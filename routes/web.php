@@ -7,13 +7,11 @@ use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminProductController;
 
 Route::get('/', [HomeController::class, 'HomePage']);
-
+Route::post('/contact', [App\Http\Controllers\ContactController::class, 'send'])->name('contact.send');
 Auth::routes();
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
-    Route::resource('articles', Admin\ArticleController::class);
     Route::resource('products', AdminProductController::class);
-    Route::resource('pages', Admin\PageController::class);
     Route::get('/home', [AdminHomeController::class, 'index']);
 });
 #ADMIN FELULET BELEPESHEZ RESZ-----

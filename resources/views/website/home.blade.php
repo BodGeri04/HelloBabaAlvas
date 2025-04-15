@@ -1,6 +1,13 @@
 @extends('website.main')
 @section('content')
     <!-- Main Slider -->
+    @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show mt-3" role="alert"
+            style="max-width: 700px; margin: 0 auto;">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Bezárás"></button>
+        </div>
+    @endif
     <section class="main-slider">
         <div class="rev_slider_wrapper fullwidthbanner-container" id="rev_slider_one_wrapper" data-source="gallery">
             <div class="rev_slider fullwidthabanner" id="rev_slider_one" data-version="5.4.1">
@@ -59,7 +66,8 @@
                             data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
                             style="">
                             <div class="button-box">
-                                <a href="services.html" class="theme-btn btn-style-two"><span class="txt">Segítek neked!
+                                <a href="services.html" class="theme-btn btn-style-two"><span class="txt">Segítek
+                                        neked!
                                     </span></a>
                             </div>
                         </div>
@@ -210,12 +218,12 @@
                                         <h4><a href="service-detail.html">{{ $product->name }}</a></h4>
                                     </div>
                                     <label>{{ $product->description }}</label>
-                                
+
                                     <ul class="post-info mt-1">
                                         <li><span class="fa fa-clock"></span> 1 óra</li>
                                     </ul>
                                 </div>
-                                
+
                             </div>
                         </div>
                     @endforeach
@@ -381,49 +389,68 @@
 
                         <!-- Contact Form -->
                         <div class="contact-form">
-                            <form method="post" action="blog.html">
+                            <form method="post" action="{{ route('contact.send') }}">
+                                @csrf
                                 <div class="row clearfix">
 
                                     <!-- Form Group -->
                                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
                                         <span class="icon flaticon-user-4"></span>
-                                        <input type="text" name="username" placeholder="Teljes név *" required>
+                                        <input type="text" name="username" placeholder="Teljes név *" required
+                                            value="{{ old('username') }}">
+                                        @error('username')
+                                            <div class="text-danger mt-1">{{ $message }}</div>
+                                        @enderror
                                     </div>
 
                                     <!-- Form Group -->
                                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
                                         <span class="icon flaticon-envelope"></span>
-                                        <input type="email" name="email" placeholder="E-Mail cím *" required>
+                                        <input type="email" name="email" placeholder="E-Mail cím *" required
+                                            value="{{ old('email') }}">
+                                        @error('email')
+                                            <div class="text-danger mt-1">{{ $message }}</div>
+                                        @enderror
                                     </div>
 
                                     <!--Form Group-->
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
                                         <span class="icon flaticon-notebook"></span>
-                                        <select name="country" class="custom-select-box">
-                                            <option>Válassz egy csomagot! *</option>
-                                            @foreach($products as $product)
-                                            <option>{{$product->name}}, {{$product->price}} Ft.</option>
+                                        <select name="product" required class="custom-select-box">
+                                            <option value="">Válassz egy csomagot! *</option>
+                                            @foreach ($products as $product)
+                                                <option value="{{ $product->name }}"
+                                                    {{ old('product') == $product->name ? 'selected' : '' }}>
+                                                    {{ $product->name }}, {{ $product->price }} Ft.
+                                                </option>
                                             @endforeach
                                         </select>
+                                        @error('product')
+                                            <div class="text-danger mt-1">{{ $message }}</div>
+                                        @enderror
                                     </div>
 
                                     <!-- Form Group -->
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
                                         <span class="icon flaticon-pen"></span>
-                                        <textarea name="message" placeholder="Üzenet"></textarea>
+                                        <textarea name="message" placeholder="Üzenet">{{ old('message') }}</textarea>
+                                        @error('message')
+                                            <div class="text-danger mt-1">{{ $message }}</div>
+                                        @enderror
                                     </div>
 
                                     <!-- Form Group -->
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                        <button class="theme-btn btn-style-three" type="submit" name="submit-form"><span
-                                                class="txt">Get a quote</span></button>
+                                        <button class="theme-btn btn-style-three" type="submit" name="submit-form">
+                                            <span class="txt">Küldés</span>
+                                        </button>
                                     </div>
 
                                 </div>
                             </form>
-
                         </div>
                         <!-- eND Contact Form -->
+
 
                     </div>
                 </div>
