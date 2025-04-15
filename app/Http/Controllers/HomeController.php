@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,7 @@ class HomeController extends Controller
      */
     public function HomePage()
     {
-        return view('website.home');
+        $products = Product::paginate(4);
+        return view('website.home')->with('products',$products);
     }
 }
