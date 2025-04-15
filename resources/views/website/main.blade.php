@@ -14,7 +14,6 @@
 
 	<link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
 	<link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	<!-- Responsive -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -40,7 +39,7 @@
 					<div class="inner-container clearfix">
 						<!-- Top Left -->
 						<div class="top-left clearfix">
-							<div class="text"><span>Email cím: </span> lkfnmemfme</div>
+							<div class="text"><span>Email cím: </span> hello@pihenjbaba.hu</div>
 							<!-- IKONOK KELLENEK IDE MINDENHOVÁ!!!! <div class="text">Call for free consultation: <a href="tel:+0056-693-55-20">0056 693 55 20</a></div> -->
 						</div>
 
@@ -67,7 +66,7 @@
 
 					<!-- Logo Box -->
 					<div class="pull-left logo-box">
-						<div class="logo"><a href="index.html"><img src="assets/images/logo.png" alt="" title=""></a>
+						<div class="logo"><a href="/"><img src="assets/images/logo.png" alt="" title=""></a>
 						</div>
 					</div>
 

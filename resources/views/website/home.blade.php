@@ -1,15 +1,17 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 @extends('website.main')
 @section('content')
     <!-- Main Slider -->
-    @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show mt-3" role="alert"
-            style="max-width: 700px; margin: 0 auto;">
-            {{ session('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Bezárás"></button>
-        </div>
-    @endif
+
     <section class="main-slider">
         <div class="rev_slider_wrapper fullwidthbanner-container" id="rev_slider_one_wrapper" data-source="gallery">
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show mt-3" role="alert"
+                    style="max-width: 700px; margin: 0 auto;">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Bezárás"></button>
+                </div>
+            @endif
             <div class="rev_slider fullwidthabanner" id="rev_slider_one" data-version="5.4.1">
                 <ul>
 
@@ -18,7 +20,7 @@
                         data-title="Slide Title">
                         <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10"
                             data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina=""
-                            src="assets/images/DSC_8594.jpg">
+                            src="assets/images/fokep.jpg">
 
                         <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                             data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
@@ -66,7 +68,7 @@
                             data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
                             style="">
                             <div class="button-box">
-                                <a href="services.html" class="theme-btn btn-style-two"><span class="txt">Segítek
+                                <a href="#contact-section" class="theme-btn btn-style-two"><span class="txt">Segítek
                                         neked!
                                     </span></a>
                             </div>
@@ -366,7 +368,7 @@
     </section>
     <!-- End Testimonial Section -->
 
-    <section class="contact-form-section">
+    <section class="contact-form-section" id="contact-section">
         <div class="auto-container">
             <div class="row clearfix">
 

@@ -22,8 +22,11 @@ class ContactController extends Controller
                 'message' => 'nullable|string',
             ]);
 
+            // Message új sorok és szóközök kezelése
+            $validated['message'] = nl2br(e($validated['message']));
+            
             // Email küldése neked
-            Mail::to('bodge04@gmail.com')->send(new ContactMessage($validated));
+            Mail::to('hello@pihenjbaba.hu')->send(new ContactMessage($validated));
 
             // Email visszaigazolás a felhasználónak
             Mail::to($validated['email'])->send(new ContactAutoReply($validated));

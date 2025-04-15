@@ -3,4 +3,4 @@
 <p><strong>Email:</strong> {{ $data['email'] }}</p>
 <p><strong>Termék:</strong> {{ $data['product'] }}</p>
 <p><strong>Üzenet:</strong></p>
-<p>{{ $data['message'] }}</p>
+<p>{{!! $data['message'] !!}}</p>
