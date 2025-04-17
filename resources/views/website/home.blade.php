@@ -304,22 +304,25 @@
             <div class="row clearfix">
                 <!-- ITT MAJD EGY OLYAN RÉSZ LESZ, AMI DINAMIKUSAN FRISSÜL A GYAKRAN KERESETT KURZUSOK ALAPJÁN AZ ADATBÁZISBÓL -->
                 <!-- Course Block -->
-                <div class="course-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="image">
-                            <a href="course-detail.html"><img class="transition-500ms"
-                                    src="assets/images/resource/course-1.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <h5><a href="course-detail.html">How to success through market segmentation</a></h5>
-                            <ul class="post-info">
-                                <li><span class="icon flaticon-book-1"></span>3 Chapter</li>
-                                <li><span class="icon flaticon-clock"></span>10 Lessons</li>
-                            </ul>
+                @foreach ($blogs as $blog)
+                
+                    <div class="course-block col-lg-3 col-md-6 col-sm-12">
+                        <div class="inner-box" data-wow-delay="0ms" data-wow-duration="400ms">
+                            <div class="image">
+                                <a href="{{$blog->slug}}"><img class="transition-500ms"
+                                    src="{{ asset('assets/images/gallery/blog/' . $blog->cover_image) }}"
+                                    alt="{{ $blog->cover_image }}" /></a>
+                            </div>
+                            <div class="lower-content">
+                                <h5><a href="course-detail.html">{{$blog->title}}</a></h5>
+                                <ul class="post-info">
+                                    <li><span class="icon flaticon-book-1"></span>3 Chapter</li>
+                                    <li><span class="icon flaticon-clock"></span>10 Lessons</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-
+                @endforeach
 
             </div>
         </div>

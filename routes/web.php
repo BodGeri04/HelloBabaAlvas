@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\AdminProductController;
 
 Route::get('/', [HomeController::class, 'HomePage']);
 Route::post('/contact', [App\Http\Controllers\ContactController::class, 'send'])->name('contact.send');
+Route::get('/{slug}', [AdminBlogController::class, 'show'])->name('blog.show');
 Auth::routes();
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {

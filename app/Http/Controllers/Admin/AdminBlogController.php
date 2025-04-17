@@ -58,9 +58,14 @@ class AdminBlogController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($slug)
     {
-        //
+        $blog = Blog::where('slug', $slug)->firstOrFail();
+        // Megtekintésszám növelése
+        $blog->increment('views');
+        // Kommentezhető felület
+        // $comments = $blog->comments()->latest()->get();
+        return view('website.blog', compact('blog'));//,'comments'
     }
 
     /**
