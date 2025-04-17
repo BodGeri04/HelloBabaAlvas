@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function HomePage()
     {
         $products = Product::paginate(4);
-        $blogs=Blog::paginate(4);
+        $blogs=Blog::where('is_published',true)->orderBy('created_at','DESC')->paginate(4);
         return view('website.home')->with('products',$products)->with('blogs',$blogs);
     }
 }

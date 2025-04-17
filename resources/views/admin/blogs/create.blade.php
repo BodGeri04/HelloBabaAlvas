@@ -35,11 +35,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-7">
                             <div class="form-group">
                                 <label for="content">Leírás</label>
-                                <input required type="text" class="form-control" id="content" name="content"
-                                    value="{{ old('content', $blog->content ?? '') }}">
+                                <textarea required type="text" class="form-control" id="content" name="content">{{ old('content', $blog->content ?? '') }}</textarea>
                             </div>
                         </div>
                     </div>

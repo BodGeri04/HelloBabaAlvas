@@ -5,10 +5,15 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Str;
 
 class AdminBlogController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -61,11 +66,20 @@ class AdminBlogController extends Controller
     public function show($slug)
     {
         $blog = Blog::where('slug', $slug)->firstOrFail();
-        // Megtekintésszám növelése
-        $blog->increment('views');
+        // Cookie kulcs - Laravel titkosítja automatikusan
+        $blogHash=hash('sha256', 'blog-' . $blog->id);
+        $cookieKey = 'blog_viewed_' . $blogHash;
+
+        // Ha nincs ilyen cookie, akkor növeljük a megtekintések számát
+        if (!Cookie::has($cookieKey)) {
+            $blog->increment('views');
+
+            // Cookie létrehozása 1 napra (1440 perc)
+            Cookie::queue($cookieKey, true, 1441);
+        }
         // Kommentezhető felület
         // $comments = $blog->comments()->latest()->get();
-        return view('website.blog', compact('blog'));//,'comments'
+        return view('website.blog', compact('blog')); //,'comments'
     }
 
     /**

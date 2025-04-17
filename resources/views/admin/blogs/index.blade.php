@@ -24,7 +24,7 @@
                 <tr>
                     <td>{{ $blog->title }}</td>
                     <td>{{ $blog->slug }}</td>
-                    <td>{{ $blog->content }}</td>
+                    <td>{!! $blog->content !!}</td>
                     <td>{{ $blog->cover_image }}</td>
                     <td>{{ $blog->is_published }}</td>
                     <td>{{ $blog->views }}</td>

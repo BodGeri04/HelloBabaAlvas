@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="/assets/admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/assets/admin/dist/css/adminlte.min.css">
+    <!--TINYMCE-->
+    <script src="https://cdn.tiny.cloud/1/z3ivhoi87w7309hzr8a537h5xm156y3unisq93zp528w3jsq/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -240,7 +242,7 @@
                                 </li>
                             </ul>
                         </li>
-                     
+
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -303,6 +305,21 @@
         <script src="/assets/admin/dist/js/demo.js"></script>
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
         <script src="/assets/admin/dist/js/pages/dashboard2.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                tinymce.init({
+                    selector: 'textarea', // Az összes textarea elemet TinyMCE-re cseréli
+                    plugins: 'advlist autolink lists link image charmap print preview anchor',
+                    toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+                    menubar: 'file edit view insert format tools table help',
+                    setup: function(editor) {
+                        editor.on('change', function() {
+                            tinymce.triggerSave();
+                        });
+                    }
+                });
+            });
+        </script>
 </body>
 
 </html>
