@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminBlogController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -12,6 +13,7 @@ Auth::routes();
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::resource('products', AdminProductController::class);
+    Route::resource('blogs', AdminBlogController::class);
     Route::get('/home', [AdminHomeController::class, 'index']);
 });
 #ADMIN FELULET BELEPESHEZ RESZ-----

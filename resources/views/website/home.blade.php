@@ -298,8 +298,8 @@
         <div class="auto-container">
             <!-- Sec Title -->
             <div class="sec-title centered">
-                <div class="title color-four">IDE KELL VALAMI SZÖVEG</div>
-                <h2>Gyakra keresett kurzusaim</h2>
+                <div class="title color-four">Blogok</div>
+                <h2>Legújabb bejegyzések</h2>
             </div>
             <div class="row clearfix">
                 <!-- ITT MAJD EGY OLYAN RÉSZ LESZ, AMI DINAMIKUSAN FRISSÜL A GYAKRAN KERESETT KURZUSOK ALAPJÁN AZ ADATBÁZISBÓL -->

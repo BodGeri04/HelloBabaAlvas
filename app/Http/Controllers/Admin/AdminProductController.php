@@ -85,16 +85,32 @@ class AdminProductController extends Controller
         ]);
 
         $product = Product::findOrFail($id);
-        $product->update($request->except('image'));
 
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->price = $request->price;
+
+        // Ha új kép van feltöltve
         if ($request->hasFile('image')) {
-            // Kép feltöltése és elmentése
-            $product->image = $request->file('image')->store('products');
-            $product->save();
+            // Régi kép törlése, ha nem az alapértelmezett
+            if ($product->image && $product->image !== 'noimage.jpg') {
+                $oldImagePath = public_path('/assets/images/gallery/' . $product->image);
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
+            }
+
+            // Új kép mentése
+            $imageName = time() . '.' . $request->image->getClientOriginalExtension();
+            $request->image->move(public_path('/assets/images/gallery'), $imageName);
+            $product->image = $imageName;
         }
+
+        $product->save();
 
         return redirect()->route('admin.products.index')->with('success', 'Termék sikeresen frissítve.');
     }
+
 
     /**
      * Remove the specified resource from storage.
