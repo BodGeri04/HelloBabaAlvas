@@ -114,7 +114,7 @@
   --main-color: rgb(238,217,196);
   
   /* #ffe4aa in decimal RGB */
-  --main-color-two: rgb(255,228,170);
+  --main-color-two: rgb(239,195,202);
   
   /* #fbf7f5 in decimal RGB */
   --color-three: rgb(251,247,245);
@@ -123,7 +123,7 @@
   --color-four: rgb(246,234,255);
   
   /* #cdf0ff in decimal RGB */
-  --color-five: rgb(205,240,255);
+  --color-five: rgb(242,218,223);
   
   /* #aafffa in decimal RGB */
   --color-six: rgb(170,255,250);
@@ -144,7 +144,7 @@
   --color-eleven: rgb(100,141,139);
   
   /* #c6e8f6 in decimal RGB */
-  --color-twelve: rgb(198,232,246);
+  --color-twelve: rgb(242,218,223);
   
   /* #fff5e1 in decimal RGB */
   --color-thirteen: rgb(255,245,225);
@@ -849,11 +849,11 @@ img{
 	display: inline-block;
 	font-size: var(--font-16);
 	line-height: 30px;
-	color: var(--white-color);
+	color: var(--black-color);
 	padding: 12px 32px 12px;
 	font-weight: 700;
 	overflow: hidden;
-	background:var(--main-color);
+	background:var(--main-color-two);
 	border-radius:0px;
 	text-transform: capitalize;
 	font-family: var(--font-family-roboto);
@@ -1339,8 +1339,8 @@ img{
 .sec-title .title{
 	position: relative;
     font-weight:700;
-	padding:7px 20px 5px;
-	font-size:var(--font-14);
+	padding:9px 22px 7px;
+	font-size:var(--font-20);
 	color:var(--dark-color);
 	display:inline-block;
 	background-color:var(--main-color-two);

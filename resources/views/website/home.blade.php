@@ -20,7 +20,7 @@
                         data-title="Slide Title">
                         <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10"
                             data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina=""
-                            src="assets/images/fokep.jpg">
+                            src="assets/images/gallery/kapcsolatfelvetel.jpg">
 
                         <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                             data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
@@ -30,7 +30,6 @@
                             data-y="['middle','middle','middle','middle']" data-textalign="['top','top','top','top']"
                             data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
                             style="">
-                            <div class="title">Nyugodt alvás a babának és a családnak</div>
                         </div>
 
                         <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
@@ -52,8 +51,7 @@
                             data-y="['middle','middle','middle','middle']" data-textalign="['top','top','top','top']"
                             data-frames='[{"delay":0,"speed":1500,"frame":"0","from":"x:[175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:1;","mask":"x:[-100%];y:0;s:inherit;e:inherit;","to":"o:1;","ease":"power3.out"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
                             style="">
-                            <div class="text">Nyugodt alvás a babának és a családnak
-                                <br>Nehezen megy az altatás? Sokszor ébred a babád éjszaka? Sokat sír?
+                            <div class="text">Személyre szabott megoldások a<br>babád és a te igényeid összehangolásával.
                             </div>
 
 
@@ -73,20 +71,6 @@
                                     </span></a>
                             </div>
                         </div>
-
-                        <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                            data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
-                            data-type="text" data-height="none" data-width="['700','700','700','500']"
-                            data-whitespace="normal" data-hoffset="['15','15','15','15']"
-                            data-voffset="['260','240','180','180']" data-x="['left','left','left','left']"
-                            data-y="['middle','middle','middle','middle']" data-textalign="['top','top','top','top']"
-                            data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
-                            style="">
-                            <div class="clients-image">
-                                <img src="assets/images/main-slider/icons.png" alt="" />
-                            </div>
-                        </div>
-
                     </li>
                 </ul>
             </div>
@@ -103,7 +87,7 @@
                 <div class="image-column col-lg-5 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <div class="image" data-tilt data-tilt-max="3">
-                            <img src="assets/images/hattertest.jpg" alt="" />
+                            <img src="assets/images/gallery/Orsi_Berci.jpg" alt="" />
                         </div>
                     </div>
                 </div>
@@ -113,10 +97,10 @@
                     <div class="inner-column">
                         <div class="sec-title">
                             <div class="title">Rólam</div>
-                            <h2>Bod Orsolya vagyok, baba és kisgyermek alvástanácsadó.</h2>
+                            <h2>Bod Orsolya vagyok, baba és kisgyermek alvástanácsadó</h2>
                             <div class="text">Egyedülálló anyaként, egy (akkor még) nagyon kis alvásigényű gyermekkel,
                                 pontosan tudom, milyen fárasztó tud lenni, amikor az alvás, a pihenés elérhetetlennek tűnik,
-                                és úgy érezzük, hogy örökké kimerültek leszünk.<br>
+                                és úgy érezzük, hogy örökké kimerültek leszünk.<br><br>
                                 Szinte minden, amit a 'babázásról' gondoltam, a kisfiam születése után felülíródott és új
                                 perspektívába helyeződött. Előtte más elképzelésem volt a kisbabás anyukák életéről: láttam,
                                 olvastam, hallottam mások tapasztalatait, és én is elképzeltem, hogy mit hogyan fogok
@@ -135,7 +119,7 @@
                             </div>
                         </div>
 
-                        <!-- Counter Box -->
+                        {{-- <!-- Counter Box -->
                         <div class="counter-box">
                             <!-- Fact Counter -->
                             <div class="fact-counter">
@@ -184,7 +168,7 @@
                             </div>
 
                         </div>
-                        <!-- End Counter Box -->
+                        <!-- End Counter Box --> --}}
 
                     </div>
                 </div>
@@ -199,7 +183,7 @@
         <div class="auto-container">
             <div class="sec-title">
                 <div class="title color-two">Szolgáltatások</div>
-                <h2>Hogyan segíthetek?</h2>
+                <h2>Hogyan segítek?</h2>
             </div>
             <div class="inner-container">
                 <div class="services-carousel owl-carousel owl-theme">
@@ -241,7 +225,7 @@
             <!-- Sec Title -->
             <div class="sec-title light">
                 <div class="title">Folyamat</div>
-                <h2>A tanácsadás folyamata</h2>
+                <h2>Az online tanácsadás folyamata</h2>
             </div>
             <div class="row clearfix">
 
@@ -249,7 +233,7 @@
                 <div class="process-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
                     <div class="inner-box transition-300ms">
                         <div class="icon transition-500ms flaticon-planning"></div>
-                        <div class="step">I. lépés</div>
+                        <div class="step">1. lépés</div>
                         <h4><a href="service-detail.html">Kitöltöd az űrlapot</a></h4>
                         <div class="text">Az űrlap kitöltésével felveszed velem a kapcsolatot, és leírod a felmerült
                             alvási problémákat..</div>
@@ -260,18 +244,19 @@
                 <div class="process-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
                     <div class="inner-box transition-300ms">
                         <div class="icon transition-500ms flaticon-implement"></div>
-                        <div class="step">II. lépés</div>
+                        <div class="step">2. lépés</div>
                         <h4><a href="service-detail.html">Válasz email-ben</a></h4>
                         <div class="text"> Miután megkaptam az űrlapot, email-ben megkereslek, és egyeztetünk egy
                             megfelelő időpontot a tanácsadásra.. </div>
                     </div>
                 </div>
 
+
                 <!-- Process Block -->
                 <div class="process-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
                     <div class="inner-box transition-300ms">
                         <div class="icon transition-500ms flaticon-friend"></div>
-                        <div class="step">III. lépés</div>
+                        <div class="step">3. lépés</div>
                         <h4><a href="service-detail.html">Tanácsadás díja</a></h4>
                         <div class="text">Az egyeztetett időpont után elutalod a tanácsadás díját..</div>
                     </div>
@@ -281,7 +266,7 @@
                 <div class="process-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
                     <div class="inner-box transition-300ms">
                         <div class="icon transition-500ms flaticon-finish-line"></div>
-                        <div class="step">IV. lépés</div>
+                        <div class="step">4. lépés</div>
                         <h4><a href="service-detail.html">Kérdőív kitöltése</a></h4>
                         <div class="text">Ezt követően küldök egy kérdőívet, amely segít abban, hogy alaposan
                             felkészüljek a beszélgetésre..</div>
@@ -305,16 +290,15 @@
                 <!-- ITT MAJD EGY OLYAN RÉSZ LESZ, AMI DINAMIKUSAN FRISSÜL A GYAKRAN KERESETT KURZUSOK ALAPJÁN AZ ADATBÁZISBÓL -->
                 <!-- Course Block -->
                 @foreach ($blogs as $blog)
-                
                     <div class="course-block col-lg-3 col-md-6 col-sm-12">
                         <div class="inner-box" data-wow-delay="0ms" data-wow-duration="400ms">
                             <div class="image">
-                                <a href="{{$blog->slug}}"><img class="transition-500ms"
-                                    src="{{ asset('assets/images/gallery/blog/' . $blog->cover_image) }}"
-                                    alt="{{ $blog->cover_image }}" /></a>
+                                <a href="{{ $blog->slug }}"><img class="transition-500ms"
+                                        src="{{ asset('assets/images/gallery/blog/' . $blog->cover_image) }}"
+                                        alt="{{ $blog->cover_image }}" /></a>
                             </div>
                             <div class="lower-content">
-                                <h5><a href="course-detail.html">{{$blog->title}}</a></h5>
+                                <h5><a href="course-detail.html">{{ $blog->title }}</a></h5>
                                 <ul class="post-info">
                                     <li><span class="icon flaticon-book-1"></span>3 Chapter</li>
                                     <li><span class="icon flaticon-clock"></span>10 Lessons</li>
@@ -333,8 +317,8 @@
         <div class="auto-container">
             <!-- Sec Title -->
             <div class="sec-title centered">
-                <div class="title color-four">Referenciáim</div>
-                <h2>Ezeket a véleményeket <br> írták rólam</h2>
+                {{-- <div class="title color-four">Referenciáim</div> --}}
+                <h2>Rólam írták</h2><!-- Ezt a szöveget még itt meg kell változatatni valamire. -->
             </div>
             <div class="testimonial-carousel owl-carousel owl-theme">
 
@@ -365,8 +349,35 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- Testimonial Block -->
+                <div class="testimonial-block">
+                    <div class="inner-box">
+                        <div class="upper-box">
+                            <span class="quote-icon flaticon-quote-3"></span>
+                            <div class="rating">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="text">" It’s amazing how much easier it has been to meet new people and
+                                create instant connection. I have the exact same personality, the only thing that
+                                has changed is my mindset and a few behaviors. "</div>
+                        </div>
+                        <div class="lower-box">
+                            <div class="box-inner">
+                                <div class="author-image">
+                                    <img src="assets/images/resource/author-1.jpg" alt="" />
+                                </div>
+                                <h5>Alaxis D. Dowson</h5>
+                                <div class="designation">Head Of Idea, Kilix Co.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </section>
     <!-- End Testimonial Section -->
@@ -426,7 +437,7 @@
                                             @foreach ($products as $product)
                                                 <option value="{{ $product->name }}"
                                                     {{ old('product') == $product->name ? 'selected' : '' }}>
-                                                    {{ $product->name }}, {{ $product->price }} Ft.
+                                                    {{ $product->name }}
                                                 </option>
                                             @endforeach
                                         </select>

@@ -20,7 +20,7 @@
 
 .main-header .header-top{
 	position:relative;
-	background-color:var(--main-color);
+	/* background-color:var(--main-color); */
 }
 
 .main-header .inner-container{

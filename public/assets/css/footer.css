@@ -205,7 +205,7 @@
 .main-footer .footer-bottom{
 	position:relative;
 	padding:26px 40px;
-	background-color:var(--color-twelve);
+	background-color:var(--main-color-two);
 }
 
 .main-footer .footer-bottom .copyright{

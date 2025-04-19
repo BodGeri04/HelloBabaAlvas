@@ -1,22 +1,5 @@
 @extends('website.main')
 @section('content')
-    <!-- Page Title Section -->
-    <section class="page-title" style="background-image: url(assets/images/background/2.jpg)">
-        <div class="auto-container">
-            <div class="content">
-                <div class="text">Welcome to our company</div>
-                <h1>News Feeds</h1>
-            </div>
-            <div class="breadcrumb-outer">
-                <ul class="page-breadcrumb">
-                    <li><a href="index.html">Home</a></li>
-                    <li>Blog</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!-- End Page Title Section -->
-
     <!-- Sidebar Page Container -->
     <div class="sidebar-page-container">
         <div class="auto-container">
@@ -217,32 +200,6 @@
                 <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
                     <aside class="sidebar sticky-top">
 
-                        <!-- Sidebar Widget / About Widget -->
-                        <div class="sidebar-widget-two about-widget">
-                            <div class="widget-content">
-                                <!-- Sidebar Title -->
-                                <div class="sidebar-title-two">
-                                    <h5>About Me</h5>
-                                </div>
-                                <div class="image">
-                                    <img src="assets/images/resource/about-widget.jpg" alt="" />
-                                </div>
-                                <div class="lower-content">
-                                    <h6>Rosalina D. Willaimson</h6>
-                                    <div class="text">Lorem ipsum dolor sit amet, consect etur adipisicing elit, sed do
-                                        eiusmod tempor incididunt ut labore.</div>
-                                    <!-- Social Box -->
-                                    <ul class="social-box">
-                                        <li><a href="https://www.facebook.com/" class="fa fa-facebook-f"></a></li>
-                                        <li><a href="https://www.twitter.com/" class="fa fa-twitter"></a></li>
-                                        <li><a href="https://www.behance.com/" class="fa fa-behance"></a></li>
-                                        <li><a href="https://www.linkedin.com/" class="fa fa-linkedin"></a></li>
-                                        <li><a href="https://youtube.com/" class="fa fa-youtube-play"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Sidebar Widget / About Widget -->
 
                         <!-- Sidebar Widget / Search Widget -->
                         <div class="sidebar-widget-two about-widget">
