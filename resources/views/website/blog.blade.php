@@ -11,7 +11,6 @@
                         <div class="inner-box">
                             <ul class="post-meta">
                                 <li><span class="icon fa fa-eye"></span> {{ $blog->views }} megtekintés</li>
-                                <li><span class="icon fa fa-comments"></span> 30 hozzászólás</li>
                                 <li><span class="icon fa fa-calendar"></span> {{ $blog->created_at->format('Y. F d.') }}
                                 </li>
                             </ul>
@@ -60,7 +59,8 @@
                             <div class="post-share-options">
                                 <div class="post-share-inner clearfix">
                                     <div class="pull-left tags"><strong>Releted Tags</strong><a href="#">Popular</a>
-                                        <a href="#">Desgin</a><a href="#">UX</a></div>
+                                        <a href="#">Desgin</a><a href="#">UX</a>
+                                    </div>
                                     <ul class="social-box pull-right">
                                         <li class="share">Social Share</li>
                                         <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
@@ -71,15 +71,17 @@
                                     </ul>
                                 </div>
                             </div>
-
+                            
                             <!-- More Posts -->
                             <div class="more-posts">
                                 <div class="clearfix">
-                                    <div class="prev pull-left"><a href="#">Previous Post <strong>Tips On
-                                                Minimalist</strong></a></div>
+                                    @if($pastBlog)
+                                    <div class="prev pull-left"><a href="{{url($pastBlog->slug)}}">Korábbi blog <strong>{{$pastBlog->title}}</strong></a></div>
+                                    @endif
                                     <span class="grid-icon flaticon-grid"></span>
-                                    <div class="next pull-right"><a href="#">Newer Post <strong>Less Is
-                                                More</strong></a></div>
+                                    @if($latestBlog)
+                                    <div class="next pull-right"><a href="{{url($latestBlog->slug)}}">Legújabb blog <strong>{{$latestBlog->title}}</strong></a></div>
+                                    @endif
                                     </ul>
                                 </div>
                             </div>
@@ -88,109 +90,13 @@
                             <div class="blog-author-box">
                                 <div class="author-inner">
                                     <div class="thumb"><img src="assets/images/resource/author-5.jpg" alt=""></div>
-                                    <div class="title">Written by</div>
-                                    <h4 class="name">Rosalina D. William</h4>
-                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation is enougn for today.</div>
+                                    <div class="title">Írta</div>
+                                    <h4 class="name">Bod Orsolya</h4>
+                                    <div class="text">Baba és kisgyermek alvástanácsadó.
+                                    </div>
                                 </div>
                             </div>
                             <!-- End Blog Author Box -->
-
-                            <!-- Comments Area -->
-                            <div class="comments-area">
-                                <div class="group-title">
-                                    <h4>03 Comments</h4>
-                                </div>
-
-                                <div class="comment-box">
-                                    <div class="comment">
-                                        <div class="author-thumb"><img src="assets/images/resource/author-6.jpg"
-                                                alt=""></div>
-                                        <div class="comment-info clearfix"><strong>Rosalina Kelian</strong>
-                                            <div class="comment-time">24th March 2022</div>
-                                        </div>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                            eiusmod tempor labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        </div>
-                                        <a class="theme-btn reply-btn" href="#"><span class="fa fa-reply"></span>
-                                            Reply</a>
-                                    </div>
-                                </div>
-
-                                <div class="comment-box reply-comment">
-                                    <div class="comment">
-                                        <div class="author-thumb"><img src="assets/images/resource/author-7.jpg"
-                                                alt=""></div>
-                                        <div class="comment-info clearfix"><strong>Paul Molive </strong>
-                                            <div class="comment-time">Mar 01, 2022</div>
-                                        </div>
-                                        <div class="text">The wise man therefore always holds in these matters to this
-                                            principle of selection: he rejects pleasures to secure other greater pleasures,
-                                            or else he endures pains to avoid worse pains.</div>
-                                        <a class="theme-btn reply-btn" href="#"><span class="fa fa-reply"></span>
-                                            Reply</a>
-                                    </div>
-                                </div>
-
-                                <div class="comment-box">
-                                    <div class="comment">
-                                        <div class="author-thumb"><img src="assets/images/resource/author-8.jpg"
-                                                alt=""></div>
-                                        <div class="comment-info clearfix"><strong>Mouna Sthesia </strong>
-                                            <div class="comment-time">Apr 28, 2022</div>
-                                        </div>
-                                        <div class="text">The wise man therefore always holds in these matters to this
-                                            principle of selection: he rejects pleasures to secure other greater pleasures,
-                                            or else he endures pains to avoid worse pains.</div>
-                                        <a class="theme-btn reply-btn" href="#"><span class="fa fa-reply"></span>
-                                            Reply</a>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                            <!-- Comment Form -->
-                            <div class="comment-form">
-                                <div class="group-title">
-                                    <h4>Post Comment</h4>
-                                </div>
-
-                                <!--Comment Form-->
-                                <form method="post" action="blog.html">
-
-                                    <div class="form-group">
-                                        <span class="icon fa fa-pencil"></span>
-                                        <textarea class="" name="message" placeholder="Type your comments...."></textarea>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <span class="icon fa fa-user"></span>
-                                        <input type="text" name="username" placeholder="Type your name...." required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <span class="icon fa fa-envelope"></span>
-                                        <input type="email" name="email" placeholder="Type your email...." required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <span class="icon fa fa-globe"></span>
-                                        <input type="text" name="username" placeholder="Type your website...."
-                                            required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <button class="theme-btn btn-style-five" type="submit" name="submit-form"><span
-                                                class="txt"><i class="fa fa-comment"></i>Post Comment</span></button>
-                                    </div>
-
-                                </form>
-
-                            </div>
-                            <!--End Comment Form -->
 
                         </div>
                     </div>
@@ -229,45 +135,17 @@
                             <div class="widget-content">
                                 <!-- Sidebar Title -->
                                 <div class="sidebar-title-two">
-                                    <h5>Popular Feeds</h5>
+                                    <h5>Legnézettebb blogok</h5>
                                 </div>
-
+                                @foreach($popularBlogs as $popularblog)
                                 <article class="post">
-                                    <figure class="post-thumb"><img src="assets/images/resource/post-thumb-1.jpg"
-                                            alt=""><a href="blog-detail.html" class="overlay-box"><span
+                                    <figure class="post-thumb"><img src="{{ asset('assets/images/gallery/blog/' . $popularblog->cover_image) }}"
+                                            alt=""><a href="{{url($popularblog->slug)}}" class="overlay-box"><span
                                                 class="icon fa fa-link"></span></a></figure>
-                                    <div class="text"><a href="blog-detail.html">Lorem ipsum dolor sit cised do
-                                            something.</a></div>
-                                    <div class="post-info">24th March 2022</div>
+                                    <div class="text"><a href="{{url($popularblog->slug)}}">{{$popularblog->title}}</a></div>
+                                    <div class="post-info">{{$popularblog->created_at->format('Y. F d.')}}</div>
                                 </article>
-
-                                <article class="post">
-                                    <figure class="post-thumb"><img src="assets/images/resource/post-thumb-2.jpg"
-                                            alt=""><a href="blog-detail.html" class="overlay-box"><span
-                                                class="icon fa fa-link"></span></a></figure>
-                                    <div class="text"><a href="blog-detail.html">Lorem ipsum dolor sit cised do
-                                            something.</a></div>
-                                    <div class="post-info">24th March 2022</div>
-                                </article>
-
-                                <article class="post">
-                                    <figure class="post-thumb"><img src="assets/images/resource/post-thumb-3.jpg"
-                                            alt=""><a href="blog-detail.html" class="overlay-box"><span
-                                                class="icon fa fa-link"></span></a></figure>
-                                    <div class="text"><a href="blog-detail.html">Lorem ipsum dolor sit cised do
-                                            something.</a></div>
-                                    <div class="post-info">24th March 2022</div>
-                                </article>
-
-                                <article class="post">
-                                    <figure class="post-thumb"><img src="assets/images/resource/post-thumb-4.jpg"
-                                            alt=""><a href="blog-detail.html" class="overlay-box"><span
-                                                class="icon fa fa-link"></span></a></figure>
-                                    <div class="text"><a href="blog-detail.html">Lorem ipsum dolor sit cised do
-                                            something.</a></div>
-                                    <div class="post-info">24th March 2022</div>
-                                </article>
-
+                                @endforeach
                             </div>
                         </div>
                         <!-- End Sidebar Widget / Popular Posts -->
@@ -289,29 +167,6 @@
                             </div>
                         </div>
                         <!-- End Sidebar Widget / Category Widget -->
-
-                        <!-- Sidebar Widget / Instagram Widget -->
-                        <div class="sidebar-widget-two instagram-widget">
-                            <div class="widget-content">
-                                <!-- Sidebar Title -->
-                                <div class="sidebar-title-two">
-                                    <h5>Categories</h5>
-                                </div>
-                                <a href="#">Popular</a>
-                                <a href="#">Design</a>
-                                <a href="#">ux</a>
-                                <a href="#">Usability</a>
-                                <a href="#">Develop</a>
-                                <a href="#">Icon</a>
-                                <a href="#">Business</a>
-                                <a href="#">Consult</a>
-                                <a href="#">Kit</a>
-                                <a href="#">Keyboard</a>
-                                <a href="#">Mouse</a>
-                                <a href="#">Tech</a>
-                            </div>
-                        </div>
-                        <!-- End Sidebar Widget / Instagram Widget -->
 
                     </aside>
                 </div>

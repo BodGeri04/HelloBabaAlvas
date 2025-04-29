@@ -23,10 +23,32 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    // Főoldal megjelenítése
     public function HomePage()
     {
         $products = Product::paginate(4);
-        $blogs=Blog::where('is_published',true)->orderBy('created_at','DESC')->paginate(4);
-        return view('website.home')->with('products',$products)->with('blogs',$blogs);
+        $blogs = Blog::where('is_published', true)->orderBy('created_at', 'DESC')->paginate(4);
+
+        return view('website.home', compact('products', 'blogs'));
+    }
+
+    public function searchBlogs(Request $request)
+    {
+        $query = $request->get('query'); // A keresési kifejezés
+
+        // Keresés blogokban a title és content mezőkben
+        $blogs = Blog::where('title', 'like', '%' . $query . '%')
+            ->orWhere('content', 'like', '%' . $query . '%')
+            ->where('is_published', true)
+            ->orderBy('created_at', 'DESC')
+            ->get();
+
+        if ($request->ajax()) {
+            return response()->json([
+                'blogs' => $blogs,
+            ]);
+        }
+
+        return view('website.home', compact('blogs'));
     }
 }

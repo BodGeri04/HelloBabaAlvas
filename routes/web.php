@@ -18,6 +18,9 @@ Route::get('/', [HomeController::class, 'HomePage']);
 // Kapcsolatfelvétel POST
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 
+// Keresés blogok között
+Route::post('/kereses', [HomeController::class, 'searchBlogs'])->name('blog.search');
+
 // ----- ADMIN RÉSZ -----
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::resource('products', AdminProductController::class);

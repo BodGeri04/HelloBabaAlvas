@@ -18,7 +18,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <!--TINYMCE-->
-    <script src="https://cdn.tiny.cloud/1/z3ivhoi87w7309hzr8a537h5xm156y3unisq93zp528w3jsq/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/z3ivhoi87w7309hzr8a537h5xm156y3unisq93zp528w3jsq/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
     <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
     <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 </head>
@@ -35,28 +36,35 @@
         <header class="main-header">
 
             <!-- Header Top -->
-            <div class="header-top">
+            <div class="header-top" style="background-color: rgba(0, 0, 0, 0.418)">
                 <div class="auto-container">
-                    <div class="inner-container clearfix">
-                        <!-- Top Left -->
-                        <div class="top-left clearfix">
-                            <div class="text"><span>Email cím: </span> hello@pihenjbaba.hu</div>
-                            <!-- IKONOK KELLENEK IDE MINDENHOVÁ!!!! <div class="text">Call for free consultation: <a href="tel:+0056-693-55-20">0056 693 55 20</a></div> -->
+                    <div class="inner-container d-flex justify-content-between align-items-center flex-wrap">
+
+                        <!-- Left: Email -->
+                        <div class="top-left">
+                            <div class="text">
+                                <i class="fa fa-envelope" style="margin-right: 5px;"></i>
+                                <span>hello@pihenjbaba.hu</span>
+                            </div>
                         </div>
 
-                        <!-- Top Right -->
-                        <div class="top-right pull-right clearfix">
-                            <!-- Social Box -->
-                            <!-- <div class="text">Call for free consultation: <a href="tel:+0056-693-55-20">0056 693 55 20</a></div> -->
-                            <ul class="social-box">
-                                <li><a href="https://www.facebook.com/" class="fa fa-facebook-f"></a></li>
-                                <li><a href="https://www.twitter.com/" class="fa fa-twitter"></a></li>
-                                <li><a href="https://www.behance.com/" class="fa fa-behance"></a></li>
-                                <li><a href="https://www.linkedin.com/" class="fa fa-linkedin"></a></li>
-                                <li><a href="https://youtube.com/" class="fa fa-youtube-play"></a></li>
+                        <!-- Center: Phone -->
+                        <div class="top-center text-center flex-grow-1">
+                            <div class="text" style="color:white">
+                                <i class="fa fa-phone" style="margin-right: 5px;"></i>
+                                <span>+36 20 560 7609</span>
+                            </div>
+                        </div>
+
+                        <!-- Right: Social Icons -->
+                        <div class="top-right">
+                            <ul class="social-box d-flex gap-2">
+                                <li><a href="https://www.facebook.com/profile.php?id=61574071451804"
+                                        class="fa fa-facebook-f" target="_blank"></a></li>
+                                <li><a href="https://www.instagram.com/pihenjbaba" class="fa fa-instagram" target="_blank"></a></li>
+                                <li><a href="https://www.behance.com/" class="fa fa-tiktok" target="_blank"></a></li>
                             </ul>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -361,11 +369,10 @@
                 <div class="footer-bottom">
                     <div class="clearfix">
                         <div class="pull-left">
-                            <div class="copyright">Copyright By &copy; <a
-                                    href="https://themeforest.net/user/themexriver">Themexriver</a> - 2022</div>
+                            <div class="copyright">Minden jog fenntartva &copy; <strong> Bod Orsolya </strong> - {{date('Y')}}</div>
                         </div>
                         <div class="pull-right">
-                            <div class="payments"><img src="assets/images/icons/payment.png" alt="" /></div>
+                            <div class="copyright">Az oldal fejlesztője: <a target="_blank" href="https://bodgergely.hu"><strong>Bod Gergely</strong></a></div>
                         </div>
                     </div>
                 </div>

@@ -22,8 +22,8 @@ class ContactAutoReply extends Mailable
 
     public function build()
     {
-        return $this->subject('Köszönjük a kapcsolatfelvételt!')
-                    ->view('emails.contact-auto-reply')
-                    ->with('data', $this->data);
+        return $this->subject('Köszönöm a jelentkezésed – hamarosan jelentkezem!')
+            ->view('emails.contact-auto-reply')
+            ->with('data', $this->data);
     }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
             margin: 0;
             padding: 0;
         }
+
         .container {
             width: 100%;
             max-width: 600px;
@@ -21,24 +23,28 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         h1 {
-            color: #4CAF50;
+            color: rgb(239, 195, 202);
             font-size: 24px;
             margin-bottom: 10px;
         }
+
         p {
             font-size: 16px;
             line-height: 1.5;
         }
+
         .button {
             display: inline-block;
             padding: 10px 20px;
             margin-top: 20px;
-            background-color: #4CAF50;
-            color: #fff;
+            background-color: rgb(239, 195, 202);
+            color: #000000;
             text-decoration: none;
             border-radius: 4px;
         }
+
         .footer {
             margin-top: 30px;
             font-size: 12px;
@@ -47,16 +53,39 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <h1>Köszönjük, {{ $data['username'] }}!</h1>
-        <p>Megkaptuk a kapcsolatfelvételi üzenetét. Az üzenetét hamarosan feldolgozzuk, és egy munkatársunk válaszol Önnek néhány órán belül.</p>
-        <p>Ha bármilyen kérdése van, ne habozzon ismételten felvenni velünk a kapcsolatot.</p>
-        <p>Üdvözlettel,<br>Pihenjbaba.hu csapata</p>
+        <h1>Kedves <strong>{{ $data['username'] }}</strong>!</h1>
+        <p>Köszönöm, hogy felvetted velem a kapcsolatot, és megosztottad velem az alvási nehézségeiteket.</p>
+
+        <p>A következő lépésként hamarosan e-mailben kereslek az általad megadott címen, hogy egyeztessük a tanácsadás
+            időpontját, és minden további részletet megbeszéljünk.</p>
+
+        <p>📩 <strong>Kérlek, figyeld a bejövő (és a spam) mappáidat is</strong>, hogy biztosan megkapd a válaszom.<br>
+            Ha bármi kérdésed lenne addig is, írj bátran a <a href="mailto:hello@pihenjbaba.hu">hello@pihenjbaba.hu</a>
+            email címemre.</p>
+
+        <p>Üdvözlettel:<br>
+            <strong>Orsi</strong>
+        </p>
+        <p>
+            Bod Orsolya<br>
+            Pihenj Baba<br>
+            <a href="mailto:hello@pihenjbaba.hu">hello@pihenjbaba.hu</a><br>
+            +36 20 560 7609
+        </p>
+
+        <p>
+            <a href="https://www.facebook.com/pihenjbaba" target="_blank">Facebook</a> |
+            <a href="https://www.instagram.com/pihenjbaba" target="_blank">Instagram</a> |
+            <a href="https://linktr.ee/pihenjbaba" target="_blank">Linktree</a>
+        </p>
         <a href="{{ url('/') }}" class="button">Vissza a főoldalra</a>
         <div class="footer">
-            <p>Ez egy automatikus válasz, kérjük, ne válaszoljon erre az emailre.</p>
+            <p>Ez egy automatikus válasz, kérjük, ne válaszolj erre az emailre.</p>
         </div>
     </div>
 </body>
+
 </html>

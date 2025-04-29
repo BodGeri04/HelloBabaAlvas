@@ -49,6 +49,7 @@ class AdminBlogController extends Controller
         $blog->slug = Str::slug($request->title);
         $blog->content = $request->content;
         $blog->is_published = $request->has('is_published') ? true : false;
+        $blog->created_at = $request->filled('created_at') ? $request->created_at : now();
         if ($request->hasFile('cover_image')) {
             $imageName = time() . '.' . $request->cover_image->getClientOriginalExtension();
             $request->cover_image->move(public_path('/assets/images/gallery/blog/'), $imageName);
@@ -66,20 +67,36 @@ class AdminBlogController extends Controller
     public function show($slug)
     {
         $blog = Blog::where('slug', $slug)->firstOrFail();
+
         // Cookie kulcs - Laravel titkosítja automatikusan
-        $blogHash=hash('sha256', 'blog-' . $blog->id);
+        $blogHash = hash('sha256', 'blog-' . $blog->id);
         $cookieKey = 'blog_viewed_' . $blogHash;
 
         // Ha nincs ilyen cookie, akkor növeljük a megtekintések számát
         if (!Cookie::has($cookieKey)) {
             $blog->increment('views');
-
-            // Cookie létrehozása 1 napra (1440 perc)
-            Cookie::queue($cookieKey, true, 1441);
+            Cookie::queue($cookieKey, true, 1441); // 1 nap
         }
-        // Kommentezhető felület
-        // $comments = $blog->comments()->latest()->get();
-        return view('website.blog', compact('blog')); //,'comments'
+
+        // Korábbi blog (időrend szerint előző, de nem ugyanaz)
+        $pastBlog = Blog::where('created_at', '<', $blog->created_at)
+            ->where('id', '!=', $blog->id)
+            ->where('is_published', true)
+            ->orderBy('created_at', 'desc')
+            ->first();
+
+        // Legújabb blog (időrend szerint legfrissebb, de nem ugyanaz)
+        $latestBlog = Blog::where('id', '!=', $blog->id)
+            ->where('is_published', true)
+            ->orderBy('created_at', 'desc')
+            ->first();
+        // Legnézettebb blogok (nézettségi szám alapján sorba rendezve)
+        $popularBlogs = Blog::orderBy('views', 'desc')
+        ->where('id', '!=', $blog->id)
+        ->take(3)
+        ->get();
+
+        return view('website.blog', compact('blog', 'pastBlog', 'latestBlog', 'popularBlogs'));
     }
 
     /**
@@ -111,6 +128,7 @@ class AdminBlogController extends Controller
         $blog->slug = $request->slug ? Str::slug($request->slug) : Str::slug($request->title);
         $blog->content = $request->content;
         $blog->is_published = $request->has('is_published') ? true : false;
+        $blog->created_at = $request->filled('created_at') ? $request->created_at : now();
         if ($request->hasFile('cover_image')) {
             // Töröljük a régi képet, ha nem az alapértelmezett
             if ($blog->cover_image && $blog->cover_image !== 'noimage.jpg') {

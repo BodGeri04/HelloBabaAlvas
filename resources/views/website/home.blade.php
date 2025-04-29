@@ -98,13 +98,21 @@
                         <div class="sec-title">
                             <div class="title">Rólam</div>
                             <h2>Bod Orsolya vagyok, baba és kisgyermek alvástanácsadó</h2>
-                            <div class="text">Egyedülálló anyaként, egy (akkor még) nagyon kis alvásigényű gyermekkel,
-                                pontosan tudom, milyen fárasztó tud lenni, amikor az alvás, a pihenés elérhetetlennek tűnik,
-                                és úgy érezzük, hogy örökké kimerültek leszünk.<br><br>
-                                Szinte minden, amit a 'babázásról' gondoltam, a kisfiam születése után felülíródott és új
-                                perspektívába helyeződött. Előtte más elképzelésem volt a kisbabás anyukák életéről: láttam,
-                                olvastam, hallottam mások tapasztalatait, és én is elképzeltem, hogy mit hogyan fogok
-                                csinálni, mit veszek meg, vagy mit semmiképpen sem.
+                            <div class="text">Célom, hogy a kisbabás és kisgyerekes családok számára tudományos alapú,
+                                gyakorlatias tanácsokkal segítsek az alvás, altatás és napirend kialakításában, hogy
+                                mindenki pihentetően aludhasson.
+                                <br><br>
+                                Segítek megérteni a babák alvásának természetét, eloszlatni a tévhiteket, és olyan rutint,
+                                valamint környezetet kialakítani, amely támogatja mind a baba, mind a szülők igényeit.<br>
+                                Olyan ötleteket és tippeket adok, amelyek megkönnyítik ezt a bizonytalansággal és
+                                kihívásokkal teli időszakot mind a babák, mind a családok számára, miközben biztosítjuk a
+                                biztonságos környezetet, ahol a baba igényeire érzékenyen reagálhatunk.
+                                <br><br>
+                                Egy olyan világot képzelek el, ahol a babák születésük pillanatától megkapják a válaszkész,
+                                segítő gondoskodást, így érzelmileg érett, empatikus felnőttek formálódnak belőlük. Hiszem,
+                                hogy a korai években kapott szeretet és válaszkész gondoskodás alapvetően formálhatja egy
+                                ember érzelmi világát, és hozzájárulhat egy harmonikusabb, elfogadóbb társadalom
+                                kialakulásához.
                             </div>
                         </div>
                         <div class="row clearfix">
@@ -192,7 +200,7 @@
                         <div class="service-block translate-top">
                             <div class="inner-box">
                                 <div class="image">
-                                    <a href="service-detail.html">
+                                    <a href="#contact-section">
                                         <img class="transition-600ms"
                                             src="{{ asset('assets/images/gallery/' . $product->image) }}"
                                             alt="{{ $product->name }}" />
@@ -201,7 +209,7 @@
                                 <div class="lower-content">
                                     <div class="lessons">{{ $product->price }} Ft</div>
                                     <div class="lower-box">
-                                        <h4><a href="service-detail.html">{{ $product->name }}</a></h4>
+                                        <h4><a href="#contact-section">{{ $product->name }}</a></h4>
                                     </div>
                                     <label>{{ $product->description }}</label>
 
@@ -232,22 +240,24 @@
                 <!-- Process Block -->
                 <div class="process-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
                     <div class="inner-box transition-300ms">
-                        <div class="icon transition-500ms flaticon-planning"></div>
+                        <div class="icon transition-500ms flaticon-notepad"></div>
                         <div class="step">1. lépés</div>
-                        <h4><a href="service-detail.html">Kitöltöd az űrlapot</a></h4>
-                        <div class="text">Az űrlap kitöltésével felveszed velem a kapcsolatot, és leírod a felmerült
-                            alvási problémákat..</div>
+                        <h4><a href="#contact-section">Kapcsolatfelvétel</a></h4>
+                        <div class="text">Töltsd ki az űrlapot, és írd le, miben tudok segíteni. Ezután e-mailben
+                            egyeztetünk időpontot, és küldöm a további teendőket.
+                        </div>
                     </div>
                 </div>
 
                 <!-- Process Block -->
                 <div class="process-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
                     <div class="inner-box transition-300ms">
-                        <div class="icon transition-500ms flaticon-implement"></div>
+                        <div class="icon transition-500ms flaticon-email"></div>
                         <div class="step">2. lépés</div>
-                        <h4><a href="service-detail.html">Válasz email-ben</a></h4>
-                        <div class="text"> Miután megkaptam az űrlapot, email-ben megkereslek, és egyeztetünk egy
-                            megfelelő időpontot a tanácsadásra.. </div>
+                        <h4><a href="#contact-section">Előkészületek</a></h4>
+                        <div class="text"> A tanácsadás díjának rendezése után kitöltesz egy részletes kérdőívet, amely
+                            alapján fel tudok készülni a beszélgetésre.
+                        </div>
                     </div>
                 </div>
 
@@ -255,10 +265,13 @@
                 <!-- Process Block -->
                 <div class="process-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
                     <div class="inner-box transition-300ms">
-                        <div class="icon transition-500ms flaticon-friend"></div>
+                        <div class="icon transition-500ms flaticon-money-bag"></div>
                         <div class="step">3. lépés</div>
-                        <h4><a href="service-detail.html">Tanácsadás díja</a></h4>
-                        <div class="text">Az egyeztetett időpont után elutalod a tanácsadás díját..</div>
+                        <h4><a href="#contact-section">Tanácsadás
+                            </a></h4>
+                        <div class="text">A megbeszélt időpontban megtartjuk az online konzultációt – személyre
+                            szabottan, a problémádra fókuszálva.
+                        </div>
                     </div>
                 </div>
 
@@ -267,9 +280,11 @@
                     <div class="inner-box transition-300ms">
                         <div class="icon transition-500ms flaticon-finish-line"></div>
                         <div class="step">4. lépés</div>
-                        <h4><a href="service-detail.html">Kérdőív kitöltése</a></h4>
-                        <div class="text">Ezt követően küldök egy kérdőívet, amely segít abban, hogy alaposan
-                            felkészüljek a beszélgetésre..</div>
+                        <h4><a href="#contact-section">Utánkövetés
+                            </a></h4>
+                        <div class="text">A tanácsadás után is számíthatsz rám: írásban kérdezhetsz, visszajelezhetsz, és
+                            további iránymutatást is kapsz, ha szükséged van rá.
+                        </div>
                     </div>
                 </div>
 
@@ -285,32 +300,51 @@
             <div class="sec-title centered">
                 <div class="title color-four">Blogok</div>
                 <h2>Legújabb bejegyzések</h2>
+
+                <!-- Keresőmező középre igazítva -->
+                <div class="sidebar-widget search-box"
+                    style="margin-top: 50px; max-width: 500px; margin-left: auto; margin-right: auto;">
+                    <form method="POST" id="search-form">
+                        @csrf
+                        <div class="form-group">
+                            <input type="search" id="search-field" name="query"
+                                placeholder="Írd be a keresni kívánt kulcsszót..." required>
+                            <button type="submit" style="display: none;">Keresés</button>
+                        </div>
+                    </form>
+                </div>
             </div>
             <div class="row clearfix">
-                <!-- ITT MAJD EGY OLYAN RÉSZ LESZ, AMI DINAMIKUSAN FRISSÜL A GYAKRAN KERESETT KURZUSOK ALAPJÁN AZ ADATBÁZISBÓL -->
-                <!-- Course Block -->
-                @foreach ($blogs as $blog)
-                    <div class="course-block col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box" data-wow-delay="0ms" data-wow-duration="400ms">
-                            <div class="image">
-                                <a href="{{ $blog->slug }}"><img class="transition-500ms"
-                                        src="{{ asset('assets/images/gallery/blog/' . $blog->cover_image) }}"
-                                        alt="{{ $blog->cover_image }}" /></a>
-                            </div>
-                            <div class="lower-content">
-                                <h5><a href="course-detail.html">{{ $blog->title }}</a></h5>
-                                <ul class="post-info">
-                                    <li><span class="icon flaticon-book-1"></span>3 Chapter</li>
-                                    <li><span class="icon flaticon-clock"></span>10 Lessons</li>
-                                </ul>
+                @if ($blogs->isEmpty())
+                    <div class="col-12">
+                        <p class="text-center">Nincs találat a keresésre.</p>
+                    </div>
+                @else
+                    @foreach ($blogs as $blog)
+                        <div class="course-block col-lg-3 col-md-6 col-sm-12" id="search-results">
+                            <div class="inner-box" data-wow-delay="0ms" data-wow-duration="400ms">
+                                <div class="image">
+                                    <a href="{{ $blog->slug }}">
+                                        <img class="transition-500ms"
+                                            src="{{ asset('assets/images/gallery/blog/' . $blog->cover_image) }}"
+                                            alt="{{ $blog->cover_image }}" />
+                                    </a>
+                                </div>
+                                <div class="lower-content">
+                                    <h5><a href="{{ $blog->slug }}">{{ $blog->title }}</a></h5>
+                                    <ul class="post-info">
+                                        <li><span class="icon flaticon-book-1"></span>3 Chapter</li>
+                                        <li><span class="icon flaticon-clock"></span>10 Lessons</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
-
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>
+
     <!-- End Course Section Two -->
     <!-- Testimonial Section -->
     <section class="testimonial-section">
@@ -475,4 +509,50 @@
         </div>
     </section>
     <!-- End Contact Form Section -->
+    <script>
+        document.getElementById('search-field').addEventListener('input', function() {
+            var query = this.value;
+
+            // Ne küldjünk üres keresést
+            if (query.length >= 1) {
+                fetch("{{ route('blog.search') }}", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute(
+                                'content')
+                        },
+                        body: JSON.stringify({
+                            query: query
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        var resultsContainer = document.getElementById('search-results-container');
+                        resultsContainer.innerHTML =
+                            ''; // Ürítse ki a keresési eredményeket, mielőtt újra tölti
+
+                        if (data.blogs.length > 0) {
+                            data.blogs.forEach(blog => {
+                                resultsContainer.innerHTML += `
+                    <div class="course-block col-lg-3 col-md-6 col-sm-12">
+                        <div class="inner-box">
+                            <div class="image">
+                                <a href="${blog.slug}"><img src="/assets/images/gallery/blog/${blog.cover_image}" alt="${blog.title}" /></a>
+                            </div>
+                            <div class="lower-content">
+                                <h5><a href="${blog.slug}">${blog.title}</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                            });
+                        } else {
+                            resultsContainer.innerHTML = '<p>Nincs találat.</p>';
+                        }
+                    })
+                    .catch(error => console.log('Error:', error));
+            }
+        });
+    </script>
 @endsection

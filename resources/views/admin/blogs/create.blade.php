@@ -52,6 +52,15 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="created_at">Létrehozás dátuma (Ha üres, akkor a mai dátum lesz)</label>
+                                <input type="date" name="created_at" class="form-control"
+                                    value="{{ old('created_at', isset($blog->created_at) ? $blog->created_at->format('Y-m-d') : '') }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
                         <label for="cover_image">Kép</label>
                         <div class="input-group">
                             <div class="custom-file col-sm-6">
