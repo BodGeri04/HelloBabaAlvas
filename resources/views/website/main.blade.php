@@ -104,7 +104,7 @@
                                     </li>
                                     <li class=""><a href="/aboutMe">Rólam</a>
                                     </li>
-                                    <li class=""><a href="#">Szolgáltatások</a>
+                                    <li class=""><a href="/products">Szolgáltatások</a>
                                     </li>
                                     <li><a href="/#contact-section">Kapcsolat</a></li>
                                 </ul>

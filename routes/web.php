@@ -18,6 +18,9 @@ Route::get('/', [HomeController::class, 'HomePage']);
 // Rólam oldal
 Route::get('/aboutMe', [HomeController::class, 'aboutMe']);
 
+// Termékek oldal
+Route::get('/products', [HomeController::class, 'allProducts']);
+
 // Kapcsolatfelvétel POST
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 

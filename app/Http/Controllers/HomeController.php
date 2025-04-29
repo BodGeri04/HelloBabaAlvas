@@ -54,8 +54,14 @@ class HomeController extends Controller
 
     public function aboutMe()
     {
-        $products = Product::where('price','>',0)->paginate(5);
+        $products = Product::where('price', '>', 0)->paginate(5);
         $blogs = Blog::where('is_published', true)->orderBy('created_at', 'DESC')->paginate(4);
         return view('website.aboutMe', compact('products', 'blogs'));
+    }
+
+    public function allProducts()
+    {
+        $products = Product::all();
+        return view('website.allProducts', compact('products'));
     }
 }
