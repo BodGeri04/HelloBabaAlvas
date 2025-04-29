@@ -61,7 +61,8 @@
                             <ul class="social-box d-flex gap-2">
                                 <li><a href="https://www.facebook.com/profile.php?id=61574071451804"
                                         class="fa fa-facebook-f" target="_blank"></a></li>
-                                <li><a href="https://www.instagram.com/pihenjbaba" class="fa fa-instagram" target="_blank"></a></li>
+                                <li><a href="https://www.instagram.com/pihenjbaba" class="fa fa-instagram"
+                                        target="_blank"></a></li>
                                 <li><a href="https://www.behance.com/" class="fa fa-tiktok" target="_blank"></a></li>
                             </ul>
                         </div>
@@ -99,58 +100,13 @@
 
                             <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
-                                    <li class="current dropdown"><a href="#">Home</a>
-                                        <ul>
-                                            <li><a href="index.html">Homepage One</a></li>
-                                            <li><a href="index-2.html">Homepage Two</a></li>
-                                            <li><a href="index-3.html">Homepage Three</a></li>
-                                            <li class="dropdown"><a href="#">Header Styles</a>
-                                                <ul>
-                                                    <li><a href="index.html">Header Style One</a></li>
-                                                    <li><a href="index-2.html">Header Style Two</a></li>
-                                                    <li><a href="index-3.html">Header Style Three</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                    <li class=""><a href="/">Főoldal</a>
                                     </li>
-                                    <li class="dropdown"><a href="#">About</a>
-                                        <ul>
-                                            <li><a href="about.html">About us</a></li>
-                                            <li><a href="faq.html">Faq's</a></li>
-                                            <li><a href="price.html">Price</a></li>
-                                            <li class="dropdown"><a href="#">Our Team</a>
-                                                <ul>
-                                                    <li><a href="mentors.html">Team</a></li>
-                                                    <li><a href="mentor-detail.html">Team Detail</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                    <li class=""><a href="/aboutMe">Rólam</a>
                                     </li>
-                                    <li class="dropdown"><a href="#">Services</a>
-                                        <ul>
-                                            <li><a href="services.html">Services</a></li>
-                                            <li><a href="service-detail.html">Services Detail</a></li>
-                                        </ul>
+                                    <li class=""><a href="#">Szolgáltatások</a>
                                     </li>
-                                    <li class="dropdown"><a href="#">Projects</a>
-                                        <ul>
-                                            <li><a href="portfolio.html">Projects</a></li>
-                                            <li><a href="portfolio-detail.html">Projects Detail</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">Courses</a>
-                                        <ul>
-                                            <li><a href="courses.html">Courses</a></li>
-                                            <li><a href="course-detail.html">Courses Detail</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">Blog</a>
-                                        <ul>
-                                            <li><a href="blog.html">Our Blog</a></li>
-                                            <li><a href="blog-detail.html">Blog Detail</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="/#contact-section">Kapcsolat</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -268,7 +224,7 @@
         <!-- END sidebar widget item -->
         @yield('content')
         <!-- Main Footer -->
-        <footer class="main-footer">
+        <footer class="main-footer" style="background-image: url(assets/images/gallery/kapcsolatfelvetel.jpg)">
             <div class="auto-container">
                 <!-- Widgets Section -->
                 <div class="widgets-section">
@@ -285,34 +241,29 @@
                                             <a href="index.html"><img src="assets/images/footer-logo.png"
                                                     alt="" /></a>
                                         </div>
-                                        <div class="text">In social science, agency is defined as the capacity of
-                                            individuals to act free & to make their own free choices. One's agency is
-                                            one's independent capability or ability to act on one's will.</div>
+                                        <div class="text">Nyugodt alvás a babának és a családnak.<br>Személyre szabott megoldások a babád és a te igényeid összehangolásával.</div>
                                     </div>
                                 </div>
 
                                 <!-- Footer Column -->
                                 <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                                     <div class="footer-widget links-widget">
-                                        <h5>Pages</h5>
+                                        <h5>Oldalak</h5>
                                         <div class="row clearfix">
                                             <!-- Column -->
                                             <div class="column col-lg-6 col-md-6 col-sm-12">
                                                 <ul class="list-link">
-                                                    <li><a href="#">Home</a></li>
-                                                    <li><a href="#">Services</a></li>
-                                                    <li><a href="#">Courses</a></li>
-                                                    <li><a href="#">Blog Insight</a></li>
-                                                    <li><a href="#">Contact</a></li>
+                                                    <li><a href="/">Főoldal</a></li>
+                                                    <li><a href="/aboutMe">Rólam</a></li>
+                                                    <li><a href="/services">Szolgáltatások</a></li>
+                                                    <li><a href="/#contact-section">Kapcsolat</a></li>
                                                 </ul>
                                             </div>
                                             <!-- Column -->
                                             <div class="column col-lg-6 col-md-6 col-sm-12">
                                                 <ul class="list-link">
-                                                    <li><a href="#">Term & Condition</a></li>
-                                                    <li><a href="#">Careers</a></li>
-                                                    <li><a href="#">Support</a></li>
-                                                    <li><a href="#">Price & Plans</a></li>
+                                                    <li><a href="#">Adatvédelem</a></li>
+                                                    <li><a href="#">GYIK</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -329,14 +280,10 @@
                                 <!-- Footer Column -->
                                 <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                                     <div class="footer-widget info-widget">
-                                        <h5>Get In Touch</h5>
+                                        <h5>Lépj kapcsolatba</h5>
                                         <ul class="contact-info-list">
-                                            <li><span>Head Office</span><a href="#">12/North Hall Tower, <br>
-                                                    NYC,
-                                                    UK</a></li>
-                                            <li><span>Sub Office</span><a href="#">34, A/Front Tower, <br>
-                                                    London,
-                                                    UK</a></li>
+                                            <li><span>Tanácsadó</span><a href="#contact-section">Bod Orsolya<br>
+                                                    +36 20 560 7609<br>hello@pihenjbaba.hu</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -344,16 +291,16 @@
                                 <!-- Footer Column -->
                                 <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                                     <div class="footer-widget newsletter-widget">
-                                        <h5>Newsletter</h5>
+                                        <h5>Hírlevél</h5>
                                         <!-- Newsletter Form -->
                                         <div class="newsletter-form">
                                             <form method="post" action="contact.html">
                                                 <div class="form-group">
                                                     <span class="icon flaticon-email"></span>
                                                     <input type="email" name="search-field" value=""
-                                                        placeholder="Email address" required>
-                                                    <button type="submit" class="theme-btn submit-btn">Subscribe
-                                                        Now<span class="arrow flaticon-right-arrow-1"></span></button>
+                                                        placeholder="Email cím" required>
+                                                    <button type="submit" class="theme-btn submit-btn">Iratkozz
+                                                        fel<span class="arrow flaticon-right-arrow-1"></span></button>
                                                 </div>
                                             </form>
                                         </div>
@@ -369,10 +316,12 @@
                 <div class="footer-bottom">
                     <div class="clearfix">
                         <div class="pull-left">
-                            <div class="copyright">Minden jog fenntartva &copy; <strong> Bod Orsolya </strong> - {{date('Y')}}</div>
+                            <div class="copyright">Minden jog fenntartva &copy; <strong> Bod Orsolya </strong> -
+                                {{ date('Y') }}</div>
                         </div>
                         <div class="pull-right">
-                            <div class="copyright">Az oldal fejlesztője: <a target="_blank" href="https://bodgergely.hu"><strong>Bod Gergely</strong></a></div>
+                            <div class="copyright">Az oldal fejlesztője: <a target="_blank"
+                                    href="https://bodgergely.hu"><strong>Bod Gergely</strong></a></div>
                         </div>
                     </div>
                 </div>

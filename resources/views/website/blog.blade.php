@@ -1,5 +1,17 @@
 @extends('website.main')
 @section('content')
+<!-- Page Title Section -->
+<section class="page-title" style="background-image: url(assets/images/gallery/kapcsolatfelvetel.jpg)">
+    <div class="auto-container">
+        <div class="breadcrumb-outer">
+            <ul class="page-breadcrumb">
+                <li><a href="/">Főoldal</a></li>
+                <li>Blog</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title Section -->
     <!-- Sidebar Page Container -->
     <div class="sidebar-page-container">
         <div class="auto-container">

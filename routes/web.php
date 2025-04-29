@@ -15,6 +15,9 @@ Auth::routes();
 // Kezdőlap
 Route::get('/', [HomeController::class, 'HomePage']);
 
+// Rólam oldal
+Route::get('/aboutMe', [HomeController::class, 'aboutMe']);
+
 // Kapcsolatfelvétel POST
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 

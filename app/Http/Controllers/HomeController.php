@@ -51,4 +51,11 @@ class HomeController extends Controller
 
         return view('website.home', compact('blogs'));
     }
+
+    public function aboutMe()
+    {
+        $products = Product::where('price','>',0)->paginate(5);
+        $blogs = Blog::where('is_published', true)->orderBy('created_at', 'DESC')->paginate(4);
+        return view('website.aboutMe', compact('products', 'blogs'));
+    }
 }
