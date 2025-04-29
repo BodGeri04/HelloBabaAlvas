@@ -24,32 +24,38 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     // Főoldal megjelenítése
-    public function HomePage()
+    public function HomePage(Request $request)
     {
+        $query = $request->get('search');
+
+        if ($query) {
+            // Ha van keresési kulcsszó, akkor keresés alapján töltjük a blogokat
+            $blogs = Blog::where('title', 'like', '%' . $query . '%')
+                ->orWhere('content', 'like', '%' . $query . '%')
+                ->where('is_published', true)
+                ->orderBy('created_at', 'DESC')
+                ->get();
+
+            // Megjegyezzük, hogy vissza kell görgetni
+            session()->flash('scrollTo', 'blog-section');
+        } else {
+            // Alapértelmezett blog lista
+            $blogs = Blog::where('is_published', true)
+                ->orderBy('created_at', 'DESC')
+                ->paginate(4);
+        }
+
         $products = Product::paginate(4);
-        $blogs = Blog::where('is_published', true)->orderBy('created_at', 'DESC')->paginate(4);
 
         return view('website.home', compact('products', 'blogs'));
     }
 
     public function searchBlogs(Request $request)
     {
-        $query = $request->get('query'); // A keresési kifejezés
+        $query = $request->get('query');
 
-        // Keresés blogokban a title és content mezőkben
-        $blogs = Blog::where('title', 'like', '%' . $query . '%')
-            ->orWhere('content', 'like', '%' . $query . '%')
-            ->where('is_published', true)
-            ->orderBy('created_at', 'DESC')
-            ->get();
-
-        if ($request->ajax()) {
-            return response()->json([
-                'blogs' => $blogs,
-            ]);
-        }
-
-        return view('website.home', compact('blogs'));
+        // A keresési eredményeket tárold el a session-ben vagy redirecteld a query paramétert
+        return redirect()->route('home', ['search' => $query])->with('scrollTo', '#blog-section');
     }
 
     public function aboutMe()

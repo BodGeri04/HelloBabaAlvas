@@ -200,7 +200,7 @@
                         <div class="service-block translate-top">
                             <div class="inner-box">
                                 <div class="image">
-                                    <a href="/product/{{$product->slug}}">
+                                    <a href="/product/{{ $product->slug }}">
                                         <img class="transition-600ms"
                                             src="{{ asset('assets/images/gallery/' . $product->image) }}"
                                             alt="{{ $product->name }}" />
@@ -209,7 +209,7 @@
                                 <div class="lower-content">
                                     <div class="lessons">{{ $product->price }} Ft</div>
                                     <div class="lower-box">
-                                        <h4><a href="/product/{{$product->slug}}">{{ $product->name }}</a></h4>
+                                        <h4><a href="/product/{{ $product->slug }}">{{ $product->name }}</a></h4>
                                     </div>
                                     <label>{{ $product->description }}</label>
 
@@ -294,7 +294,7 @@
     <!-- End Process Section -->
 
     <!-- Course Section Two -->
-    <section class="course-section-two">
+    <section id="blog-section" class="course-section-two">
         <div class="auto-container">
             <!-- Sec Title -->
             <div class="sec-title centered">
@@ -304,11 +304,12 @@
                 <!-- Keresőmező középre igazítva -->
                 <div class="sidebar-widget search-box"
                     style="margin-top: 50px; max-width: 500px; margin-left: auto; margin-right: auto;">
-                    <form method="POST" id="search-form">
+                    <form method="POST" action="{{ route('blog.search') }}" id="search-form">
                         @csrf
                         <div class="form-group">
                             <input type="search" id="search-field" name="query"
-                                placeholder="Írd be a keresni kívánt kulcsszót..." required>
+                                placeholder="Írd be a keresni kívánt kulcsszót..."
+                                value="{{ old('query', $query ?? '') }}" required>
                             <button type="submit" style="display: none;">Keresés</button>
                         </div>
                     </form>
@@ -509,50 +510,17 @@
         </div>
     </section>
     <!-- End Contact Form Section -->
-    <script>
-        document.getElementById('search-field').addEventListener('input', function() {
-            var query = this.value;
-
-            // Ne küldjünk üres keresést
-            if (query.length >= 1) {
-                fetch("{{ route('blog.search') }}", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                            "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute(
-                                'content')
-                        },
-                        body: JSON.stringify({
-                            query: query
-                        })
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        var resultsContainer = document.getElementById('search-results-container');
-                        resultsContainer.innerHTML =
-                            ''; // Ürítse ki a keresési eredményeket, mielőtt újra tölti
-
-                        if (data.blogs.length > 0) {
-                            data.blogs.forEach(blog => {
-                                resultsContainer.innerHTML += `
-                    <div class="course-block col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="${blog.slug}"><img src="/assets/images/gallery/blog/${blog.cover_image}" alt="${blog.title}" /></a>
-                            </div>
-                            <div class="lower-content">
-                                <h5><a href="${blog.slug}">${blog.title}</a></h5>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                            });
-                        } else {
-                            resultsContainer.innerHTML = '<p>Nincs találat.</p>';
-                        }
-                    })
-                    .catch(error => console.log('Error:', error));
-            }
-        });
-    </script>
+    
+    @if (session('scrollTo'))
+        <script>
+            window.addEventListener('load', function() {
+                const element = document.getElementById('{{ session('scrollTo') }}');
+                if (element) {
+                    element.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        </script>
+    @endif
 @endsection

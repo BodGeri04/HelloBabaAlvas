@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 // Kezdőlap
-Route::get('/', [HomeController::class, 'HomePage']);
+Route::get('/', [HomeController::class, 'HomePage'])->name('home');
 
 // Rólam oldal
 Route::get('/aboutMe', [HomeController::class, 'aboutMe']);
