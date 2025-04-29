@@ -64,4 +64,10 @@ class HomeController extends Controller
         $products = Product::all();
         return view('website.allProducts', compact('products'));
     }
+
+    public function product($slug)
+    {
+        $product = Product::where('slug', $slug)->where('active', true)->firstOrFail();
+        return view('website.product', compact('product'));
+    }
 }

@@ -3,6 +3,11 @@
     <div class="content-wrapper">
         <div class="page-heading">
             <section class="section">
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Termék adatai</h4>
@@ -40,9 +45,19 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="price">Ár</label>
+                                        <label for="price">Rendes ár</label>
                                         <input required type="number" class="form-control" id="price" name="price"
                                             value="{{ old('price', $product->price ?? '') }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="discountPrice">Akciós ár</label>
+                                        <input type="number" placeholder="Üresen hagyható" class="form-control"
+                                            id="discountPrice" name="discountPrice"
+                                            value="{{ old('discountPrice', $product->discountPrice ?? '') }}">
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +71,8 @@
                                 </div>
                                 @if (isset($product) && $product->image)
                                     <div class="mt-2">
-                                        <img src="{{ asset('/assets/images/gallery/' . $product->image) }}" alt="Termékkép" width="100">
+                                        <img src="{{ asset('/assets/images/gallery/' . $product->image) }}" alt="Termékkép"
+                                            width="100">
                                     </div>
                                 @endif
                             </div>

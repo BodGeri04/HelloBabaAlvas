@@ -200,7 +200,7 @@
                         <div class="service-block translate-top">
                             <div class="inner-box">
                                 <div class="image">
-                                    <a href="#contact-section">
+                                    <a href="/product/{{$product->slug}}">
                                         <img class="transition-600ms"
                                             src="{{ asset('assets/images/gallery/' . $product->image) }}"
                                             alt="{{ $product->name }}" />
@@ -209,7 +209,7 @@
                                 <div class="lower-content">
                                     <div class="lessons">{{ $product->price }} Ft</div>
                                     <div class="lower-box">
-                                        <h4><a href="#contact-section">{{ $product->name }}</a></h4>
+                                        <h4><a href="/product/{{$product->slug}}">{{ $product->name }}</a></h4>
                                     </div>
                                     <label>{{ $product->description }}</label>
 

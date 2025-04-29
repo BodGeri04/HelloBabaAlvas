@@ -58,11 +58,11 @@
                     <div class="course-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
                         <div class="inner-box">
                             <div class="image">
-                                <a href="course-detail.html"><img class="transition-500ms"
+                                <a href="/product/{{$product->slug}}"><img class="transition-500ms"
                                         src="{{ asset('assets/images/gallery/' . $product->image) }}" alt="Termék képe" /></a>
                             </div>
                             <div class="lower-content">
-                                <h5><a href="course-detail.html">{{$product->name}}</a></h5>
+                                <h5><a href="/product/{{$product->slug}}">{{$product->name}}</a></h5>
                                 <label>{{$product->description}}</label>
                                 <ul class="post-info mt-1">
                                     <li><span class="fa fa-clock"></span> 1 óra</li>

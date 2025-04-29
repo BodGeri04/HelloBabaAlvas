@@ -44,3 +44,6 @@ Route::get('/admin-login', function (Request $request) {
 
 // Ez a legvégén legyen, hogy ne nyelje el a fenti route-okat
 Route::get('/{slug}', [AdminBlogController::class, 'show'])->name('blog.show');
+
+// Termék oldal
+Route::get('/product/{slug}', [HomeController::class, 'product']);

@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <title>Averon HTML-5 Template | Homepage 01</title>
-    <!-- Stylesheets -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/responsive.css" rel="stylesheet">
+    <!-- CSS -->
+    <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
@@ -241,7 +241,8 @@
                                             <a href="index.html"><img src="assets/images/footer-logo.png"
                                                     alt="" /></a>
                                         </div>
-                                        <div class="text">Nyugodt alvás a babának és a családnak.<br>Személyre szabott megoldások a babád és a te igényeid összehangolásával.</div>
+                                        <div class="text">Nyugodt alvás a babának és a családnak.<br>Személyre
+                                            szabott megoldások a babád és a te igényeid összehangolásával.</div>
                                     </div>
                                 </div>
 
@@ -348,37 +349,39 @@
     <!-- Scroll To Top -->
     <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-up"></span></div>
 
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- JS -->
+    <script src="{{ asset('assets/js/jquery.js') }}"></script>
+    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 
     <!-- Revolution Slider -->
-    <script src="assets/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="assets/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
-    <script src="assets/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-    <script src="assets/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-    <script src="assets/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script src="assets/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script src="assets/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-    <script src="assets/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script src="assets/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-    <script src="assets/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script src="assets/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
-    <script src="assets/plugins/revolution/js/main-slider-script.js"></script>
-    <!-- For Js Library -->
-
-    <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="assets/js/jquery.fancybox.js"></script>
-    <script src="assets/js/appear.js"></script>
-    <script src="assets/js/parallax.min.js"></script>
-    <script src="assets/js/tilt.jquery.min.js"></script>
-    <script src="assets/js/jquery.paroller.min.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/validate.js"></script>
-    <script src="assets/js/nav-tool.js"></script>
-    <script src="assets/js/jquery-ui.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="{{ asset('assets/plugins/revolution/js/jquery.themepunch.revolution.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/revolution/js/jquery.themepunch.tools.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/revolution/js/extensions/revolution.extension.actions.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/revolution/js/extensions/revolution.extension.carousel.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js') }}">
+    </script>
+    <script src="{{ asset('assets/plugins/revolution/js/extensions/revolution.extension.migration.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/revolution/js/extensions/revolution.extension.navigation.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/revolution/js/main-slider-script.js') }}"></script>
+    
+    <!-- JS Libraries -->
+    <script src="{{ asset('assets/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.fancybox.js') }}"></script>
+    <script src="{{ asset('assets/js/appear.js') }}"></script>
+    <script src="{{ asset('assets/js/parallax.min.js') }}"></script>
+    <script src="{{ asset('assets/js/tilt.jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.paroller.min.js') }}"></script>
+    <script src="{{ asset('assets/js/owl.js') }}"></script>
+    <script src="{{ asset('assets/js/wow.js') }}"></script>
+    <script src="{{ asset('assets/js/validate.js') }}"></script>
+    <script src="{{ asset('assets/js/nav-tool.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('assets/js/script.js') }}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             tinymce.init({

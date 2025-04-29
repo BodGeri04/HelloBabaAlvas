@@ -38,14 +38,15 @@ class AdminProductController extends Controller
             'name' => 'required',
             'description' => 'required',
             'price' => 'required|numeric',
-            'image' => 'nullable|image'
+            'image' => 'nullable|image',
+            'slug' => 'unique:products,slug',
         ]);
 
         $product = new Product();
         $product->name = $request->name;
         $product->description = $request->description;
         $product->price = $request->price;
-
+        $product->discountPrice = $request->discountPrice;
         if ($request->hasFile('image')) {
             $imageName = time() . '.' . $request->image->getClientOriginalExtension();
             $request->image->move(public_path('/assets/images/gallery'), $imageName);
@@ -85,7 +86,8 @@ class AdminProductController extends Controller
             'name' => 'required',
             'description' => 'required',
             'price' => 'required|numeric',
-            'image' => 'nullable|image|max:2048'
+            'image' => 'nullable|image|max:2048',
+            'slug' => 'unique:products,slug',
         ]);
 
         $product = Product::findOrFail($id);
@@ -93,7 +95,7 @@ class AdminProductController extends Controller
         $product->name = $request->name;
         $product->description = $request->description;
         $product->price = $request->price;
-
+        $product->discountPrice = $request->discountPrice;
         // Ha új kép van feltöltve
         if ($request->hasFile('image')) {
             // Régi kép törlése, ha nem az alapértelmezett
