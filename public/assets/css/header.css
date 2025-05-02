@@ -183,7 +183,7 @@
 
 .main-header .sticky-header .main-menu .navigation > li:hover > a,
 .main-header .sticky-header .main-menu .navigation > li.current > a{
-	color:var(--main-color);
+	color:var(--main-color-two);
 	background-color:inherit !important;
 }
 

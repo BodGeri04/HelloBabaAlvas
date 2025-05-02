@@ -413,7 +413,7 @@
 }
 
 .service-block .inner-box .lower-box a:hover{
-	color:var(--main-color);
+	color:var(--main-color-two);
 }
 
 /*** 
@@ -990,7 +990,7 @@
 }
 
 .course-block .inner-box:hover h5 a{
-	color:var(--main-color);
+	color:var(--main-color-two);
 }
 
 .course-block .inner-box .post-info{
@@ -2400,7 +2400,7 @@
 	position:relative;
 	font-weight:700;
 	line-height:1em;
-	color:var(--main-color);
+	color:var(--main-color-two);
 	font-size:var(--font-40);
 }
 
@@ -2427,7 +2427,7 @@
 	position:absolute;
 	left:0px;
 	font-size:var(--font-16);
-	color:var(--main-color);
+	color:var(--main-color-two);
 }
 
 .video-intro-widget .lower-content .intro-list li strong{
@@ -2470,7 +2470,7 @@
 
 .video-intro-widget .lower-content .buttons-box .enroll-btn:hover{
 	color:var(--white-color);
-	background-color:var(--main-color);
+	background-color:var(--main-color-two);
 }
 
 
@@ -2510,7 +2510,7 @@
 .video-intro-widget .lower-content .social-box li a{
 	position:relative;
 	font-size:var(--font-18);
-	color:var(--main-color);
+	color:var(--main-color-two);
 }
 
 .video-intro-widget .lower-content .social-box li a:hover{
@@ -3436,7 +3436,7 @@
 	left:0px;
 	top:10px;
 	line-height:1em;
-	color:var(--main-color);
+	color:var(--main-color-two);
 	font-size:var(--font-50);
 	font-family: "flaticon";
 }
@@ -4461,7 +4461,7 @@
 	font-size: var(--font-16);
 	color: var(--dark-color);
 	background-color:var(--color-three);
-	border:1px solid transparent;
+	border:1px solid #efc3ca;
 	-webkit-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
@@ -4481,7 +4481,7 @@
 .contact-form .form-group input[type="email"]:focus,
 .contact-form .form-group select:focus,
 .contact-form .form-group textarea:focus{
-	border-color:var(--main-color);
+	border-color:var(--main-color-two);
 }
 
 .contact-form .form-group textarea{

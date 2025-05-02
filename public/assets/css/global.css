@@ -906,7 +906,7 @@ img {
 }
 
 .btn-style-two:hover {
-	color: var(--main-color);
+	color: var(--main-color-two);
 }
 
 /* Btn Style Three */
@@ -916,11 +916,11 @@ img {
 	display: inline-block;
 	font-size: var(--font-16);
 	line-height: 30px;
-	color: var(--white-color);
+	color: var(--black-color);
 	padding: 15px 43px 15px;
 	font-weight: 700;
 	overflow: hidden;
-	background: var(--main-color);
+	background: var(--main-color-two);
 	border-radius: 0px;
 	text-transform: capitalize;
 	font-family: var(--font-family-roboto);
@@ -956,7 +956,7 @@ img {
 }
 
 .btn-style-three:hover {
-	color: var(--main-color);
+	color: var(--black-color);
 }
 
 /* Btn Style Four */
@@ -1506,10 +1506,9 @@ img {
 	padding: 10px 20px 10px 40px;
 	line-height: 28px;
 	color: var(--text-color);
-	border: none;
 	border-radius: 0px;
 	background: var(--color-three);
-	border: 1px solid transparent;
+	border: 1px solid #efc3ca;
 }
 
 .form-group .ui-button .ui-icon {

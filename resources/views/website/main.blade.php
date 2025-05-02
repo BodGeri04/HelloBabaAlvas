@@ -283,7 +283,7 @@
                                     <div class="footer-widget info-widget">
                                         <h5>Lépj kapcsolatba</h5>
                                         <ul class="contact-info-list">
-                                            <li><span>Tanácsadó</span><a href="#contact-section">Bod Orsolya<br>
+                                            <li><span>Tanácsadó</span><a href="/#contact-section">Bod Orsolya<br>
                                                     +36 20 560 7609<br>hello@pihenjbaba.hu</a></li>
                                         </ul>
                                     </div>
