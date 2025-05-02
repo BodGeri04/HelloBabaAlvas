@@ -42,7 +42,7 @@ class HomeController extends Controller
             // Alapértelmezett blog lista
             $blogs = Blog::where('is_published', true)
                 ->orderBy('created_at', 'DESC')
-                ->paginate(4);
+                ->paginate(4)
         }
 
         $products = Product::paginate(4);
