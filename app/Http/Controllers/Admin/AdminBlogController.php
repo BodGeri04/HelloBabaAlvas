@@ -49,7 +49,21 @@ class AdminBlogController extends Controller
         $blog->slug = Str::slug($request->title);
         $blog->content = $request->content;
         $blog->is_published = $request->has('is_published') ? true : false;
+        $blog->quote = $request->quote;
+        $blog->quote_author = $request->quote_author;
+        $blog->quote_title = $request->quote_title;
+        $blog->second_main_title = $request->second_main_title;
+        if ($request->hasFile('second_cover_image')) {
+            $imageName = time() . '.' . $request->second_cover_image->getClientOriginalExtension();
+            $request->second_cover_image->move(public_path('/assets/images/gallery/blog/'), $imageName);
+            $blog->second_cover_image = $imageName;
+        } else {
+            $blog->image = 'noimage.jpg';
+        }
+        $blog->second_content = $request->second_content;
+        $blog->end_content = $request->end_content;
         $blog->created_at = $request->filled('created_at') ? $request->created_at : now();
+
         if ($request->hasFile('cover_image')) {
             $imageName = time() . '.' . $request->cover_image->getClientOriginalExtension();
             $request->cover_image->move(public_path('/assets/images/gallery/blog/'), $imageName);
@@ -79,22 +93,22 @@ class AdminBlogController extends Controller
         }
 
         // Korábbi blog (időrend szerint előző, de nem ugyanaz)
-        $pastBlog = Blog::where('created_at', '<', $blog->created_at)
+        $pastBlog = Blog::where('updated_at', '<', $blog->updated_at)
             ->where('id', '!=', $blog->id)
             ->where('is_published', true)
-            ->orderBy('created_at', 'desc')
+            ->orderBy('updated_at', 'desc')
             ->first();
 
         // Legújabb blog (időrend szerint legfrissebb, de nem ugyanaz)
         $latestBlog = Blog::where('id', '!=', $blog->id)
             ->where('is_published', true)
-            ->orderBy('created_at', 'desc')
+            ->orderBy('updated_at', 'asc')
             ->first();
         // Legnézettebb blogok (nézettségi szám alapján sorba rendezve)
         $popularBlogs = Blog::orderBy('views', 'desc')
-        ->where('id', '!=', $blog->id)
-        ->take(3)
-        ->get();
+            ->where('id', '!=', $blog->id)
+            ->take(3)
+            ->get();
 
         return view('website.blog', compact('blog', 'pastBlog', 'latestBlog', 'popularBlogs'));
     }
@@ -128,6 +142,25 @@ class AdminBlogController extends Controller
         $blog->slug = $request->slug ? Str::slug($request->slug) : Str::slug($request->title);
         $blog->content = $request->content;
         $blog->is_published = $request->has('is_published') ? true : false;
+        $blog->quote = $request->quote;
+        $blog->quote_author = $request->quote_author;
+        $blog->quote_title = $request->quote_title;
+        $blog->second_main_title = $request->second_main_title;
+        if ($request->hasFile('second_cover_image')) {
+            // Töröljük a régi képet, ha nem az alapértelmezett
+            if ($blog->second_cover_image && $blog->second_cover_image !== 'noimage.jpg') {
+                $oldImagePath = public_path('/assets/images/gallery/blog/' . $blog->second_cover_image);
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
+            }
+
+            $imageName = uniqid() . '_second.' . $request->second_cover_image->getClientOriginalExtension();
+            $request->second_cover_image->move(public_path('/assets/images/gallery/blog/'), $imageName);
+            $blog->second_cover_image = $imageName;
+        }
+        $blog->second_content = $request->second_content;
+        $blog->end_content = $request->end_content;
         $blog->created_at = $request->filled('created_at') ? $request->created_at : now();
         if ($request->hasFile('cover_image')) {
             // Töröljük a régi képet, ha nem az alapértelmezett

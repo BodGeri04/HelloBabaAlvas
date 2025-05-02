@@ -27,7 +27,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="title">Cím</label>
+                                <label for="title">Főcím</label>
                                 <input type="text" name="title" class="form-control"
                                     value="{{ old('title', $blog->title ?? '') }}">
 
@@ -61,7 +61,85 @@
                         </div>
                     </div>
                     <div class="row">
-                        <label for="cover_image">Kép</label>
+                        <div class="col-md-7">
+                            <div class="form-group">
+                                <label for="quote">Idézet</label>
+                                <textarea placeholder="Nem kötelező kitölteni" class="form-control" id="quote" name="quote">{{ old('quote', $blog->quote ?? '') }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="quote_author">Idéző neve</label>
+                                <input placeholder="Nem kötelező kitölteni" type="text" class="form-control"
+                                    id="quote_author" name="quote_author"
+                                    value="{{ old('quote_author', $blog->quote_author ?? '') }}">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="quote_title">Idéző titulusa</label>
+                                <input placeholder="Nem kötelező kitölteni" type="text" class="form-control"
+                                    id="quote_title" name="quote_title"
+                                    value="{{ old('quote_title', $blog->quote_title ?? '') }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="second_main_title">Alcím</label>
+                                <input placeholder="Nem kötelező kitölteni" type="text" name="second_main_title"
+                                    class="form-control"
+                                    value="{{ old('second_main_title', $blog->second_main_title ?? '') }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="second_cover_image">Alcím részhez kép</label>
+                        <div class="input-group">
+                            <div class="custom-file col-sm-6">
+                                <input name="second_cover_image" type="file" class="custom-file-input"
+                                    id="second_cover_image">
+                                <label class="custom-file-label" for="second_cover_image">Fájl kiválasztása</label>
+                            </div>
+                        </div>
+
+                        @if (isset($blog) && $blog->second_cover_image)
+                            <div class="mt-2">
+                                <img id="second_cover-image-preview"
+                                    src="{{ asset('/assets/images/gallery/blog/' . $blog->second_cover_image) }}"
+                                    alt="Blog kép" width="200">
+                            </div>
+                        @else
+                            <div class="mt-2">
+                                <img id="second_cover-image-preview" src="#" alt="Előnézet" style="display: none;"
+                                    width="200">
+                            </div>
+                        @endif
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="form-group">
+                                <label for="quote">Alcím szövege</label>
+                                <textarea placeholder="Nem kötelező kitölteni" class="form-control" id="second_content" name="second_content">{{ old('second_content', $blog->second_content ?? '') }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="form-group">
+                                <label for="quote">Záró szöveg</label>
+                                <textarea placeholder="Nem kötelező kitölteni" class="form-control" id="end_content" name="end_content">{{ old('end_content', $blog->end_content ?? '') }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label for="cover_image">Fő borítókép</label>
                         <div class="input-group">
                             <div class="custom-file col-sm-6">
                                 <input name="cover_image" type="file" class="custom-file-input" id="cover_image">
@@ -99,6 +177,14 @@
             const [file] = event.target.files;
             if (file) {
                 const preview = document.getElementById('cover-image-preview');
+                preview.src = URL.createObjectURL(file);
+                preview.style.display = 'block';
+            }
+        });
+        document.getElementById('second_cover_image').addEventListener('change', function(event) {
+            const [file] = event.target.files;
+            if (file) {
+                const preview = document.getElementById('second_cover-image-preview');
                 preview.src = URL.createObjectURL(file);
                 preview.style.display = 'block';
             }
