@@ -36,7 +36,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
 // ----- ADMIN BELÉPÉS -----
 Route::get('/admin-login', function (Request $request) {
-    if ($request->query('key') !== 'xyz123') {
+    if ($request->query('key') !== 'IoCnDqxKrHzEq7r') {
         abort(404);
     }
     return view('auth.login');

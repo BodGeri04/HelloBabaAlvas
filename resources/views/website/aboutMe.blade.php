@@ -1,3 +1,4 @@
+<title>{{ $title ?? config('app.name') }}</title>
 @extends('website.main')
 @section('content')
     <!-- Page Title Section -->

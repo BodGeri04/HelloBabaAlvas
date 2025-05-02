@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard 2</title>
+    <title>Pihenj Baba | Admin</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -37,10 +37,7 @@
                             class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
+                    <a href="/admin/home" class="nav-link">Főoldal</a>
                 </li>
             </ul>
 
@@ -185,15 +182,13 @@
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
+                @if(Auth::user())
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-                    </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block">{{Auth::user()->name}}</a>
                     </div>
                 </div>
-
+                @endif
                 <!-- SidebarSearch Form -->
                 <div class="form-inline">
                     <div class="input-group" data-widget="sidebar-search">
@@ -215,9 +210,9 @@
                with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
                             <a href="#" class="nav-link active">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="nav-icon fas fa-search"></i>
                                 <p>
-                                    Dashboard
+                                    Oldalak
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -235,9 +230,9 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./index3.html" class="nav-link">
+                                    <a href="/" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v3</p>
+                                        <p>Felhasználói oldal</p>
                                     </a>
                                 </li>
                             </ul>

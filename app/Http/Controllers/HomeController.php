@@ -46,8 +46,8 @@ class HomeController extends Controller
         }
 
         $products = Product::paginate(4);
-
-        return view('website.home', compact('products', 'blogs'));
+        $title='Pihenj Baba | Főoldal';
+        return view('website.home', compact('products', 'blogs','title'));
     }
 
     public function searchBlogs(Request $request)
@@ -62,18 +62,21 @@ class HomeController extends Controller
     {
         $products = Product::where('price', '>', 0)->paginate(5);
         $blogs = Blog::where('is_published', true)->orderBy('created_at', 'DESC')->paginate(4);
-        return view('website.aboutMe', compact('products', 'blogs'));
+        $title='Pihenj Baba | Rólam';
+        return view('website.aboutMe', compact('products', 'blogs','title'));
     }
 
     public function allProducts()
     {
         $products = Product::all();
-        return view('website.allProducts', compact('products'));
+        $title='Pihenj Baba | Szolgáltatások';
+        return view('website.allProducts', compact('products','title'));
     }
 
     public function product($slug)
     {
         $product = Product::where('slug', $slug)->where('active', true)->firstOrFail();
-        return view('website.product', compact('product'));
+        $title='Pihenj Baba | Szolgáltatás';
+        return view('website.product', compact('product','title'));
     }
 }

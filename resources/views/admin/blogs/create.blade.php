@@ -68,13 +68,21 @@
                                 <label class="custom-file-label" for="cover_image">Fájl kiválasztása</label>
                             </div>
                         </div>
+
                         @if (isset($blog) && $blog->cover_image)
                             <div class="mt-2">
-                                <img src="{{ asset('/assets/images/gallery/blog/' . $blog->cover_image) }}" alt="Blog kép"
-                                    width="100">
+                                <img id="cover-image-preview"
+                                    src="{{ asset('/assets/images/gallery/blog/' . $blog->cover_image) }}" alt="Blog kép"
+                                    width="200">
+                            </div>
+                        @else
+                            <div class="mt-2">
+                                <img id="cover-image-preview" src="#" alt="Előnézet" style="display: none;"
+                                    width="200">
                             </div>
                         @endif
                     </div>
+
                     <div class="col-sm-12 d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary me-1 mb-1">Mentés</button>
                         <button type="reset" class="btn btn-light-secondary me-1 mb-1">Törlés</button>
@@ -86,5 +94,14 @@
 
         </div>
     </section>
-
+    <script>
+        document.getElementById('cover_image').addEventListener('change', function(event) {
+            const [file] = event.target.files;
+            if (file) {
+                const preview = document.getElementById('cover-image-preview');
+                preview.src = URL.createObjectURL(file);
+                preview.style.display = 'block';
+            }
+        });
+    </script>
 @endsection

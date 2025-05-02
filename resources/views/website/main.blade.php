@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Averon HTML-5 Template | Homepage 01</title>
     <!-- CSS -->
     <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
@@ -17,6 +16,10 @@
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="keywords" content="baba, alvás, babaalvás, nyugodt éjszaka, altatás, babatippek">
+    <meta name="author" content="Pihenj Baba Csapata">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ url()->current() }}">
     <!--TINYMCE-->
     <script src="https://cdn.tiny.cloud/1/z3ivhoi87w7309hzr8a537h5xm156y3unisq93zp528w3jsq/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
@@ -368,7 +371,7 @@
     <script src="{{ asset('assets/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/revolution/js/main-slider-script.js') }}"></script>
-    
+
     <!-- JS Libraries -->
     <script src="{{ asset('assets/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.fancybox.js') }}"></script>
