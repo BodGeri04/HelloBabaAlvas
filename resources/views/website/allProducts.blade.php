@@ -8,7 +8,7 @@
             <div class="breadcrumb-outer">
                 <ul class="page-breadcrumb">
                     <li><a href="/">Főoldal</a></li>
-                    <li>Termékek</li>
+                    <li>Szolgáltatások</li>
                 </ul>
             </div>
         </div>

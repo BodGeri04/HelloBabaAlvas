@@ -66,7 +66,7 @@
                                         class="fa fa-facebook-f" target="_blank"></a></li>
                                 <li><a href="https://www.instagram.com/pihenjbaba" class="fa fa-instagram"
                                         target="_blank"></a></li>
-                                <li><a href="https://www.behance.com/" class="fa fa-tiktok" target="_blank"></a></li>
+                                <li><a href="https://www.tiktok.com/@pihenjbaba?_t=ZN-8w9Jl458plP&_r=1" class="fa fa-tiktok" target="_blank"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -136,7 +136,7 @@
                 <div class="auto-container clearfix">
                     <!--Logo-->
                     <div class="logo pull-left">
-                        <a href="index.html" title=""><img src="assets/images/logo-small.png" alt=""
+                        <a href="/" title=""><img src="assets/images/logo-small.png" alt=""
                                 title=""></a>
                     </div>
                     <!--Right Col-->
@@ -284,7 +284,7 @@
                                 <!-- Footer Column -->
                                 <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                                     <div class="footer-widget info-widget">
-                                        <h5>Lépj kapcsolatba</h5>
+                                        <h5>Lépj kapcsolatba <br>velem</h5>
                                         <ul class="contact-info-list">
                                             <li><span>Tanácsadó</span><a href="/#contact-section">Bod Orsolya<br>
                                                     +36 20 560 7609<br>hello@pihenjbaba.hu</a></li>

@@ -52,7 +52,7 @@
                             data-y="['middle','middle','middle','middle']" data-textalign="['top','top','top','top']"
                             data-frames='[{"delay":0,"speed":1500,"frame":"0","from":"x:[175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:1;","mask":"x:[-100%];y:0;s:inherit;e:inherit;","to":"o:1;","ease":"power3.out"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
                             style="">
-                            <div class="text">Személyre szabott megoldások a<br>babád és a te igényeid összehangolásával.
+                            <div class="text">Nyugodt alvás a babának és a családnak.  
                             </div>
 
 
