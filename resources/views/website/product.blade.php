@@ -215,7 +215,7 @@
                         </div> --}}
                         <div class="lower-content">
                             @if($product->discountPrice)
-                            <div class="price">{{$product->discountPrice}} Ft.<span>{{$product->price}} Ft.</span></div>
+                            <div class="price">{{ number_format($product->discountPrice,0,'','.' )}} Ft<span>{{ number_format($product->price,0,'','.' )}} Ft</span></div>
                             @else
                             <div class="price">{{$product->price}} Ft.</div>
                             @endif

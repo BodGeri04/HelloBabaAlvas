@@ -76,7 +76,11 @@ class HomeController extends Controller
     public function product($slug)
     {
         $product = Product::where('slug', $slug)->where('active', true)->firstOrFail();
+        if($product->price>0){
         $title='Pihenj Baba | Szolgáltatás';
         return view('website.product', compact('product','title'));
+        }
+        else
+            abort(404);
     }
 }

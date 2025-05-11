@@ -79,7 +79,7 @@
 
                     <!-- Logo Box -->
                     <div class="pull-left logo-box">
-                        <div class="logo"><a href="/"><img src="assets/images/logo.png" alt=""
+                        <div class="logo"><a href="/"><img src="assets/images/gallery/logo.png"  style="max-width: 100px;max-height:100px;"alt=""
                                     title=""></a>
                         </div>
                     </div>
@@ -114,7 +114,7 @@
                             </div>
                         </nav>
 
-                        <!-- Main Menu End-->
+                        {{-- <!-- Main Menu End-->
                         <div class="outer-box clearfix">
 
                             <!-- Search Btn -->
@@ -124,7 +124,7 @@
                             <div class="nav-btn navSidebar-button transition-300ms"><span
                                     class="icon flaticon-menu-1"></span></div>
 
-                        </div>
+                        </div> --}}
                     </div>
 
                 </div>
