@@ -7,7 +7,7 @@
     <section class="main-slider">
         <div class="rev_slider_wrapper fullwidthbanner-container" id="rev_slider_one_wrapper" data-source="gallery">
             @if (session('success'))
-                <div class="alert alert-success alert-dismissible fade show mt-3" role="alert"
+                <div class="alert alert-success alert-dismissible fade show mt-3 notification-alert" role="alert"
                     style="max-width: 700px; margin: 0 auto;">
                     {{ session('success') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Bezárás"></button>
@@ -201,7 +201,7 @@
                         <div class="service-block translate-top">
                             <div class="inner-box">
                                 <div class="image">
-                                    <a @if(($product->price > 0)) href="/product/{{ $product->slug }}"@endif>
+                                    <a @if ($product->price > 0) href="/product/{{ $product->slug }}" @endif>
                                         <img class="transition-600ms"
                                             src="{{ asset('assets/images/gallery/' . $product->image) }}"
                                             alt="{{ $product->name }}" />
@@ -214,13 +214,14 @@
                                         @if ($product->discountPrice)
                                             <div class="lessons">
                                                 <span
-                                                    style="text-decoration: line-through; color: grey;">{{ number_format($product->price,0,'','.' )}}
+                                                    style="text-decoration: line-through; color: grey;">{{ number_format($product->price, 0, '', '.') }}
                                                     Ft</span>
-                                                <span style="color: red; margin-left: 5px;">{{ number_format($product->discountPrice,0,'','.' )}}
+                                                <span
+                                                    style="color: red; margin-left: 5px;">{{ number_format($product->discountPrice, 0, '', '.') }}
                                                     Ft</span>
                                             </div>
                                         @else
-                                            <div class="lessons">{{ number_format($product->price,0,'','.' )}} Ft</div>
+                                            <div class="lessons">{{ number_format($product->price, 0, '', '.') }} Ft</div>
                                         @endif
                                     @endif
 

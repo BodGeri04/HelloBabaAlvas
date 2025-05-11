@@ -7234,3 +7234,19 @@
 	position:relative;
 	padding:130px 0px 70px;
 }
+
+/*** 
+
+====================================================================
+	Notification
+====================================================================
+
+***/
+
+.notification-alert {
+    position: absolute;
+    z-index: 9999; /* Magas z-index, hogy minden fölé kerüljön */
+    top: 20px; /* Kicsit lejjebb hozza az oldal tetejétől */
+    left: 50%;
+    transform: translateX(-50%);
+}
