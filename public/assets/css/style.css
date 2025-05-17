@@ -1188,7 +1188,7 @@
 	position:relative;
 	min-height:80px;
 	padding-top:var(--padding-top-15);
-	padding-left:var(--padding-left-100);
+	/* padding-left:var(--padding-left-100); */
 }
 
 .testimonial-block .inner-box .lower-box .author-image{
@@ -2763,7 +2763,7 @@
 	right: 0px;
 	width:30px;
 	height:30px;
-	color:#243559;
+	color:#000000;
     text-align: center;
 	line-height:30px;
 	border-radius:50%;
@@ -2888,7 +2888,7 @@
 }
 
 .accordion-box.style-three .block .acc-btn{
-	background-color:var(--white-color);
+	background-color:#efc3ca65;
 }
 
 

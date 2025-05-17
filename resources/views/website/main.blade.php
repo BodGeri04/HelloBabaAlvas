@@ -227,7 +227,7 @@
         <!-- END sidebar widget item -->
         @yield('content')
         <!-- Main Footer -->
-        <footer class="main-footer" style="background-image: url(assets/images/gallery/kapcsolatfelvetel.jpg)">
+        <footer class="main-footer" style="background-color: var(--dark-color)">
             <div class="auto-container">
                 <!-- Widgets Section -->
                 <div class="widgets-section">

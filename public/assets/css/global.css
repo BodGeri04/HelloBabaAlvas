@@ -658,13 +658,64 @@ h6 {
 	min-width: 300px;
 }
 
-ul,
-li {
-	list-style: none;
-	padding: 0px;
-	margin: 0px;
+/* ==========================
+   Custom Description Styling
+   ========================== */
+
+.custom-description {
+	font-family: var(--font-family-roboto);
+	color: #333;
+	line-height: 1.6;
+	margin-bottom: 20px;
 }
 
+.custom-description h5 {
+	font-size: 1.5em;
+	color: var(--main-color-two);
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+.custom-description p {
+	margin-bottom: 15px;
+	text-align: justify;
+}
+
+.custom-description ul {
+	list-style-type: disc;
+	margin-left: 20px;
+	margin-bottom: 15px;
+}
+
+.custom-description ul ul {
+	list-style-type: circle;
+	margin-left: 20px;
+}
+
+.custom-description li {
+	margin-bottom: 5px;
+}
+
+.custom-description strong {
+	color: var(--heading-color);
+	font-weight: bold;
+}
+
+.custom-description .quote {
+	border-left: 4px solid #007acc;
+	margin: 20px 0;
+	padding-left: 15px;
+	font-style: italic;
+	color: #555;
+}
+
+.custom-description a:hover {
+	color: var(--main-color-two);
+}
+/* ==========================
+   Custom Description Styling End
+   ========================== */
 img {
 	display: inline-block;
 	max-width: 100%;

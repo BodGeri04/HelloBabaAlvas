@@ -71,14 +71,15 @@
         </p>
         <p>
             Bod Orsolya<br>
-            Pihenj Baba<br>
+           <strong>Pihenj Baba</strong><br>
             <a href="mailto:hello@pihenjbaba.hu">hello@pihenjbaba.hu</a><br>
             +36 20 560 7609
         </p>
 
         <p>
-            <a href="https://www.facebook.com/pihenjbaba" target="_blank">Facebook</a> |
+            <a href="https://www.facebook.com/profile.php?id=61574071451804" target="_blank">Facebook</a> |
             <a href="https://www.instagram.com/pihenjbaba" target="_blank">Instagram</a> |
+            <a href="https://www.tiktok.com/@pihenjbaba" target="_blank">TikTok</a> |
             <a href="https://linktr.ee/pihenjbaba" target="_blank">Linktree</a>
         </p>
         <a href="{{ url('/') }}" class="button">Vissza a főoldalra</a>

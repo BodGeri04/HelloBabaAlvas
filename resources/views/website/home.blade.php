@@ -325,7 +325,7 @@
                 <!-- Keresőmező középre igazítva -->
                 <div class="sidebar-widget search-box"
                     style="margin-top: 50px; max-width: 500px; margin-left: auto; margin-right: auto;">
-                    <form method="POST" action="{{ route('blog.search') }}" id="search-form">
+                    {{-- <form method="POST" action="{{ route('blog.search') }}" id="search-form">
                         @csrf
                         <div class="form-group">
                             <input type="search" id="search-field" name="query"
@@ -333,7 +333,7 @@
                                 value="{{ old('query', $query ?? '') }}" required>
                             <button type="submit" style="display: none;">Keresés</button>
                         </div>
-                    </form>
+                    </form> --}}
                 </div>
             </div>
             <div class="row clearfix">
@@ -390,17 +390,14 @@
                                 <span class="fa fa-star"></span>
                                 <span class="fa fa-star"></span>
                             </div>
-                            <div class="text">" It’s amazing how much easier it has been to meet new people and
-                                create instant connection. I have the exact same personality, the only thing that
-                                has changed is my mindset and a few behaviors. "</div>
+                            <div class="text">„Nagyon szépen köszönöm a tanácsaidat, tényleg sokat segítettek! A
+                                megerősítésed is rengeteget számított, főleg amikor már teljesen el voltam keseredve a sok
+                                ébredéstől. Bevezettem a hintát, és azóta szinte duplázódott az alvásidőnk – két nap alatt!
+                                Megnyugtató volt látni, hogy nem vagyok egyedül, és van kiút ebből a helyzetből.”</div>
                         </div>
                         <div class="lower-box">
                             <div class="box-inner">
-                                <div class="author-image">
-                                    <img src="assets/images/resource/author-1.jpg" alt="" />
-                                </div>
-                                <h5>Alaxis D. Dowson</h5>
-                                <div class="designation">Head Of Idea, Kilix Co.</div>
+                                <h5>Dóra</h5>
                             </div>
                         </div>
                     </div>
@@ -417,17 +414,37 @@
                                 <span class="fa fa-star"></span>
                                 <span class="fa fa-star"></span>
                             </div>
-                            <div class="text">" It’s amazing how much easier it has been to meet new people and
-                                create instant connection. I have the exact same personality, the only thing that
-                                has changed is my mindset and a few behaviors. "</div>
+                            <div class="text">„Szuper tanácsokat kaptam – olyanokat, amiket azonnal tudtam alkalmazni.
+                                Már attól megkönnyebbültem, hogy valaki megértette, milyen nehéz ez a nemalvós időszak. A
+                                tippek segítettek rendszerezni a napunkat, és sokkal kiegyensúlyozottabb lett a babám is.
+                                Most már nem félek levegőre vinni vagy több ingert adni neki – sőt, ez nyugtatta meg
+                                igazán!”</div>
                         </div>
                         <div class="lower-box">
                             <div class="box-inner">
-                                <div class="author-image">
-                                    <img src="assets/images/resource/author-1.jpg" alt="" />
-                                </div>
-                                <h5>Alaxis D. Dowson</h5>
-                                <div class="designation">Head Of Idea, Kilix Co.</div>
+                                <h5>Szilvi</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial Block -->
+                <div class="testimonial-block">
+                    <div class="inner-box">
+                        <div class="upper-box">
+                            <span class="quote-icon flaticon-quote-3"></span>
+                            <div class="rating">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="text">“Nagyon szépen köszönöm a megerősítést, a biztató szavakat és a jó
+                                tanácsokat is!”</div>
+                        </div>
+                        <div class="lower-box">
+                            <div class="box-inner">
+                                <h5>Kitti</h5>
                             </div>
                         </div>
                     </div>
