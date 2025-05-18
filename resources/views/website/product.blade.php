@@ -2,7 +2,7 @@
 @extends('website.main')
 @section('content')
 <!-- Cource Detail Banner Section -->
-<section class="cource-detail-banner-section" style="background-image: url(assets/images/background/2.jpg)">
+<section class="cource-detail-banner-section" style="background-image: url('{{ asset('assets/images/gallery/WebsiteHeader2.png') }}')">
     <div class="auto-container">
         <div class="content-box">
             <h1>{{$product->name}}</h1>

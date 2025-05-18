@@ -267,7 +267,7 @@
                                             <div class="column col-lg-6 col-md-6 col-sm-12">
                                                 <ul class="list-link">
                                                     <li><a href="#">Adatvédelem</a></li>
-                                                    <li><a href="#">GYIK</a></li>
+                                                    <li><a href="/aboutMe">GYIK</a></li>
                                                 </ul>
                                             </div>
                                         </div>

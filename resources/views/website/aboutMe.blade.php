@@ -2,7 +2,7 @@
 @extends('website.main')
 @section('content')
     <!-- Page Title Section -->
-    <section class="page-title" style="background-image: url(assets/images/footer.jpg)">
+    <section class="page-title" style="background-image: url(assets/images/gallery/WebsiteHeader2.png)">
         <div class="auto-container">
             <div class="content">
                 <h1>Bod Orsolya,<br>baba és kisgyermek alvástanácsadó</h1>
@@ -141,8 +141,8 @@
                                         <!-- Column -->
                                         <div class="column col-lg-4 col-md-4 col-sm-12">
                                             <div class="image">
-                                                <a class="lightbox-image" href="assets/images/gyik/masodik.jpg"><img
-                                                        src="assets/images/gyik/masodik.jpg" alt="" /></a>
+                                                <a class="lightbox-image" href="assets/images/gyik/Tanusitvany.jpg"><img
+                                                        src="assets/images/gyik/Tanusitvany.jpg" alt="" /></a>
                                             </div>
                                         </div>
                                         <!-- Column -->
@@ -157,6 +157,26 @@
 
                                 <!-- Accordian Box -->
                                 <ul class="accordion-box style-three">
+
+                                    <!-- Block -->
+                                    <li class="accordion block">
+                                        <div class="acc-btn">
+                                            <div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span
+                                                    class="icon icon-minus fa fa-minus"></span></div>Mikor érdemes hozzám
+                                            fordulni?
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <div class="text">Bármikor, ha úgy érzed, elakadtál a babád alvásával
+                                                    kapcsolatban — legyen szó sok ébredésről, nehéz elalvásról, nappali
+                                                    alvásokról, vagy arról, hogy szeretnéd jobban megérteni, mi zajlik a
+                                                    kisbabád alvásában. Akkor is segíthetek, ha egyszerűen csak szeretnél
+                                                    tudatosabban hozzáállni az altatáshoz, vagy megerősítésre vágysz, hogy
+                                                    jó úton jársz.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
 
                                     <!-- Block -->
                                     <li class="accordion block">
@@ -182,16 +202,20 @@
                                     <li class="accordion block">
                                         <div class="acc-btn">
                                             <div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span
-                                                    class="icon icon-minus fa fa-minus"></span></div>
-                                            <strong>02.</strong>What type of education do you need to become a IT
-                                            consultant?
+                                                    class="icon icon-minus fa fa-minus"></span></div>Mi a tudásom alapja?
                                         </div>
                                         <div class="acc-content">
                                             <div class="content">
-                                                <div class="text">You might be raised on a farm. Sometimes languages are
-                                                    difficult and difficult to find the right adjective to go with a noun or
-                                                    use the language in an idiomatic way This work is our attempt to make it
-                                                    easier to find this information.</div>
+                                                <div class="text">Tanácsadásaimat saját tapasztalataim mellett átfogó
+                                                    szakmai képzésekre és megbízható, tudományos alapokra építem.
+                                                    Alapvégzettségem szociális munkás, így a segítői szemlélet kezdettől
+                                                    fogva meghatározza a gondolkodásomat.<br>
+                                                    A babaalvás-tanácsadói képzésem során olyan, nemzetközi kutatásokon
+                                                    alapuló elveket sajátítottam el, amelyek a babák fejlődési igényeit,
+                                                    biztonságát és a kötődést helyezik a középpontba.
+                                                    Módszereim tiszteletteljesek, empatikusak, és mindig a baba és a család
+                                                    valós szükségleteihez igazodnak.
+                                                </div>
                                             </div>
                                         </div>
                                     </li>
@@ -200,15 +224,16 @@
                                     <li class="accordion block">
                                         <div class="acc-btn">
                                             <div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span
-                                                    class="icon icon-minus fa fa-minus"></span></div><strong>03.</strong>How
-                                            many hours do tech consultants work?
+                                                    class="icon icon-minus fa fa-minus"></span></div>Miért engem válassz?
                                         </div>
                                         <div class="acc-content">
                                             <div class="content">
-                                                <div class="text">You might be raised on a farm. Sometimes languages are
-                                                    difficult and difficult to find the right adjective to go with a noun or
-                                                    use the language in an idiomatic way This work is our attempt to make it
-                                                    easier to find this information.</div>
+                                                <div class="text">Saját tapasztalatból ismerem, milyen nehéz lehet a babás
+                                                    időszak, különösen, ha az alvás nem megy gördülékenyen. Egyedülálló
+                                                    anyaként és babaalvás-tanácsadóként gyengéd, sírni hagyás nélküli
+                                                    módszerekkel dolgozom, a baba és a szülők igényeire hangolva. A célom
+                                                    az, hogy együtt megtaláljuk azt az utat, ami a ti családotoknak működik.
+                                                </div>
                                             </div>
                                         </div>
                                     </li>
@@ -217,15 +242,17 @@
                                     <li class="accordion block">
                                         <div class="acc-btn">
                                             <div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span
-                                                    class="icon icon-minus fa fa-minus"></span></div><strong>04.</strong>How
-                                            much do consultants get paid per hour?
+                                                    class="icon icon-minus fa fa-minus"></span></div>Mi van akkor, ha nem
+                                            válik be, amit javasolsz?
                                         </div>
                                         <div class="acc-content">
                                             <div class="content">
-                                                <div class="text">You might be raised on a farm. Sometimes languages are
-                                                    difficult and difficult to find the right adjective to go with a noun or
-                                                    use the language in an idiomatic way This work is our attempt to make it
-                                                    easier to find this information.</div>
+                                                <div class="text">Minden baba más, ezért nincsenek instant megoldások.
+                                                    Amit kínálok, az egy személyre szabott útiterv, amelyet rugalmasan
+                                                    alakíthatunk, ha szükséges. Végig ott leszek melletted, támogatlak a
+                                                    változások során, és ha valami nem működik, együtt keresünk új irányt. A
+                                                    cél, hogy ne érezd magad egyedül ebben a folyamatban, és a családod
+                                                    igényeihez illeszkedő megoldás szülessen.</div>
                                             </div>
                                         </div>
                                     </li>

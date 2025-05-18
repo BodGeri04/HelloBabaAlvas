@@ -128,61 +128,23 @@
                             </div>
                         </div>
 
-                        {{-- <!-- Counter Box -->
-                        <div class="counter-box">
-                            <!-- Fact Counter -->
-                            <div class="fact-counter">
-                                <div class="row clearfix">
-
-                                    <!-- Column -->
-                                    <div class="counter-column col-lg-4 col-md-4 col-sm-12">
-                                        <div class="inner wow fadeInLeft" data-wow-delay="0ms"
-                                            data-wow-duration="1500ms">
-                                            <div class="content">
-                                                <div class="count-outer count-box">
-                                                    <span class="count-text" data-speed="2500" data-stop="10">0</span>k
-                                                </div>
-                                                <div class="counter-title">Active students <br> worldwide</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Column -->
-                                    <div class="counter-column col-lg-4 col-md-4 col-sm-12">
-                                        <div class="inner wow fadeInLeft" data-wow-delay="300ms"
-                                            data-wow-duration="1500ms">
-                                            <div class="content">
-                                                <div class="count-outer count-box">
-                                                    <span class="count-text" data-speed="2500" data-stop="10">0</span>k
-                                                </div>
-                                                <div class="counter-title">Basement <br> in New York</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Column -->
-                                    <div class="counter-column col-lg-4 col-md-4 col-sm-12">
-                                        <div class="inner wow fadeInLeft" data-wow-delay="600ms"
-                                            data-wow-duration="1500ms">
-                                            <div class="content">
-                                                <div class="count-outer count-box">
-                                                    <span class="count-text" data-speed="3000" data-stop="2">0</span>k
-                                                </div>
-                                                <div class="counter-title">Cup of tea & <br> coffee</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- End Counter Box --> --}}
-
                     </div>
-                </div>
 
+                </div>
             </div>
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    <span class="scrolling-text color-1">Nehezen megy az altatás?</span>
+                    <span class="scrolling-text color-2">Sokszor ébred a babád éjszaka?</span>
+                    <span class="scrolling-text color-3">Sokat sír?</span>
+                    <span class="scrolling-text color-4">Fáradt vagy, nem tudsz pihenni?</span>
+                    <span class="scrolling-text color-5">Bizonytalan vagy, hogy jól csinálod-e?</span>
+                    <span class="scrolling-text color-6">Mindenki mást mond, te meg nem mersz hallgatni az ösztöneidre?
+                    </span>
+                    <span class="scrolling-text color-7">Segítek neked!</span>
+                </div>
+            </div>
+
         </div>
     </section>
     <!-- End About Section -->
@@ -561,4 +523,129 @@
             });
         </script>
     @endif
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const marqueeContainer = document.querySelector('.marquee-container');
+            const marqueeContent = marqueeContainer.querySelector('.marquee-content');
+
+            // Állítsd be a sebességet
+            const speed = 0.5; // Mozgás sebessége pixel/frame-ben
+
+            let animationFrameId = null;
+            let position = 0; // Az aktuális vízszintes pozíció
+
+            function startMarquee() {
+                // 1️⃣ Ellenőrizzük és klónozzuk a tartalmat, ha szükséges.
+                // Először győződjünk meg róla, hogy csak az eredeti tartalom van bent a méréshez.
+                // Ha már voltak klónok a DOM-ban az előző futtatásból (pl. resize handler), szedjük ki őket.
+                marqueeContainer.innerHTML =
+                    ''; // Töröljük a belső tartalmat (kivéve az eredetit, azt majd visszarakjuk)
+                const originalContent = document.createElement('div'); // Létrehozzuk az eredeti tartalom helyét
+                originalContent.classList.add('marquee-content');
+                // Másoljuk át az eredeti szövegeket az ideiglenes tárolóból
+                marqueeContent.childNodes.forEach(node => {
+                    // Csak element node-okat másoljunk át, ne üres whitespace text node-okat
+                    if (node.nodeType === 1) {
+                        originalContent.appendChild(node.cloneNode(true));
+                    }
+                });
+                marqueeContainer.appendChild(
+                    originalContent); // Visszahelyezzük az eredeti tartalom elemeit egy friss konténerbe
+
+
+                // Biztosítjuk, hogy a megjelenítés készen áll a méréshez
+                // Kisebb késleltetés, hogy a böngésző kiszámolhassa a méreteket
+                requestAnimationFrame(() => { // Vagy setTimeout(..., 10);
+
+                    // Kiszámoljuk az EGYETLEN eredeti tartalom blokk (originalContent) teljes szélességét
+                    // Ez a távolság, amit egy ciklusban meg kell tenni.
+                    const contentWidth = originalContent.offsetWidth;
+
+                    console.log("Calculated contentWidth:", contentWidth); // Ellenőrizd ezt a konzolban!
+
+                    // Ellenőrizzük, hogy a szélesség érvényes-e
+                    if (contentWidth <= 0) {
+                        console.error(
+                            "Content width is 0 or less. Cannot start marquee. Check CSS display and content."
+                        );
+                        return; // Megállunk, ha a szélesség 0
+                    }
+
+                    // 2️⃣ Klónozzuk a tartalmat annyiszor, ahányszor szükséges a hézagmentes megjelenítéshez
+                    // Általában elég 1 klón, ha a konténer szélessége nem extrémen nagy a tartalomhoz képest
+                    // De a biztonság kedvéért klónozhatunk többször is, amíg a teljes szélesség elég nagy lesz
+                    let totalContentWidth = contentWidth;
+                    while (totalContentWidth < marqueeContainer.offsetWidth *
+                        2) { // Klónozunk, amíg legalább kétszerese a konténer szélességének
+                        const clone = originalContent.cloneNode(true);
+                        marqueeContainer.appendChild(clone);
+                        totalContentWidth += contentWidth;
+                    }
+
+                    // Frissítjük a hivatkozást a már duplikált elemekre
+                    const marqueeItems = marqueeContainer.querySelectorAll('.marquee-content');
+
+
+                    // 3️⃣ Animációs ciklus
+                    function animate() {
+                        position -= speed; // Mozgás balra
+
+                        // A KULCS a megszakítás nélküli hurokhoz:
+                        // Ha az ELSŐ (.marquee-content) elem bal széle (position)
+                        // kiment teljesen a bal oldalon (azaz position <= -contentWidth),
+                        // akkor az ÖSSZES .marquee-content elem position értékét
+                        // növeljük pontosan contentWidthnyit.
+                        if (position <= -contentWidth) {
+                            position += contentWidth; // Átugrás a másik blokk mögé
+                            // console.log("Loop reset. New position:", position); // Ellenőrzéshez
+                        }
+
+                        // Alkalmazzuk az új pozíciót az ÖSSZES tartalom blokkra
+                        marqueeItems.forEach(item => {
+                            // Az offset alapján számoljuk ki az egyes elemek pozícióját
+                            // Itt egyszerűbb a position-t direktben használni,
+                            // mivel a hurok logic a position-t reseteli.
+                            // VAGY, a duplikált elemek esetén:
+                            // item.style.transform = `translateX(${position}px)`; // Ezt csináltuk az előző kódban
+                            // Ha több mint 2 klón van, más logika kellhet, de 2-vel ez a módszer működik.
+
+                            // Egyszerűbb, ha a position-t használjuk a _konténer_ eltolására,
+                            // és a belső elemek a konténerhez képest maradnak.
+                            // DE mivel a struktúra már a .marquee-content elemekkel van,
+                            // maradjunk ennél: mindegyik .marquee-content elemet a közös 'position' alapján toljuk el.
+                            // AZONBAN, ha több mint 2 klón van, akkor a modulo logikának van értelme,
+                            // de másképp:
+                            // const currentOffset = position % contentWidth; // Hol tart a hurok egy cikluson belül
+                            // item.style.transform = `translateX(${currentOffset + index * contentWidth}px)`; // Minden elem a saját helyén, eltolva a ciklus offsettel.
+
+                            // VISSZATÉRVE az egyszerű, 2 blokkos módszerre, ami megbízható:
+                            item.style.transform = `translateX(${position}px)`;
+
+                        });
+
+
+                        // Kérünk egy újabb képkockát
+                        animationFrameId = requestAnimationFrame(animate);
+                    }
+
+                    // Elindítjuk az animációt a szélesség mérése után
+                    animate();
+                }); // requestAnimationFrame a méréshez
+
+            }
+
+            // Reszponzív kezelés ablakméret váltáskor
+            window.addEventListener('resize', () => {
+                cancelAnimationFrame(animationFrameId); // Megállítjuk az aktuális animációt
+                position = 0; // Visszaállítjuk a pozíciót
+                // Eltávolítjuk a régi klónokat
+                marqueeContainer.innerHTML = '';
+                // Újraindítjuk az animációt az új méretekkel és klónokkal
+                startMarquee();
+            });
+
+            // Elindítjuk az animációt az oldal betöltésekor
+            startMarquee();
+        });
+    </script>
 @endsection
