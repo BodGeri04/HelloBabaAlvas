@@ -156,7 +156,7 @@
                                 </div>
 
                                 <!-- Accordian Box -->
-                                <ul class="accordion-box style-three">
+                                <ul class="accordion-box style-three" style="list-style-type: none">
 
                                     <!-- Block -->
                                     <li class="accordion block">

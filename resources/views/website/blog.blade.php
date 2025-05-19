@@ -30,7 +30,7 @@
 
                             <h3>{{ $blog->title }}</h3>
 
-                            <div class="blog-content">
+                            <div class="blog-content blog-ulol">
                                 {!! $blog->content !!}
                             </div>
 
@@ -61,7 +61,9 @@
                                     </div>
                                 </blockquote>
                             @endif
-                            <p>{!! $blog->end_content !!}</p>
+                            <div class="blog-ulol">
+                                <p>{!! $blog->end_content !!}</p>
+                            </div>
                             <!-- Post Share Options-->
                             <div class="post-share-options">
                                 <div class="post-share-inner clearfix">

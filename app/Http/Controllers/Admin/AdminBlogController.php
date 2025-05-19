@@ -57,8 +57,6 @@ class AdminBlogController extends Controller
             $imageName = time() . '.' . $request->second_cover_image->getClientOriginalExtension();
             $request->second_cover_image->move(public_path('/assets/images/gallery/blog/'), $imageName);
             $blog->second_cover_image = $imageName;
-        } else {
-            $blog->image = 'noimage.jpg';
         }
         $blog->second_content = $request->second_content;
         $blog->end_content = $request->end_content;
@@ -69,7 +67,7 @@ class AdminBlogController extends Controller
             $request->cover_image->move(public_path('/assets/images/gallery/blog/'), $imageName);
             $blog->cover_image = $imageName;
         } else {
-            $blog->image = 'noimage.jpg';
+            $blog->cover_image = 'noimage.jpg';
         }
         $blog->save();
         return redirect()->route('admin.blogs.index')->with('success', 'Blog létrehozva!');

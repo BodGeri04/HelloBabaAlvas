@@ -2561,7 +2561,7 @@
 
 .course-tabs .tab-btns .tab-btn:nth-child(1) {
 	color: var(--white-color);
-	background-color: var(--main-color);
+	background-color: var(--main-color-two);
 }
 
 .course-tabs .tab-btns .tab-btn:nth-child(2) {
@@ -7329,5 +7329,49 @@
 		padding: 8px 15px;
 		/* Itt is finomhangolhatod a margin-right-ot, ha mobilon más távolság kell */
 		margin-right: 15px;
+	}
+}
+
+/* Csak a .blog-ulol osztály alatt érvényesül */
+.blog-ulol ul,
+.blog-ulol ol {
+	margin-left: 20px;
+	padding-left: 20px;
+}
+
+.blog-ulol ul li {
+	list-style-type: disc;
+	margin-bottom: 5px;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #000000;
+}
+
+.blog-ulol ol li {
+	list-style-type: decimal;
+	margin-bottom: 5px;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #000000;
+}
+
+.blog-ulol ul ul,
+.blog-ulol ol ol {
+	margin-left: 15px;
+	list-style-type: circle;
+}
+
+.blog-ulol ul ul li,
+.blog-ulol ol ol li {
+	margin-bottom: 3px;
+	font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+
+	.blog-ulol ul,
+	.blog-ulol ol {
+		margin-left: 10px;
+		padding-left: 15px;
 	}
 }

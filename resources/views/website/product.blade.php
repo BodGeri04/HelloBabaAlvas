@@ -8,14 +8,14 @@
             <h1>{{$product->name}}</h1>
             <ul class="course-info">
                 <li>Utolsó frissítés {{ $product->created_at->format('Y. F d.') }}</li>
-                <li><span class="icon fa fa-user"></span>27 already enrolled</li>
+                <li><span class="icon fa fa-user"></span>Korábbi előfizetők száma: 2</li>
                 <li class="rating">
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
-                    <i>(12)</i>
+                    <i>(1)</i>
                 </li>
             </ul>
         </div>
@@ -39,8 +39,7 @@
                         
                             <!--Tab Btns-->
                             <ul class="tab-btns tab-buttons clearfix">
-                                <li data-tab="#prod-overview" class="tab-btn active-btn">Áttekintés</li>
-                                <li data-tab="#prod-curriculum" class="tab-btn">Curriculum</li>
+                                <li data-tab="#prod-overview" class="tab-btn">Áttekintés</li>
                                 <li data-tab="#prod-reviews" class="tab-btn">Vélemények</li>
                             </ul>
                             
@@ -54,53 +53,26 @@
                                         
                                         <!-- Requirement Box -->
                                         <div class="requirement">
-                                            <h4>Requirements</h4>
+                                            <h4>Amire szükséged lehet</h4>
                                             <div class="row clearfix">
                                                 
                                                 <!-- Required Column -->
                                                 <div class="required-column col-lg-4 col-md-6 col-sm-12">
                                                     <div class="required-inner">
-                                                        <div class="required-text">Computer/Laptop</div>
+                                                        <div class="required-text">Telefon/Számítógép</div>
                                                     </div>
                                                 </div>
 
                                                 
                                             </div>
                                         </div>
-                                        <!-- End Requirement Box -->
-                                        
-                                        <!-- Target Box -->
-                                        <div class="target-box">
-                                            <h4>Target Audience</h4>
-                                            <ul class="target-list">
-                                                <li>Educators (teachers, lecturer, faculty)</li>
-                                                <li>Corporate trainer</li>
-                                            </ul>
-                                        </div>
-                                        <!-- End Target Box -->
-                                        
+                                        <!-- End Requirement Box -->                                        
                                     </div>
                                 </div>
                                 
                                 <!-- Tab -->
                                 <div class="tab" id="prod-curriculum">
                                     <div class="content">
-                                        
-                                        <!-- Curriculum Box -->
-                                        <div class="curriculum-box">
-                                            <div class="clearfix">
-                                                <div class="pull-left">
-                                                    <h4>Curriculum</h4>
-                                                </div>
-                                                <div class="pull-right">
-                                                    <ul class="lessons">
-                                                        <li><span class="icon fa fa-book"></span>5 Lessons</li>
-                                                        <li><span class="icon fa fa-clock-o"></span>4h 55m</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Curriculum Box -->
                                         
                                         <!-- Accordian Box -->
                                         <ul class="accordion-box">
@@ -169,15 +141,14 @@
                                         <!-- Comments Area -->
                                         <div class="comments-area">
                                             <div class="group-title">
-                                                <h4>User Feedbacks</h4>
+                                                <h4>Felhasználói visszajelzések</h4>
                                             </div>
                                             
                                             <div class="comment-box">
                                                 <div class="comment">
-                                                    <div class="author-thumb"><img src="assets/images/resource/author-3.jpg" alt=""></div>
                                                     <div class="comment-info clearfix">
-                                                        <strong>Kevin Martin</strong>
-                                                        <div class="comment-time">26 July, 2022</div>
+                                                        <strong>Szilvi</strong>
+                                                        <div class="comment-time">2025. 05. 10</div>
                                                         <div class="rating">
                                                             <span class="fa fa-star"></span>
                                                             <span class="fa fa-star"></span>
@@ -186,8 +157,7 @@
                                                             <span class="fa fa-star"></span>
                                                         </div>
                                                     </div>
-                                                    <div class="text">Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui dolorem ipsum a quia quaed inventore veritatis et quasi architecto beatae vitae dicta sunt explicabocopytyping mean refreshing que porro espanio.</div>
-                                                    <a class="theme-btn reply-btn" href="#"><span class="fa fa-reply"></span> Reply</a>
+                                                    <div class="text">IDE VALAMI SZÖVEGET ÍRNUNK KELL!!</div>
                                                 </div>
                                             </div>
                                             
@@ -217,14 +187,11 @@
                             @if($product->discountPrice)
                             <div class="price">{{ number_format($product->discountPrice,0,'','.' )}} Ft<span>{{ number_format($product->price,0,'','.' )}} Ft</span></div>
                             @else
-                            <div class="price">{{$product->price}} Ft.</div>
+                            <div class="price">{{ number_format($product->price,0,'','.' )}} Ft</div>
                             @endif
                             <ul class="intro-list">
-                                <li><span class="icon fa fa-link"></span><strong>Level</strong><i>All Levels</i></li>
-                                <li><span class="icon fa fa-clock-o"></span><strong>Duration</strong><i>1 óra</i></li>
-                                <li><span class="icon fa fa-video-camera"></span><strong>Lectures</strong><i>5 lectures</i></li>
-                                <li><span class="icon fa fa-book"></span><strong>Subject</strong><i>Teacher Training</i></li>
-                                <li><span class="icon fa fa-money"></span><strong>Nyelv</strong><i>Magyar</i></li>
+                                <li><span class="icon fa fa-clock-o"></span><strong>Hossz</strong><i>1 óra</i></li>
+                                <li><span class="icon fa fa-book"></span><strong>Nyelv</strong><i>Magyar</i></li>
                             </ul>
                             
                             <!-- Buttons Box -->
@@ -235,11 +202,9 @@
                             
                             <!-- Social Box -->
                             <ul class="social-box">
-                                <li><a href="https://www.facebook.com/" class="fa fa-facebook-f"></a></li>
-                                <li><a href="https://www.twitter.com/" class="fa fa-twitter"></a></li>
-                                <li><a href="https://www.behance.com/" class="fa fa-behance"></a></li>
-                                <li><a href="https://www.linkedin.com/" class="fa fa-linkedin"></a></li>
-                                <li><a href="https://youtube.com/" class="fa fa-youtube-play"></a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=61574071451804" class="fa fa-facebook-f"></a></li>
+                                <li><a href="https://www.instagram.com/pihenjbaba" class="fa fa-instagram"></a></li>
+                                <li><a href="https://www.tiktok.com/@pihenjbaba" class="fa fa-tiktok"></a></li>
                             </ul>
                             
                         </div>

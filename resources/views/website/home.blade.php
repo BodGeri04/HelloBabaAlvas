@@ -195,10 +195,6 @@
                                         @endif
                                     </div>
                                     <label>{{ $product->description }}</label>
-
-                                    <ul class="post-info mt-1">
-                                        <li><span class="fa fa-clock"></span> 1 óra</li>
-                                    </ul>
                                 </div>
 
                             </div>
@@ -316,10 +312,6 @@
                                 </div>
                                 <div class="lower-content">
                                     <h5><a href="{{ $blog->slug }}">{{ $blog->title }}</a></h5>
-                                    <ul class="post-info">
-                                        <li><span class="icon flaticon-book-1"></span>3 Chapter</li>
-                                        <li><span class="icon flaticon-clock"></span>10 Lessons</li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -469,10 +461,10 @@
                                         <span class="icon flaticon-notebook"></span>
                                         <select name="product" required class="custom-select-box">
                                             <option value="">Válassz egy csomagot! *</option>
-                                            @foreach ($products as $product)
-                                                <option value="{{ $product->name }}"
-                                                    {{ old('product') == $product->name ? 'selected' : '' }}>
-                                                    {{ $product->name }}
+                                            @foreach ($availableProducts as $availableProduct)
+                                                <option value="{{ $availableProduct->name }}"
+                                                    {{ old('product') == $availableProduct->name ? 'selected' : '' }}>
+                                                    {{ $availableProduct->name }}
                                                 </option>
                                             @endforeach
                                         </select>

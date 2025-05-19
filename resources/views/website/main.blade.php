@@ -298,15 +298,14 @@
                                         <h5>Hírlevél</h5>
                                         <!-- Newsletter Form -->
                                         <div class="newsletter-form">
-                                            <form method="post" action="contact.html">
+                                            
                                                 <div class="form-group">
                                                     <span class="icon flaticon-email"></span>
                                                     <input type="email" name="search-field" value=""
                                                         placeholder="Email cím" required>
-                                                    <button type="submit" class="theme-btn submit-btn">Iratkozz
-                                                        fel<span class="arrow flaticon-right-arrow-1"></span></button>
+                                                    <button type="#" class="theme-btn submit-btn">Hamarosan<span class="arrow flaticon-right-arrow-1"></span></button>
                                                 </div>
-                                            </form>
+                                            
                                         </div>
                                     </div>
                                 </div>

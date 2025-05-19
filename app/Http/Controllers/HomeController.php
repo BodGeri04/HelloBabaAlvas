@@ -45,9 +45,10 @@ class HomeController extends Controller
                 ->paginate(4);
         }
 
-        $products = Product::paginate(4);
+        $products = Product::all();
+        $availableProducts=Product::where('price','>',0)->get();
         $title='Pihenj Baba | Főoldal';
-        return view('website.home', compact('products', 'blogs','title'));
+        return view('website.home', compact('products', 'blogs','title','availableProducts'));
     }
 
     public function searchBlogs(Request $request)
