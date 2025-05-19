@@ -42,6 +42,15 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
+                                <label for="detailed_description">Részletes leírás</label>
+                                <input type="text" class="form-control" id="detailed_description" name="detailed_description"
+                                    value="{{ old('detailed_description', $product->detailed_description ?? '') }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
                                 <label for="price">Rendes ár</label>
                                 <input required type="number" class="form-control" id="price" name="price"
                                     value="{{ old('price', $product->price ?? '') }}">

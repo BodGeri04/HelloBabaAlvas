@@ -45,6 +45,7 @@ class AdminProductController extends Controller
         $product = new Product();
         $product->name = $request->name;
         $product->description = $request->description;
+        $product->detailed_description = $request->detailed_description;
         $product->price = $request->price;
         $product->discountPrice = $request->discountPrice;
         if ($request->hasFile('image')) {
@@ -94,6 +95,7 @@ class AdminProductController extends Controller
 
         $product->name = $request->name;
         $product->description = $request->description;
+        $product->detailed_description = $request->detailed_description;
         $product->price = $request->price;
         $product->discountPrice = $request->discountPrice;
         // Ha új kép van feltöltve

@@ -28,7 +28,15 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('blogs', function (Blueprint $table) {
-            $table->dropColumn(['quote', 'quote_author', 'quote_title']);
+            $table->dropColumn([
+                'quote',
+                'quote_author',
+                'quote_title',
+                'second_main_title',
+                'second_cover_image',
+                'second_content',
+                'end_content'
+            ]);
         });
     }
 };
