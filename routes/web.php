@@ -31,6 +31,9 @@ Route::post('/kereses', [HomeController::class, 'searchBlogs'])->name('blog.sear
 // Cookie elfogadás
 Route::post('/cookie-consent', [CookieConsentController::class, 'store'])->name('cookie.consent');
 
+// Rólam oldal
+Route::get('/adatvedelem', [HomeController::class, 'adatVedelem']);
+
 // ----- ADMIN RÉSZ -----
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::resource('products', AdminProductController::class);

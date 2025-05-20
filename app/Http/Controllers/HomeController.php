@@ -84,4 +84,11 @@ class HomeController extends Controller
         else
             abort(404);
     }
+
+    public function adatVedelem()
+    {
+        $title='Pihenj Baba | Adatvédelem';
+        return view('website.adatvedelem', compact('title'));
+    }
+
 }

@@ -528,7 +528,7 @@ a {
 	position: relative;
 	text-decoration: none;
 	cursor: pointer;
-	color: var(--main-color);
+	color: var(--main-color-two);
 	-webkit-transition: all 300ms ease;
 	-ms-transition: all 300ms ease;
 	-o-transition: all 300ms ease;
@@ -541,6 +541,7 @@ a:hover,
 a:focus,
 a:visited {
 	text-decoration: none;
+	
 	outline: none !important;
 }
 
