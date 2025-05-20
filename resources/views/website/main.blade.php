@@ -10,7 +10,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
     <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
     <!-- Responsive -->
@@ -66,7 +66,8 @@
                                         class="fa fa-facebook-f" target="_blank"></a></li>
                                 <li><a href="https://www.instagram.com/pihenjbaba" class="fa fa-instagram"
                                         target="_blank"></a></li>
-                                <li><a href="https://www.tiktok.com/@pihenjbaba?_t=ZN-8w9Jl458plP&_r=1" class="fa fa-tiktok" target="_blank"></a></li>
+                                <li><a href="https://www.tiktok.com/@pihenjbaba?_t=ZN-8w9Jl458plP&_r=1"
+                                        class="fa fa-tiktok" target="_blank"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -79,8 +80,8 @@
 
                     <!-- Logo Box -->
                     <div class="pull-left logo-box">
-                        <div class="logo"><a href="/"><img src="assets/images/gallery/logo.png"  style="max-width: 100px;max-height:100px;"alt=""
-                                    title=""></a>
+                        <div class="logo"><a href="/"><img src="assets/images/gallery/logo.png"
+                                    style="max-width: 100px;max-height:100px;"alt="" title=""></a>
                         </div>
                     </div>
 
@@ -226,6 +227,15 @@
         </div>
         <!-- END sidebar widget item -->
         @yield('content')
+        @if (!request()->cookie('cookie_consent'))
+            <div id="cookie-consent-banner" class="cookie-banner">
+                <p>Ez az oldal sütiket használ a felhasználói élmény javítása érdekében.</p>
+                <div>
+                    <button id="cookie-accept" class="btn btn-success btn-sm">Elfogadom</button>
+                    <button id="cookie-reject" class="btn btn-secondary btn-sm">Elutasítom</button>
+                </div>
+            </div>
+        @endif
         <!-- Main Footer -->
         <footer class="main-footer" style="background-color: var(--dark-color)">
             <div class="auto-container">
@@ -298,14 +308,15 @@
                                         <h5>Hírlevél</h5>
                                         <!-- Newsletter Form -->
                                         <div class="newsletter-form">
-                                            
-                                                <div class="form-group">
-                                                    <span class="icon flaticon-email"></span>
-                                                    <input type="email" name="search-field" value=""
-                                                        placeholder="Email cím" required>
-                                                    <button type="#" class="theme-btn submit-btn">Hamarosan<span class="arrow flaticon-right-arrow-1"></span></button>
-                                                </div>
-                                            
+
+                                            <div class="form-group">
+                                                <span class="icon flaticon-email"></span>
+                                                <input type="email" name="search-field" value=""
+                                                    placeholder="Email cím" required>
+                                                <button type="#" class="theme-btn submit-btn">Hamarosan<span
+                                                        class="arrow flaticon-right-arrow-1"></span></button>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -384,6 +395,7 @@
     <script src="{{ asset('assets/js/nav-tool.js') }}"></script>
     <script src="{{ asset('assets/js/jquery-ui.js') }}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
+    <script src="{{ asset('assets/js/cookie.js') }}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             tinymce.init({

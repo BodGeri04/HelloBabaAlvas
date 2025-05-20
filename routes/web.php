@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CookieConsentController;
 use Illuminate\Support\Facades\Auth;
 
 // Laravel auth route-ok beállítása
@@ -26,6 +27,9 @@ Route::post('/contact', [ContactController::class, 'send'])->name('contact.send'
 
 // Keresés blogok között
 Route::post('/kereses', [HomeController::class, 'searchBlogs'])->name('blog.search');
+
+// Cookie elfogadás
+Route::post('/cookie-consent', [CookieConsentController::class, 'store'])->name('cookie.consent');
 
 // ----- ADMIN RÉSZ -----
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {

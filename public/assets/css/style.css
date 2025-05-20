@@ -2568,9 +2568,6 @@
 	background-color: var(--color-five);
 }
 
-.course-tabs .tab-btns .tab-btn:hover,
-.course-tabs .tab-btns .tab-btn.active-btn {}
-
 .course-tabs .tabs-content {
 	position: relative;
 	padding: 45px 45px;
@@ -7374,4 +7371,29 @@
 		margin-left: 10px;
 		padding-left: 15px;
 	}
+}
+/*** 
+
+====================================================================
+	Cookie
+====================================================================
+
+***/
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #f9f9f9;
+    border-top: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    z-index: 9999;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+.cookie-banner form {
+    margin-top: 10px;
+}
+.cookie-banner button {
+    margin: 0 5px;
 }
