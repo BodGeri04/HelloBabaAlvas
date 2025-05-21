@@ -10,7 +10,7 @@
             </div>
             <div class="breadcrumb-outer">
                 <ul class="page-breadcrumb">
-                    <li><a href="index.html">Főoldal</a></li>
+                    <li><a href="/">Főoldal</a></li>
                     <li>Adatvédelem</li>
                 </ul>
             </div>
@@ -57,7 +57,7 @@
 
                     <h4 class="text-xl font-semibold mt-6 mb-2">5. Az adatokhoz hozzáférők köre</h4>
                     <ul class="list-disc list-inside">
-                        <li>Az oldal adminisztrátorai</li>
+                        <li>Az oldal adminisztrátora (1 darab)</li>
                         <li>Az oldal tulajdonosa (Bod Orsolya)</li>
                         <li>Tárhelyszolgáltató: Websupport Magyarország Kft. (1119 Budapest, Fehérvári út 97–99.)</li>
                     </ul>

@@ -108,7 +108,7 @@
                                     </li>
                                     <li class=""><a href="/aboutMe">Rólam</a>
                                     </li>
-                                    <li class=""><a href="/products">Szolgáltatások</a>
+                                    <li class=""><a href="/services">Szolgáltatások</a>
                                     </li>
                                     <li><a href="/#contact-section">Kapcsolat</a></li>
                                 </ul>
@@ -269,7 +269,7 @@
                                                 <ul class="list-link">
                                                     <li><a href="/">Főoldal</a></li>
                                                     <li><a href="/aboutMe">Rólam</a></li>
-                                                    <li><a href="/services">Szolgáltatások</a></li>
+                                                    <li><a href="/products">Szolgáltatások</a></li>
                                                     <li><a href="/#contact-section">Kapcsolat</a></li>
                                                 </ul>
                                             </div>

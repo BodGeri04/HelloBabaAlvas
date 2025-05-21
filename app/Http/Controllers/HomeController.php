@@ -69,7 +69,7 @@ class HomeController extends Controller
 
     public function allProducts()
     {
-        $products = Product::all();
+        $products = Product::where('price', '>', 0)->get();
         $title='Pihenj Baba | Szolgáltatások';
         return view('website.allProducts', compact('products','title'));
     }
