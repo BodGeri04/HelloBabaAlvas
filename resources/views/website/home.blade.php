@@ -207,7 +207,8 @@
     <!-- End Services Section -->
 
     <!-- Process Section -->
-    <section class="process-section" style="background-image: url(assets/images/background/pattern-2.png)">
+    <section class="process-section" style="background-image: url(assets/images/background/pattern-2.png); position: relative; overflow: hidden;">
+        <div style="position: absolute; inset: 0; background: inherit; filter: blur(4px); z-index: 0; pointer-events: none;"></div>
         <div class="auto-container">
             <!-- Sec Title -->
             <div class="sec-title light">

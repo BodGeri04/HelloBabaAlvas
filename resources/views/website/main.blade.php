@@ -41,33 +41,33 @@
             <!-- Header Top -->
             <div class="header-top" style="background-color: rgba(0, 0, 0, 0.418)">
                 <div class="auto-container">
-                    <div class="inner-container d-flex justify-content-between align-items-center flex-wrap">
+                    <div class="inner-container d-flex justify-content-between align-items-center flex-wrap" style="gap: 10px;">
 
                         <!-- Left: Email -->
-                        <div class="top-left">
-                            <div class="text">
-                                <i class="fa fa-envelope" style="margin-right: 5px;"></i>
-                                <span>hello@pihenjbaba.hu</span>
+                        <div class="top-left d-flex align-items-center" style="height: 40px;">
+                            <div class="text d-flex align-items-center" style="height: 100%;">
+                                <i class="fa fa-envelope" style="margin-right: 5px; vertical-align: middle; font-size: 18px;"></i>
+                                <span style="vertical-align: middle;">hello@pihenjbaba.hu</span>
                             </div>
                         </div>
 
                         <!-- Center: Phone -->
-                        <div class="top-center text-center flex-grow-1">
-                            <div class="text" style="color:white">
-                                <i class="fa fa-phone" style="margin-right: 5px;"></i>
-                                <span>+36 20 560 7609</span>
+                        <div class="top-center text-center flex-grow-1 d-flex align-items-center justify-content-center" style="height: 40px;">
+                            <div class="text d-flex align-items-center" style="color:white; height: 100%;">
+                                <i class="fa fa-phone" style="margin-right: 5px; vertical-align: middle; font-size: 18px;"></i>
+                                <span style="vertical-align: middle;">+36 20 560 7609</span>
                             </div>
                         </div>
 
                         <!-- Right: Social Icons -->
-                        <div class="top-right">
-                            <ul class="social-box d-flex gap-2">
+                        <div class="top-right d-flex align-items-center" style="height: 40px;">
+                            <ul class="social-box d-flex gap-2 align-items-center mb-0" style="height: 100%;">
                                 <li><a href="https://www.facebook.com/profile.php?id=61574071451804"
-                                        class="fa fa-facebook-f" target="_blank"></a></li>
+                                        class="fa fa-facebook-f" target="_blank" style="font-size: 18px; vertical-align: middle;"></a></li>
                                 <li><a href="https://www.instagram.com/pihenjbaba" class="fa fa-instagram"
-                                        target="_blank"></a></li>
+                                        target="_blank" style="font-size: 18px; vertical-align: middle;"></a></li>
                                 <li><a href="https://www.tiktok.com/@pihenjbaba?_t=ZN-8w9Jl458plP&_r=1"
-                                        class="fa fa-tiktok" target="_blank"></a></li>
+                                        class="fa fa-tiktok" target="_blank" style="font-size: 18px; vertical-align: middle;"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -162,7 +162,7 @@
                 <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
 
                 <nav class="menu-box">
-                    <div class="nav-logo"><a href="index.html"><img src="assets/images/logo-small.png"
+                    <div class="nav-logo"><a href="/"><img src="assets/images/logo-small.png"
                                 alt="" title=""></a></div>
                     <div class="menu-outer">
                         <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
@@ -189,7 +189,7 @@
                         <div class="sidebar-info-contents">
                             <div class="content-inner">
                                 <div class="logo">
-                                    <a href="index.html"><img src="assets/images/logo.png" alt="" /></a>
+                                    <a href="/"><img src="assets/images/logo.png" alt="" /></a>
                                 </div>
                                 <div class="content-box">
                                     <h4>About Us</h4>
@@ -251,7 +251,7 @@
                                 <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                                     <div class="footer-widget logo-widget">
                                         <div class="logo">
-                                            <a href="index.html"><img src="assets/images/footer-logo.png"
+                                            <a href="/"><img src="assets/images/footer-logo.png"
                                                     alt="" /></a>
                                         </div>
                                         <div class="text">Nyugodt alvás a babának és a családnak.<br>Személyre

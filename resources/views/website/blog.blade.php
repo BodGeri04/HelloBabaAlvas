@@ -146,7 +146,7 @@
                         </div>
                         <!-- End Sidebar Widget / Popular Posts -->
 
-                        <!-- Sidebar Widget / Category Widget -->
+                        {{-- <!-- Sidebar Widget / Category Widget -->
                         <div class="sidebar-widget-two category-widget-two">
                             <div class="widget-content">
                                 <!-- Sidebar Title -->
@@ -162,7 +162,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <!-- End Sidebar Widget / Category Widget -->
+                        <!-- End Sidebar Widget / Category Widget --> --}}
 
                     </aside>
                 </div>
