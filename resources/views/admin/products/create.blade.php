@@ -87,7 +87,6 @@
                     </div>
                     <div class="col-sm-12 d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary me-1 mb-1">Mentés</button>
-                        <button type="reset" class="btn btn-light-secondary me-1 mb-1">Törlés</button>
                         <button onclick="location='{{ route('admin.products.index') }}'" type="button"
                             class="btn btn-light-secondary me-1 mb-1">Vissza</button>
                     </div>

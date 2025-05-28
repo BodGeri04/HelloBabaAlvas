@@ -2,7 +2,7 @@
 @extends('website.main')
 @section('content')
     <!-- Page Title Section -->
-    <section class="page-title" style="background-image: url(assets/images/background/2.jpg)">
+    <section class="page-title" style="background-image: url(assets/images/gallery/WebsiteHeader2.png)">
         <div class="auto-container">
             <div class="content">
                 <div class="text"></div>

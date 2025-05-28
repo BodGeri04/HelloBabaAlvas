@@ -22,9 +22,9 @@
             <div class="order-box">
                 <div class="clearfix">
                     <div class="pull-left">
-                        <div class="text">Az összes termék megjelenítve</div>
+                        <div class="text">Az összes elérhető termék megjelenítve</div>
                     </div>
-                    <div class="pull-right clearfix">
+                    {{-- <div class="pull-right clearfix">
 
                         <!-- Search -->
                         <div class="order-search-box">
@@ -48,7 +48,7 @@
                             </select>
                         </div>
 
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <!-- End Order Box -->
@@ -65,9 +65,6 @@
                             <div class="lower-content">
                                 <h5><a href="/product/{{$product->slug}}">{{$product->name}}</a></h5>
                                 <label>{{$product->description}}</label>
-                                <ul class="post-info mt-1">
-                                    <li><span class="fa fa-clock"></span> 1 óra</li>
-                                </ul>
                             </div>
                         </div>
                     </div>

@@ -108,7 +108,7 @@
                                     </li>
                                     <li class=""><a href="/aboutMe">Rólam</a>
                                     </li>
-                                    <li class=""><a href="/services">Szolgáltatások</a>
+                                    <li class=""><a href="/products">Szolgáltatások</a>
                                     </li>
                                     <li><a href="/#contact-section">Kapcsolat</a></li>
                                 </ul>
@@ -278,6 +278,14 @@
                                                 <ul class="list-link">
                                                     <li><a href="/adatvedelem">Adatvédelem</a></li>
                                                     <li><a href="/aboutMe">GYIK</a></li>
+                                                    @if (Auth::check() && Auth::user()->is_admin)
+                                                        {{-- Itt jelenik meg az adminnak szóló tartalom vagy link --}}
+                                                        <a href="/admin/home">Admin felület</a>
+                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
+                                                            @csrf
+                                                            <button type="submit" class="btn btn-link p-0 m-0 align-baseline" style="color: inherit; background: none; border: none; cursor: pointer;">Kilépés</button>
+                                                        </form>
+                                                    @endif
                                                 </ul>
                                             </div>
                                         </div>

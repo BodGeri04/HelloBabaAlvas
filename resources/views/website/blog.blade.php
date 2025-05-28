@@ -83,17 +83,24 @@
 
                             <!-- More Posts -->
                             <div class="more-posts">
-                                <div class="clearfix">
+                                <div class="clearfix d-flex justify-content-between align-items-center flex-wrap" style="gap: 10px;">
                                     @if ($pastBlog)
-                                        <div class="prev pull-left"><a href="{{ url($pastBlog->slug) }}">Korábbi blog
-                                                <strong>{{ $pastBlog->title }}</strong></a></div>
+                                        <div class="prev text-truncate" style="max-width: 45%;">
+                                            <a href="{{ url($pastBlog->slug) }}">
+                                                Korábbi blog
+                                                <strong class="d-block text-truncate" style="max-width: 100%;">{{ $pastBlog->title }}</strong>
+                                            </a>
+                                        </div>
                                     @endif
                                     <span class="grid-icon flaticon-grid"></span>
                                     @if ($latestBlog)
-                                        <div class="next pull-right"><a href="{{ url($latestBlog->slug) }}">Legújabb blog
-                                                <strong>{{ $latestBlog->title }}</strong></a></div>
+                                        <div class="next text-truncate text-end" style="max-width: 45%;">
+                                            <a href="{{ url($latestBlog->slug) }}">
+                                                Legújabb blog
+                                                <strong class="d-block text-truncate" style="max-width: 100%;">{{ $latestBlog->title }}</strong>
+                                            </a>
+                                        </div>
                                     @endif
-                                    </ul>
                                 </div>
                             </div>
 

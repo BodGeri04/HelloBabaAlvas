@@ -16,7 +16,8 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="/assets/admin/dist/css/adminlte.min.css">
     <!--TINYMCE-->
-    <script src="https://cdn.tiny.cloud/1/z3ivhoi87w7309hzr8a537h5xm156y3unisq93zp528w3jsq/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/z3ivhoi87w7309hzr8a537h5xm156y3unisq93zp528w3jsq/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
 </head>
 
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -24,8 +25,8 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60"
-                width="60">
+            <img class="animation__wobble" src="{{ asset('assets/images/gallery/logo.png') }}" alt="AdminLTELogo"
+                height="60" width="60">
         </div>
 
         <!-- Navbar -->
@@ -76,8 +77,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="dist/img/user1-128x128.jpg" alt="User Avatar"
-                                    class="img-size-50 mr-3 img-circle">
+                                <img src="" alt="User Avatar" class="img-size-50 mr-3 img-circle">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         Brad Diesel
@@ -93,8 +93,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="dist/img/user8-128x128.jpg" alt="User Avatar"
-                                    class="img-size-50 img-circle mr-3">
+                                <img src="" alt="User Avatar" class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         John Pierce
@@ -110,8 +109,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="dist/img/user3-128x128.jpg" alt="User Avatar"
-                                    class="img-size-50 img-circle mr-3">
+                                <img src="" alt="User Avatar" class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         Nora Silvester
@@ -173,21 +171,26 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
-                <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-                    style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+            <a href="/admin/home" class="brand-link">
+                <img src="{{ asset('assets/images/gallery/logo.png') }}" alt="AdminLTE Logo" alt="AdminLTE Logo"
+                    class="brand-image img-circle elevation-3" style="opacity: .8">
             </a>
 
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
-                @if(Auth::user())
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="info">
-                        <a href="#" class="d-block">{{Auth::user()->name}}</a>
+                @if (Auth::user())
+                    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                        <div class="info">
+                            <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+                        </div>
                     </div>
-                </div>
+                    <!-- Kilépés gomb -->
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="btn btn-danger btn-block mb-3">Kilépés <span id="logout-timer"
+                                style="font-size:0.9em; margin-left:10px;"></span></button>
+                    </form>
                 @endif
                 <!-- SidebarSearch Form -->
                 <div class="form-inline">
@@ -315,6 +318,45 @@
                 });
             });
         </script>
+        <script>
+            let logoutTimer;
+            let countdownInterval;
+            const logoutAfter = 20 * 60; // másodpercben
+            let timeLeft = logoutAfter;
+
+            function updateTimerDisplay() {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                document.getElementById('logout-timer').textContent =
+                    `(${minutes}:${seconds.toString().padStart(2, '0')})`;
+            }
+
+            function resetLogoutTimer() {
+                clearTimeout(logoutTimer);
+                clearInterval(countdownInterval);
+                timeLeft = logoutAfter;
+                updateTimerDisplay();
+
+                countdownInterval = setInterval(() => {
+                    timeLeft--;
+                    updateTimerDisplay();
+                    if (timeLeft <= 0) {
+                        clearInterval(countdownInterval);
+                    }
+                }, 1000);
+
+                logoutTimer = setTimeout(() => {
+                    document.getElementById('auto-logout-form').submit();
+                }, logoutAfter * 1000);
+            }
+
+            document.addEventListener('click', resetLogoutTimer);
+
+            window.onload = resetLogoutTimer;
+        </script>
+        <form id="auto-logout-form" method="POST" action="{{ route('logout') }}" style="display:none;">
+            @csrf
+        </form>
 </body>
 
 </html>
