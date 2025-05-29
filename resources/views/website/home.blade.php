@@ -418,7 +418,7 @@
                 <div class="image-column col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <div class="image">
-                            <img src="assets/images/gallery/kapcsolatfelvetel.jpg" alt="" />
+                            <img style="max-width: 30%, max-height:30%" src="assets/images/gallery/kapcsolatfelvetel_telefon.jpg" alt="" />
                         </div>
                     </div>
                 </div>
@@ -428,7 +428,7 @@
                     <div class="inner-column">
                         <div class="sec-title">
                             <div class="title color-three">Kapcsolatfelvétel</div>
-                            <h2>Írj nekem</h2>
+                            <h2>Lépj kapcsolatba velem!</h2>
                         </div>
 
                         <!-- Contact Form -->

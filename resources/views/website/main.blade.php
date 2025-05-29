@@ -80,8 +80,8 @@
 
                     <!-- Logo Box -->
                     <div class="pull-left logo-box">
-                        <div class="logo"><a href="/"><img src="assets/images/gallery/logo.png"
-                                    style="max-width: 100px;max-height:100px;"alt="" title=""></a>
+                        <div class="logo"><a href="/"><img src="assets/images/gallery/baba3.png"
+                                    style="max-width: 90px;max-height:90px;"alt="" title=""></a>
                         </div>
                     </div>
 
@@ -137,7 +137,7 @@
                 <div class="auto-container clearfix">
                     <!--Logo-->
                     <div class="logo pull-left">
-                        <a href="/" title=""><img src="assets/images/logo-small.png" alt=""
+                        <a href="/" title=""><img style="max-width: 90px;max-height:90px;" src="assets/images/gallery/baba3.png" alt=""
                                 title=""></a>
                     </div>
                     <!--Right Col-->
@@ -162,7 +162,7 @@
                 <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
 
                 <nav class="menu-box">
-                    <div class="nav-logo"><a href="/"><img src="assets/images/logo-small.png"
+                    <div class="nav-logo"><a href="/"><img style="max-width: 90px;max-height:90px;" src="assets/images/gallery/baba3.png.png"
                                 alt="" title=""></a></div>
                     <div class="menu-outer">
                         <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
