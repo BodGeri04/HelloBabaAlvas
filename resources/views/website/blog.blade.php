@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <title>{{ $title ?? config('app.name') }}</title>
 @extends('website.main')
 @section('content')
@@ -38,104 +39,106 @@
                                 <img src="{{ asset('assets/images/gallery/blog/' . $blog->cover_image) }}"
                                     alt="{{ $blog->cover_image }}" />
                             </div>
-
-                            <div class="setting-box">
-                                <h3>{{ $blog->second_main_title }}</h3>
-                                <div class="box-inner">
-                                    <div class="small-image">
-                                        <img src="{{ asset('assets/images/gallery/blog/' . $blog->second_cover_image) }}"
-                                            alt="{{ $blog->second_cover_image }}" />
+                            @if ($blog->second_main_title)
+                                <div class="setting-box">
+                                    <h3>{{ $blog->second_main_title }}</h3>
+                                    <div class="box-inner">
+                                        <div class="small-image">
+                                            <img src="{{ asset('assets/images/gallery/blog/' . $blog->second_cover_image) }}"
+                                                alt="{{ $blog->second_cover_image }}" />
+                                        </div>
+                                        <p>{!! $blog->second_content !!}</p>
                                     </div>
-                                    <p>{!! $blog->second_content !!}</p>
                                 </div>
-                            </div>
-                            @if ($blog->quote)
-                                <blockquote>
-                                    <span class="quote-icon flaticon-quote-2"></span>
-                                    <div class="quote-text">{!! $blog->quote !!}</div>
-                                    <div class="designation">
-                                        {{ $blog->quote_author }}
-                                        @if ($blog->quote_title)
-                                            <span>{{ $blog->quote_title }}</span>
-                                        @endif
-                                    </div>
-                                </blockquote>
                             @endif
-                            <div class="blog-ulol">
-                                <p>{!! $blog->end_content !!}</p>
-                            </div>
-                            <!-- Post Share Options-->
-                            <div class="post-share-options">
-                                <div class="post-share-inner clearfix">
-                                    <div class="pull-left tags">
-                                        <strong>Kapcsolódó témák</strong>
-                                        @if (!empty($blog->tags))
-                                            @foreach ($blog->tags as $tag)
-                                                <a href="#">{{ $tag }}</a>
-                                            @endforeach
-                                        @endif
-                                    </div>
-                                    <ul class="social-box pull-right">
-                                        <li class="share">Közösséi platformokon is</li>
-                                        @if (!empty($blog->social_share_link['facebook']))
-                                            <li>
-                                                <a href="{{ $blog->social_share_link['facebook'] }}" target="_blank"><span
-                                                        class="fa fa-facebook-f"></span></a>
-                                            </li>
-                                        @endif
-                                        @if (!empty($blog->social_share_link['instagram']))
-                                            <li>
-                                                <a href="{{ $blog->social_share_link['instagram'] }}" target="_blank"><span
-                                                        class="fa fa-instagram"></span></a>
-                                            </li>
-                                        @endif
-                                        @if (!empty($blog->social_share_link['tiktok']))
-                                            <li>
-                                                <a href="{{ $blog->social_share_link['tiktok'] }}" target="_blank"><span
-                                                        class="fa fa-tiktok"></span></a>
-                                            </li>
-                                        @endif
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- More Posts -->
-                            <div class="more-posts">
-                                <div class="clearfix d-flex justify-content-between align-items-center flex-wrap"
-                                    style="gap: 10px;">
-                                    @if ($pastBlog)
-                                        <div class="prev text-truncate" style="max-width: 45%;">
-                                            <a href="{{ url($pastBlog->slug) }}">
-                                                Korábbi blog
-                                                <strong class="d-block text-truncate"
-                                                    style="max-width: 100%;">{{ $pastBlog->title }}</strong>
-                                            </a>
+                                @if ($blog->quote)
+                                    <blockquote>
+                                        <span class="quote-icon flaticon-quote-2"></span>
+                                        <div class="quote-text">{!! $blog->quote !!}</div>
+                                        <div class="designation">
+                                            {{ $blog->quote_author }}
+                                            @if ($blog->quote_title)
+                                                <span>{{ $blog->quote_title }}</span>
+                                            @endif
                                         </div>
-                                    @endif
-                                    <span class="grid-icon flaticon-grid"></span>
-                                    @if ($latestBlog)
-                                        <div class="next text-truncate text-end" style="max-width: 45%;">
-                                            <a href="{{ url($latestBlog->slug) }}">
-                                                Legújabb blog
-                                                <strong class="d-block text-truncate"
-                                                    style="max-width: 100%;">{{ $latestBlog->title }}</strong>
-                                            </a>
-                                        </div>
-                                    @endif
+                                    </blockquote>
+                                @endif
+                                <div class="blog-ulol">
+                                    <p>{!! $blog->end_content !!}</p>
                                 </div>
-                            </div>
-
-                            <!-- Blog Author Box -->
-                            <div class="blog-author-box">
-                                <div class="author-inner">
-                                    <div class="thumb"><img src="assets/images/resource/author-5.jpg" alt=""></div>
-                                    <div class="title">Írta</div>
-                                    <h4 class="name">Bod Orsolya</h4>
-                                    <div class="text">Baba és kisgyermek alvástanácsadó.
+                                <!-- Post Share Options-->
+                                <div class="post-share-options">
+                                    <div class="post-share-inner clearfix">
+                                        <div class="pull-left tags">
+                                            <strong>Kapcsolódó témák</strong>
+                                            @if (!empty($blog->tags))
+                                                @foreach ($blog->tags as $tag)
+                                                    <a href="#">{{ $tag }}</a>
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                        <ul class="social-box pull-right">
+                                            <li class="share">Közösséi platformokon is</li>
+                                            @if (!empty($blog->social_share_link['facebook']))
+                                                <li>
+                                                    <a href="{{ $blog->social_share_link['facebook'] }}"
+                                                        target="_blank"><span class="fa fa-facebook-f"></span></a>
+                                                </li>
+                                            @endif
+                                            @if (!empty($blog->social_share_link['instagram']))
+                                                <li>
+                                                    <a href="{{ $blog->social_share_link['instagram'] }}"
+                                                        target="_blank"><span class="fa fa-instagram"></span></a>
+                                                </li>
+                                            @endif
+                                            @if (!empty($blog->social_share_link['tiktok']))
+                                                <li>
+                                                    <a href="{{ $blog->social_share_link['tiktok'] }}"
+                                                        target="_blank"><span class="fa fa-tiktok"></span></a>
+                                                </li>
+                                            @endif
+                                        </ul>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- End Blog Author Box -->
+
+                                <!-- More Posts -->
+                                <div class="more-posts">
+                                    <div class="clearfix d-flex justify-content-between align-items-center flex-wrap"
+                                        style="gap: 10px;">
+                                        @if ($pastBlog)
+                                            <div class="prev text-truncate" style="max-width: 45%;">
+                                                <a href="{{ url($pastBlog->slug) }}">
+                                                    Korábbi blog
+                                                    <strong class="d-block text-truncate"
+                                                        style="max-width: 100%;">{{ $pastBlog->title }}</strong>
+                                                </a>
+                                            </div>
+                                        @endif
+                                        <span class="grid-icon flaticon-grid"></span>
+                                        @if ($latestBlog)
+                                            <div class="next text-truncate text-end" style="max-width: 45%;">
+                                                <a href="{{ url($latestBlog->slug) }}">
+                                                    Legújabb blog
+                                                    <strong class="d-block text-truncate"
+                                                        style="max-width: 100%;">{{ $latestBlog->title }}</strong>
+                                                </a>
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <!-- Blog Author Box -->
+                                <div class="blog-author-box">
+                                    <div class="author-inner">
+                                        <div class="thumb"><img src="assets/images/resource/author-5.jpg" alt="">
+                                        </div>
+                                        <div class="title">Írta</div>
+                                        <h4 class="name">Bod Orsolya</h4>
+                                        <div class="text">Baba és kisgyermek alvástanácsadó.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Blog Author Box -->
 
                         </div>
                     </div>

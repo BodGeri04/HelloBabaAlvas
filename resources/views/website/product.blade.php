@@ -49,7 +49,7 @@
                                 <!-- Tab / Active Tab -->
                                 <div class="tab active-tab" id="prod-overview">
                                     <div class="content">
-                                       <p>{{$product->detailed_description}}</p>
+                                       <p>{!! $product->detailed_description !!}</p>
                                         
                                         <!-- Requirement Box -->
                                         <div class="requirement">

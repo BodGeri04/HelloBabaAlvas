@@ -55,7 +55,13 @@ class AdminProductController extends Controller
         } else {
             $product->image = 'noimage.jpg';
         }
-
+        if ($request->input('delete_image') == 1 && $product->image) {
+            $imagePath = public_path('/assets/images/gallery/' . $product->image);
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+            $product->image = 'noimage.jpg';
+        }
         $product->save();
         return redirect()->route('admin.products.index')->with('success', 'Termék sikeresen létrehozva.');
     }
@@ -87,7 +93,7 @@ class AdminProductController extends Controller
             'name' => 'required',
             'description' => 'required',
             'price' => 'required|numeric',
-            'image' => 'nullable|image|max:2048',
+            'image' => 'nullable|image',
             'slug' => 'unique:products,slug',
         ]);
 
@@ -113,7 +119,13 @@ class AdminProductController extends Controller
             $request->image->move(public_path('/assets/images/gallery'), $imageName);
             $product->image = $imageName;
         }
-
+        if ($request->input('delete_image') == 1 && $product->image) {
+            $imagePath = public_path('/assets/images/gallery/' . $product->image);
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+            $product->image = 'noimage.jpg';
+        }
         $product->save();
 
         return redirect()->route('admin.products.index')->with('success', 'Termék sikeresen frissítve.');

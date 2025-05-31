@@ -11,13 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/images/gallery/baba3.png') }}" type="image/png">
+    <link rel="icon" href="{{ asset('assets/images/gallery/baba3.png') }}" type="image/png">
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="keywords" content="baba, alvás, babaalvás, nyugodt éjszaka, altatás, babatippek">
     <meta name="author" content="Pihenj Baba Csapata">
+    <meta name="description" content="Nyugodt alvás a babának és a családnak. Személyre szabott babaaltatási tanácsadás és tippek.">
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ url()->current() }}">
     <!--TINYMCE-->
@@ -169,7 +170,7 @@
 
                 <nav class="menu-box">
                     <div class="nav-logo"><a href="/"><img style="max-width: 90px;max-height:90px;"
-                                src="assets/images/gallery/baba3.png.png" alt="" title=""></a></div>
+                                src="assets/images/gallery/baba3.png" alt="" title=""></a></div>
                     <div class="menu-outer">
                         <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                     </div>

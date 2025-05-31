@@ -1,9 +1,13 @@
 @extends('admin.main')
 @section('content')
     <section class="section">
-        @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul class="mb-0">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
         @endif
         <div class="card">
@@ -23,7 +27,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="name">Név</label>
+                                <label for="name">Megnevezés</label>
                                 <input type="text" name="name" class="form-control"
                                     value="{{ old('name', $product->name ?? '') }}">
 
@@ -34,8 +38,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="description">Leírás</label>
-                                <input required type="text" class="form-control" id="description" name="description"
-                                    value="{{ old('description', $product->description ?? '') }}">
+                                <textarea class="form-control" id="description" name="description" required>{{ old('description', $product->description ?? '') }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -43,8 +46,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="detailed_description">Részletes leírás</label>
-                                <input type="text" class="form-control" id="detailed_description" name="detailed_description"
-                                    value="{{ old('detailed_description', $product->detailed_description ?? '') }}">
+                                <textarea class="form-control" id="detailed_description" name="detailed_description">{{ old('detailed_description', $product->detailed_description ?? '') }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -74,13 +76,17 @@
                                 <label class="custom-file-label" for="image">Fájl kiválasztása</label>
                             </div>
                         </div>
+                        {{-- ... --}}
                         @if (isset($product) && $product->image)
-                            <div class="mt-2">
+                            <div class="mt-2" id="image-preview-container">
                                 <img id="image-preview" src="{{ asset('/assets/images/gallery/' . $product->image) }}"
                                     alt="Termékkép" width="200">
+                                <button type="button" class="btn btn-danger btn-sm ms-2" id="delete-image-btn">Kép
+                                    törlése</button>
                             </div>
+                            <input type="hidden" name="delete_image" id="delete-image" value="0">
                         @else
-                            <div class="mt-2">
+                            <div class="mt-2" id="image-preview-container">
                                 <img id="image-preview" src="#" alt="Előnézet" style="display: none;" width="200">
                             </div>
                         @endif
@@ -102,7 +108,22 @@
                 const preview = document.getElementById('image-preview');
                 preview.src = URL.createObjectURL(file);
                 preview.style.display = 'block';
+                // Ha új képet választ, ne töröljük a régit
+                const deleteInput = document.getElementById('delete-image');
+                if (deleteInput) deleteInput.value = 0;
             }
         });
+
+        const deleteBtn = document.getElementById('delete-image-btn');
+        if (deleteBtn) {
+            deleteBtn.addEventListener('click', function() {
+                // Elrejtjük a képet
+                document.getElementById('image-preview').style.display = 'none';
+                // Beállítjuk, hogy törölni kell
+                document.getElementById('delete-image').value = 1;
+                // Opcionálisan a gombot is elrejtheted:
+                deleteBtn.style.display = 'none';
+            });
+        }
     </script>
 @endsection

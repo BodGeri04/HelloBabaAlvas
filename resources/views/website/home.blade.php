@@ -160,7 +160,7 @@
                 <div class="services-carousel owl-carousel owl-theme">
                     @foreach ($products as $product)
                         <!-- Service Block -->
-                        <div class="service-block translate-top">
+                        <div class="service-block translate-top{{ $product->price < 1 ? ' soon-available' : '' }}" style="{{ $product->price < 1 ? 'opacity:0.6; filter: grayscale(60%); pointer-events: none;' : '' }}">
                             <div class="inner-box">
                                 <div class="image">
                                     <a @if ($product->price > 0) href="/product/{{ $product->slug }}" @endif>
@@ -194,7 +194,7 @@
                                             <h4>{{ $product->name }}</h4>
                                         @endif
                                     </div>
-                                    <label>{{ $product->description }}</label>
+                                    <label>{!! $product->description!!}</label>
                                 </div>
 
                             </div>

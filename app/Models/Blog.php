@@ -13,8 +13,24 @@ class Blog extends Model
     protected static function boot()
     {
         parent::boot();
+        // Létrehozáskor
         static::creating(function ($blog) {
-            $blog->slug = Str::slug($blog->title);
+            $slug = Str::slug($blog->title);
+            if (Blog::where('slug', $slug)->exists()) {
+                $slug .= '-' . (Blog::where('slug', 'like', $slug . '%')->count() + 1);
+            }
+            $blog->slug = $slug;
+        });
+
+        // Frissítéskor
+        static::updating(function ($blog) {
+            if ($blog->isDirty('title')) {
+                $slug = Str::slug($blog->title);
+                if (Blog::where('slug', $slug)->where('id', '!=', $blog->id)->exists()) {
+                    $slug .= '-' . (Blog::where('slug', 'like', $slug . '%')->where('id', '!=', $blog->id)->count() + 1);
+                }
+                $blog->slug = $slug;
+            }
         });
     }
     protected $casts = [

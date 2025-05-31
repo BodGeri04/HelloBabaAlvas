@@ -103,9 +103,22 @@ class AdminBlogController extends Controller
     public function show($slug)
     {
         $blog = Blog::where('slug', $slug)->firstOrFail();
-        $tags = is_array($blog->tags) ? $blog->tags : json_decode($blog->tags ?? '[]', true);
-        // Az első 5 tag kiválasztása
-        $limitedTags = array_slice($tags, 0, 5);
+        
+        // Az összes blogból összegyűjtjük az összes tageket, majd kiválasztjuk az első 5 egyedit
+        $allTags = Blog::pluck('tags')->toArray();
+        $flattenedTags = [];
+        foreach ($allTags as $tags) {
+            if (is_array($tags)) {
+            $flattenedTags = array_merge($flattenedTags, $tags);
+            } elseif (is_string($tags)) {
+            $decoded = json_decode($tags, true);
+            if (is_array($decoded)) {
+                $flattenedTags = array_merge($flattenedTags, $decoded);
+            }
+            }
+        }
+        $uniqueTags = array_unique(array_map('trim', $flattenedTags));
+        $limitedTags = array_slice($uniqueTags, 0, 5);
 
         // Cookie kulcs - Laravel titkosítja automatikusan
         $blogHash = hash('sha256', 'blog-' . $blog->id);

@@ -22,17 +22,25 @@ class Product extends Model
     protected static function boot()
     {
         parent::boot();
+        // Létrehozáskor
         static::creating(function ($product) {
-            // Ellenőrizzük, hogy létezik-e már az adott slug
             $slug = Str::slug($product->name);
-
-            // Ha létezik, akkor hozzáadunk egy számot az egyediség érdekében
             if (Product::where('slug', $slug)->exists()) {
                 $slug .= '-' . (Product::where('slug', 'like', $slug . '%')->count() + 1);
             }
-
-            // Hozzárendeljük a slug-ot a termékhez
             $product->slug = $slug;
+        });
+
+        // Frissítéskor
+        static::updating(function ($product) {
+            // Csak akkor generáljunk új slugot, ha a név változott
+            if ($product->isDirty('name')) {
+                $slug = Str::slug($product->name);
+                if (Product::where('slug', $slug)->where('id', '!=', $product->id)->exists()) {
+                    $slug .= '-' . (Product::where('slug', 'like', $slug . '%')->where('id', '!=', $product->id)->count() + 1);
+                }
+                $product->slug = $slug;
+            }
         });
     }
 }
