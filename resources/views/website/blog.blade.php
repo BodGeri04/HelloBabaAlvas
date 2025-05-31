@@ -67,28 +67,48 @@
                             <!-- Post Share Options-->
                             <div class="post-share-options">
                                 <div class="post-share-inner clearfix">
-                                    <div class="pull-left tags"><strong>Releted Tags</strong><a href="#">Popular</a>
-                                        <a href="#">Desgin</a><a href="#">UX</a>
+                                    <div class="pull-left tags">
+                                        <strong>Kapcsolódó témák</strong>
+                                        @if (!empty($blog->tags))
+                                            @foreach ($blog->tags as $tag)
+                                                <a href="#">{{ $tag }}</a>
+                                            @endforeach
+                                        @endif
                                     </div>
                                     <ul class="social-box pull-right">
-                                        <li class="share">Social Share</li>
-                                        <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-pinterest-p"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-dribbble"></span></a></li>
+                                        <li class="share">Közösséi platformokon is</li>
+                                        @if (!empty($blog->social_share_link['facebook']))
+                                            <li>
+                                                <a href="{{ $blog->social_share_link['facebook'] }}" target="_blank"><span
+                                                        class="fa fa-facebook-f"></span></a>
+                                            </li>
+                                        @endif
+                                        @if (!empty($blog->social_share_link['instagram']))
+                                            <li>
+                                                <a href="{{ $blog->social_share_link['instagram'] }}" target="_blank"><span
+                                                        class="fa fa-instagram"></span></a>
+                                            </li>
+                                        @endif
+                                        @if (!empty($blog->social_share_link['tiktok']))
+                                            <li>
+                                                <a href="{{ $blog->social_share_link['tiktok'] }}" target="_blank"><span
+                                                        class="fa fa-tiktok"></span></a>
+                                            </li>
+                                        @endif
                                     </ul>
                                 </div>
                             </div>
 
                             <!-- More Posts -->
                             <div class="more-posts">
-                                <div class="clearfix d-flex justify-content-between align-items-center flex-wrap" style="gap: 10px;">
+                                <div class="clearfix d-flex justify-content-between align-items-center flex-wrap"
+                                    style="gap: 10px;">
                                     @if ($pastBlog)
                                         <div class="prev text-truncate" style="max-width: 45%;">
                                             <a href="{{ url($pastBlog->slug) }}">
                                                 Korábbi blog
-                                                <strong class="d-block text-truncate" style="max-width: 100%;">{{ $pastBlog->title }}</strong>
+                                                <strong class="d-block text-truncate"
+                                                    style="max-width: 100%;">{{ $pastBlog->title }}</strong>
                                             </a>
                                         </div>
                                     @endif
@@ -97,7 +117,8 @@
                                         <div class="next text-truncate text-end" style="max-width: 45%;">
                                             <a href="{{ url($latestBlog->slug) }}">
                                                 Legújabb blog
-                                                <strong class="d-block text-truncate" style="max-width: 100%;">{{ $latestBlog->title }}</strong>
+                                                <strong class="d-block text-truncate"
+                                                    style="max-width: 100%;">{{ $latestBlog->title }}</strong>
                                             </a>
                                         </div>
                                     @endif
@@ -146,23 +167,23 @@
                         </div>
                         <!-- End Sidebar Widget / Popular Posts -->
 
-                        {{-- <!-- Sidebar Widget / Category Widget -->
+                        <!-- Sidebar Widget / Category Widget -->
                         <div class="sidebar-widget-two category-widget-two">
                             <div class="widget-content">
                                 <!-- Sidebar Title -->
                                 <div class="sidebar-title-two">
-                                    <h5>Categories</h5>
+                                    <h5>Népszerű kategóriák</h5>
                                 </div>
                                 <ul class="cat-list-two">
-                                    <li><a href="#">Business<span>26</span></a></li>
-                                    <li><a href="#">Consultant<span>30</span></a></li>
-                                    <li><a href="#">Creative<span>71</span></a></li>
-                                    <li><a href="#">UI/UX<span>56</span></a></li>
-                                    <li><a href="#">Technology<span>60</span></a></li>
+                                    @foreach ($limitedTags as $tag)
+                                        <li><a href="#">{{ $tag }}</a>
+                                            {{-- ezt kell bemásolni a href-be: {{ url('blog/tag/' . urlencode($tag)) }} --}}
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
-                        <!-- End Sidebar Widget / Category Widget --> --}}
+                        <!-- End Sidebar Widget / Category Widget -->
 
                     </aside>
                 </div>

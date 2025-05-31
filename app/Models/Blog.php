@@ -17,4 +17,8 @@ class Blog extends Model
             $blog->slug = Str::slug($blog->title);
         });
     }
+    protected $casts = [
+        'social_share_link' => 'array', // Laravel automatikusan arrayként kezel
+        'tags' => 'array',
+    ];
 }

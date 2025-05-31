@@ -41,20 +41,24 @@
             <!-- Header Top -->
             <div class="header-top" style="background-color: rgba(0, 0, 0, 0.418)">
                 <div class="auto-container">
-                    <div class="inner-container d-flex justify-content-between align-items-center flex-wrap" style="gap: 10px;">
+                    <div class="inner-container d-flex justify-content-between align-items-center flex-wrap"
+                        style="gap: 10px;">
 
                         <!-- Left: Email -->
                         <div class="top-left d-flex align-items-center" style="height: 40px;">
                             <div class="text d-flex align-items-center" style="height: 100%;">
-                                <i class="fa fa-envelope" style="margin-right: 5px; vertical-align: middle; font-size: 18px;"></i>
+                                <i class="fa fa-envelope"
+                                    style="margin-right: 5px; vertical-align: middle; font-size: 18px;"></i>
                                 <span style="vertical-align: middle;">hello@pihenjbaba.hu</span>
                             </div>
                         </div>
 
                         <!-- Center: Phone -->
-                        <div class="top-center text-center flex-grow-1 d-flex align-items-center justify-content-center" style="height: 40px;">
+                        <div class="top-center text-center flex-grow-1 d-flex align-items-center justify-content-center"
+                            style="height: 40px;">
                             <div class="text d-flex align-items-center" style="color:white; height: 100%;">
-                                <i class="fa fa-phone" style="margin-right: 5px; vertical-align: middle; font-size: 18px;"></i>
+                                <i class="fa fa-phone"
+                                    style="margin-right: 5px; vertical-align: middle; font-size: 18px;"></i>
                                 <span style="vertical-align: middle;">+36 20 560 7609</span>
                             </div>
                         </div>
@@ -63,11 +67,13 @@
                         <div class="top-right d-flex align-items-center" style="height: 40px;">
                             <ul class="social-box d-flex gap-2 align-items-center mb-0" style="height: 100%;">
                                 <li><a href="https://www.facebook.com/profile.php?id=61574071451804"
-                                        class="fa fa-facebook-f" target="_blank" style="font-size: 18px; vertical-align: middle;"></a></li>
+                                        class="fa fa-facebook-f" target="_blank"
+                                        style="font-size: 18px; vertical-align: middle;"></a></li>
                                 <li><a href="https://www.instagram.com/pihenjbaba" class="fa fa-instagram"
                                         target="_blank" style="font-size: 18px; vertical-align: middle;"></a></li>
                                 <li><a href="https://www.tiktok.com/@pihenjbaba?_t=ZN-8w9Jl458plP&_r=1"
-                                        class="fa fa-tiktok" target="_blank" style="font-size: 18px; vertical-align: middle;"></a></li>
+                                        class="fa fa-tiktok" target="_blank"
+                                        style="font-size: 18px; vertical-align: middle;"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -137,8 +143,8 @@
                 <div class="auto-container clearfix">
                     <!--Logo-->
                     <div class="logo pull-left">
-                        <a href="/" title=""><img style="max-width: 90px;max-height:90px;" src="assets/images/gallery/baba3.png" alt=""
-                                title=""></a>
+                        <a href="/" title=""><img style="max-width: 90px;max-height:90px;"
+                                src="assets/images/gallery/baba3.png" alt="" title=""></a>
                     </div>
                     <!--Right Col-->
                     <div class="pull-right">
@@ -162,8 +168,8 @@
                 <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
 
                 <nav class="menu-box">
-                    <div class="nav-logo"><a href="/"><img style="max-width: 90px;max-height:90px;" src="assets/images/gallery/baba3.png.png"
-                                alt="" title=""></a></div>
+                    <div class="nav-logo"><a href="/"><img style="max-width: 90px;max-height:90px;"
+                                src="assets/images/gallery/baba3.png.png" alt="" title=""></a></div>
                     <div class="menu-outer">
                         <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                     </div>
@@ -251,8 +257,8 @@
                                 <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                                     <div class="footer-widget logo-widget">
                                         <div class="logo">
-                                            <a href="/"><img src="assets/images/footer-logo.png"
-                                                    alt="" /></a>
+                                            <a href="/"><img src="assets/images/gallery/baba3.png"
+                                                    style="max-width: 90px;max-height:90px;" alt="" /></a>
                                         </div>
                                         <div class="text">Nyugodt alvás a babának és a családnak.<br>Személyre
                                             szabott megoldások a babád és a te igényeid összehangolásával.</div>
@@ -281,9 +287,12 @@
                                                     @if (Auth::check() && Auth::user()->is_admin)
                                                         {{-- Itt jelenik meg az adminnak szóló tartalom vagy link --}}
                                                         <a href="/admin/home">Admin felület</a>
-                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
+                                                        <form id="logout-form" action="{{ route('logout') }}"
+                                                            method="POST" style="display: inline;">
                                                             @csrf
-                                                            <button type="submit" class="btn btn-link p-0 m-0 align-baseline" style="color: inherit; background: none; border: none; cursor: pointer;">Kilépés</button>
+                                                            <button type="submit"
+                                                                class="btn btn-link p-0 m-0 align-baseline"
+                                                                style="color: inherit; background: none; border: none; cursor: pointer;">Kilépés</button>
                                                         </form>
                                                     @endif
                                                 </ul>

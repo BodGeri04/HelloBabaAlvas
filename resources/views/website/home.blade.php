@@ -207,8 +207,11 @@
     <!-- End Services Section -->
 
     <!-- Process Section -->
-    <section class="process-section" style="background-image: url(assets/images/background/pattern-2.png); position: relative; overflow: hidden;">
-        <div style="position: absolute; inset: 0; background: inherit; filter: blur(4px); z-index: 0; pointer-events: none;"></div>
+    <section class="process-section"
+        style="background-image: url(assets/images/background/pattern-2.png); position: relative; overflow: hidden;">
+        <div
+            style="position: absolute; inset: 0; background: inherit; filter: blur(4px); z-index: 0; pointer-events: none;">
+        </div>
         <div class="auto-container">
             <!-- Sec Title -->
             <div class="sec-title light">
@@ -415,10 +418,13 @@
             <div class="row clearfix">
 
                 <!-- Image Column -->
-                <div class="image-column col-lg-6 col-md-12 col-sm-12">
-                    <div class="inner-column">
-                        <div class="image">
-                            <img style="max-width: 30%, max-height:30%" src="assets/images/gallery/kapcsolatfelvetel_telefon.jpg" alt="" />
+                <div class="image-column col-lg-6 col-md-12 col-sm-12 d-flex align-items-center justify-content-center">
+                    <div class="inner-column w-100 d-flex justify-content-center align-items-center"
+                        style="min-height: 100%;">
+                        <div class="image"
+                            style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                            <img src="assets/images/gallery/kapcsolatfelvetel_telefon.jpg" alt=""
+                                style="max-width: 70%; width: 100%; height: auto; display: block; margin: 0 auto;" />
                         </div>
                     </div>
                 </div>
@@ -428,7 +434,7 @@
                     <div class="inner-column">
                         <div class="sec-title">
                             <div class="title color-three">Kapcsolatfelvétel</div>
-                            <h2>Lépj kapcsolatba velem!</h2>
+                            <h2>Szolgáltatás megrendelése/Kapcsolatfelvétel</h2>
                         </div>
 
                         <!-- Contact Form -->
@@ -481,10 +487,12 @@
                                         @error('message')
                                             <div class="text-danger mt-1">{{ $message }}</div>
                                         @enderror
+                                        Töltsd ki az űrlapot és küldd el!
                                     </div>
 
                                     <!-- Form Group -->
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
+
                                         <button class="theme-btn btn-style-three" type="submit" name="submit-form">
                                             <span class="txt">Küldés</span>
                                         </button>
@@ -522,7 +530,7 @@
             const marqueeContent = marqueeContainer.querySelector('.marquee-content');
 
             // Állítsd be a sebességet
-            const speed = 0.5; // Mozgás sebessége pixel/frame-ben
+            const speed = 0.9; // Mozgás sebessége pixel/frame-ben
 
             let animationFrameId = null;
             let position = 0; // Az aktuális vízszintes pozíció

@@ -41,7 +41,19 @@ class AdminBlogController extends Controller
             'content' => 'required',
             'slug' => 'nullable',
             'cover_image' => 'nullable|image',
-            'is_published' => 'nullable'
+            'is_published' => 'nullable',
+            'tags' => 'nullable|string',
+            'second_cover_image' => 'nullable|image',
+            'second_content' => 'nullable|string',
+            'end_content' => 'nullable|string',
+            'quote' => 'nullable|string',
+            'quote_author' => 'nullable|string',
+            'quote_title' => 'nullable|string',
+            'second_main_title' => 'nullable|string',
+            'created_at' => 'nullable|date',
+            'facebook_link' => 'nullable|url',
+            'instagram_link' => 'nullable|url',
+            'tiktok_link' => 'nullable|url',
         ]);
 
         $blog = new Blog();
@@ -60,6 +72,18 @@ class AdminBlogController extends Controller
         }
         $blog->second_content = $request->second_content;
         $blog->end_content = $request->end_content;
+        $socialLinks = [
+            'facebook' => $request->input('facebook_link'),
+            'instagram' => $request->input('instagram_link'),
+            'tiktok' => $request->input('tiktok_link'),
+        ];
+        $blog->social_share_link = $socialLinks;
+        // Tároljuk a tageket tömbként, de NEM kell json_encode
+        // tags
+        $blog->tags = $request->filled('tags')
+            ? array_map('trim', explode(',', $request->tags))
+            : [];
+
         $blog->created_at = $request->filled('created_at') ? $request->created_at : now();
 
         if ($request->hasFile('cover_image')) {
@@ -79,6 +103,9 @@ class AdminBlogController extends Controller
     public function show($slug)
     {
         $blog = Blog::where('slug', $slug)->firstOrFail();
+        $tags = is_array($blog->tags) ? $blog->tags : json_decode($blog->tags ?? '[]', true);
+        // Az első 5 tag kiválasztása
+        $limitedTags = array_slice($tags, 0, 5);
 
         // Cookie kulcs - Laravel titkosítja automatikusan
         $blogHash = hash('sha256', 'blog-' . $blog->id);
@@ -108,7 +135,7 @@ class AdminBlogController extends Controller
             ->take(3)
             ->get();
 
-        return view('website.blog', compact('blog', 'pastBlog', 'latestBlog', 'popularBlogs'));
+        return view('website.blog', compact('blog', 'pastBlog', 'latestBlog', 'popularBlogs', 'limitedTags'));
     }
 
     /**
@@ -131,7 +158,19 @@ class AdminBlogController extends Controller
             'content' => 'required',
             'slug' => 'nullable',
             'cover_image' => 'nullable|image',
-            'is_published' => 'nullable'
+            'is_published' => 'nullable',
+            'tags' => 'nullable|string',
+            'second_cover_image' => 'nullable|image',
+            'second_content' => 'nullable|string',
+            'end_content' => 'nullable|string',
+            'quote' => 'nullable|string',
+            'quote_author' => 'nullable|string',
+            'quote_title' => 'nullable|string',
+            'second_main_title' => 'nullable|string',
+            'created_at' => 'nullable|date',
+            'facebook_link' => 'nullable|url',
+            'instagram_link' => 'nullable|url',
+            'tiktok_link' => 'nullable|url',
         ]);
 
         $blog = Blog::findOrFail($id);
@@ -159,6 +198,16 @@ class AdminBlogController extends Controller
         }
         $blog->second_content = $request->second_content;
         $blog->end_content = $request->end_content;
+        $socialLinks = [
+            'facebook' => $request->input('facebook_link'),
+            'instagram' => $request->input('instagram_link'),
+            'tiktok' => $request->input('tiktok_link'),
+        ];
+        $blog->social_share_link = $socialLinks;
+        // tags
+        $blog->tags = $request->filled('tags')
+            ? array_map('trim', explode(',', $request->tags))
+            : [];
         $blog->created_at = $request->filled('created_at') ? $request->created_at : now();
         if ($request->hasFile('cover_image')) {
             // Töröljük a régi képet, ha nem az alapértelmezett

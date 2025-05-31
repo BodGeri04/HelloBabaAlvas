@@ -181,6 +181,32 @@
                                 </div>
                             </div>
 
+                            {{-- Címkék --}}
+                            <div class="row">
+                                <div class="col-md-4 form-group">
+                                    <label for="tags">Tag-ek</label>
+                                    <input type="text" name="tags" class="form-control"
+                                        value="{{ old('tags', isset($blog->tags) ? implode(', ', $blog->tags) : '') }}">
+                                </div>
+                            </div>
+
+                            {{-- Social média linkek --}}
+                            <div class="row">
+                                <div class="col-md-4 form-group">
+                                    <label for="tags">Linkek</label>
+                                    <!-- Social link inputok -->
+                                    <input class="form-control" type="url" name="facebook_link"
+                                        placeholder="Facebook link"
+                                        value="{{ old('facebook_link', $blog->social_share_link['facebook'] ?? '') }}">
+                                    <input class="form-control" type="url" name="instagram_link"
+                                        placeholder="Instagram link"
+                                        value="{{ old('instagram_link', $blog->social_share_link['instagram'] ?? '') }}">
+                                    <input class="form-control" type="url" name="tiktok_link"
+                                        placeholder="TikTok link"
+                                        value="{{ old('tiktok_link', $blog->social_share_link['tiktok'] ?? '') }}">
+                                </div>
+                            </div>
+
                             {{-- Gombok --}}
                             <div class="d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary me-1 mb-1">Mentés</button>
