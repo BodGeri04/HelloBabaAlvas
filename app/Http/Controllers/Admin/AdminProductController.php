@@ -50,13 +50,13 @@ class AdminProductController extends Controller
         $product->discountPrice = $request->discountPrice;
         if ($request->hasFile('image')) {
             $imageName = time() . '.' . $request->image->getClientOriginalExtension();
-            $request->image->move(public_path('/assets/images/gallery'), $imageName);
+            $request->image->move(public_path('/assets/images/gallery/product/'), $imageName);
             $product->image = $imageName;
         } else {
             $product->image = 'noimage.jpg';
         }
         if ($request->input('delete_image') == 1 && $product->image) {
-            $imagePath = public_path('/assets/images/gallery/' . $product->image);
+            $imagePath = public_path('/assets/images/gallery/product/' . $product->image);
             if (file_exists($imagePath)) {
                 unlink($imagePath);
             }
@@ -108,7 +108,7 @@ class AdminProductController extends Controller
         if ($request->hasFile('image')) {
             // Régi kép törlése, ha nem az alapértelmezett
             if ($product->image && $product->image !== 'noimage.jpg') {
-                $oldImagePath = public_path('/assets/images/gallery/' . $product->image);
+                $oldImagePath = public_path('/assets/images/gallery/product/' . $product->image);
                 if (file_exists($oldImagePath)) {
                     unlink($oldImagePath);
                 }
@@ -116,11 +116,11 @@ class AdminProductController extends Controller
 
             // Új kép mentése
             $imageName = time() . '.' . $request->image->getClientOriginalExtension();
-            $request->image->move(public_path('/assets/images/gallery'), $imageName);
+            $request->image->move(public_path('/assets/images/gallery/product/'), $imageName);
             $product->image = $imageName;
         }
         if ($request->input('delete_image') == 1 && $product->image) {
-            $imagePath = public_path('/assets/images/gallery/' . $product->image);
+            $imagePath = public_path('/assets/images/gallery/product/' . $product->image);
             if (file_exists($imagePath)) {
                 unlink($imagePath);
             }

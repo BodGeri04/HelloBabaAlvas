@@ -127,7 +127,7 @@
                                     </div>
                                 </div>
 
-                                <!-- Blog Author Box -->
+                                {{-- <!-- Blog Author Box -->
                                 <div class="blog-author-box">
                                     <div class="author-inner">
                                         <div class="thumb"><img src="assets/images/resource/author-5.jpg" alt="">
@@ -138,7 +138,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- End Blog Author Box -->
+                                <!-- End Blog Author Box --> --}}
 
                         </div>
                     </div>

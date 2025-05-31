@@ -648,7 +648,7 @@ ul {
         -webkit-transition: all .4s ease-in .8s;
         -o-transition: all .4s ease-in .8s;
         transition: all .4s ease-in .8s;
-        cursor: url(../images/cross-out.png), pointer
+        cursor: url(), pointer
 }
 
 .xs-sidebar-group .widget-heading {

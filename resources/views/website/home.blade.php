@@ -160,12 +160,13 @@
                 <div class="services-carousel owl-carousel owl-theme">
                     @foreach ($products as $product)
                         <!-- Service Block -->
-                        <div class="service-block translate-top{{ $product->price < 1 ? ' soon-available' : '' }}" style="{{ $product->price < 1 ? 'opacity:0.6; filter: grayscale(60%); pointer-events: none;' : '' }}">
+                        <div class="service-block translate-top{{ $product->price < 1 ? ' soon-available' : '' }}"
+                            style="{{ $product->price < 1 ? 'opacity:0.6; filter: grayscale(60%); pointer-events: none;' : '' }}">
                             <div class="inner-box">
                                 <div class="image">
                                     <a @if ($product->price > 0) href="/product/{{ $product->slug }}" @endif>
                                         <img class="transition-600ms"
-                                            src="{{ asset('assets/images/gallery/' . $product->image) }}"
+                                            src="{{ asset('assets/images/gallery/product/' . $product->image) }}"
                                             alt="{{ $product->name }}" />
                                     </a>
                                 </div>
@@ -194,7 +195,7 @@
                                             <h4>{{ $product->name }}</h4>
                                         @endif
                                     </div>
-                                    <label>{!! $product->description!!}</label>
+                                    <label>{!! $product->description !!}</label>
                                 </div>
 
                             </div>
@@ -492,7 +493,10 @@
 
                                     <!-- Form Group -->
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
-
+                                        <div class="g-recaptcha" data-sitekey="6LcsT1ErAAAAAHJLZDaxHg8a-YN__CYOxVB4H8I4"></div>
+                                        @error('g-recaptcha-response')
+                                            <div class="text-danger mt-1">{{ $message }}</div>
+                                        @enderror
                                         <button class="theme-btn btn-style-three" type="submit" name="submit-form">
                                             <span class="txt">Küldés</span>
                                         </button>
@@ -562,7 +566,7 @@
                     // Ez a távolság, amit egy ciklusban meg kell tenni.
                     const contentWidth = originalContent.offsetWidth;
 
-                    console.log("Calculated contentWidth:", contentWidth); // Ellenőrizd ezt a konzolban!
+                    // console.log("Calculated contentWidth:", contentWidth); // Ellenőrizd ezt a konzolban!
 
                     // Ellenőrizzük, hogy a szélesség érvényes-e
                     if (contentWidth <= 0) {

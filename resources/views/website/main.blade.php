@@ -196,7 +196,7 @@
                         <div class="sidebar-info-contents">
                             <div class="content-inner">
                                 <div class="logo">
-                                    <a href="/"><img src="assets/images/logo.png" alt="" /></a>
+                                    <a href="/"><img src="" alt="" /></a>
                                 </div>
                                 <div class="content-box">
                                     <h4>About Us</h4>
@@ -414,6 +414,7 @@
     <script src="{{ asset('assets/js/jquery-ui.js') }}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
     <script src="{{ asset('assets/js/cookie.js') }}"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             tinymce.init({
