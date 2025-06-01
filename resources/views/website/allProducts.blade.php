@@ -60,11 +60,11 @@
                         <div class="inner-box">
                             <div class="image">
                                 <a href="/product/{{$product->slug}}"><img class="transition-500ms"
-                                        src="{{ asset('assets/images/gallery/' . $product->image) }}" alt="Termék képe" /></a>
+                                        src="{{ asset('assets/images/gallery/product/' . $product->image) }}" alt="Termék képe" /></a>
                             </div>
                             <div class="lower-content">
                                 <h5><a href="/product/{{$product->slug}}">{{$product->name}}</a></h5>
-                                <label>{{$product->description}}</label>
+                                <label>{!!$product->description!!}</label>
                             </div>
                         </div>
                     </div>

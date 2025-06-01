@@ -32,7 +32,7 @@
                     @endif
                     <td>
                         @if ($product->image)
-                            <img src="{{ asset('assets/images/gallery/' . $product->image) }}" alt="{{ $product->name }}"
+                            <img src="{{ asset('assets/images/gallery/product/' . $product->image) }}" alt="{{ $product->name }}"
                                 style="max-width: 100px; max-height: 100px;">
                         @else
                             Nincs kép

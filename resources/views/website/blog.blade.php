@@ -78,7 +78,7 @@
                                             @endif
                                         </div>
                                         <ul class="social-box pull-right">
-                                            <li class="share">Közösséi platformokon is</li>
+                                            <li class="share">A cikk itt is elérhető</li>
                                             @if (!empty($blog->social_share_link['facebook']))
                                                 <li>
                                                     <a href="{{ $blog->social_share_link['facebook'] }}"

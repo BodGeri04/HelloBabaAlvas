@@ -299,29 +299,41 @@
                     </form> --}}
                 </div>
             </div>
-            <div class="row clearfix">
-                @if ($blogs->isEmpty())
-                    <div class="col-12">
-                        <p class="text-center">Nincs találat a keresésre.</p>
-                    </div>
-                @else
-                    @foreach ($blogs as $blog)
-                        <div class="course-block col-lg-3 col-md-6 col-sm-12" id="search-results">
-                            <div class="inner-box" data-wow-delay="0ms" data-wow-duration="400ms">
-                                <div class="image">
-                                    <a href="{{ $blog->slug }}">
-                                        <img class="transition-500ms"
-                                            src="{{ asset('assets/images/gallery/blog/' . $blog->cover_image) }}"
-                                            alt="{{ $blog->cover_image }}" />
-                                    </a>
-                                </div>
-                                <div class="lower-content">
-                                    <h5><a href="{{ $blog->slug }}">{{ $blog->title }}</a></h5>
-                                </div>
+            <div class="row clearfix d-none d-md-flex">
+                @foreach ($blogs as $blog)
+                    <div class="course-block col-lg-3 col-md-6 col-sm-12" id="search-results">
+                        <div class="inner-box" data-wow-delay="0ms" data-wow-duration="400ms">
+                            <div class="image">
+                                <a href="{{ $blog->slug }}">
+                                    <img class="transition-500ms"
+                                        src="{{ asset('assets/images/gallery/blog/' . $blog->cover_image) }}"
+                                        alt="{{ $blog->cover_image }}" />
+                                </a>
+                            </div>
+                            <div class="lower-content">
+                                <h5><a href="{{ $blog->slug }}">{{ $blog->title }}</a></h5>
                             </div>
                         </div>
-                    @endforeach
-                @endif
+                    </div>
+                @endforeach
+            </div>
+            <div class="blog-carousel owl-carousel owl-theme d-md-none">
+                @foreach ($blogs as $blog)
+                    <div class="course-block">
+                        <div class="inner-box" data-wow-delay="0ms" data-wow-duration="400ms">
+                            <div class="image">
+                                <a href="{{ $blog->slug }}">
+                                    <img class="transition-500ms"
+                                        src="{{ asset('assets/images/gallery/blog/' . $blog->cover_image) }}"
+                                        alt="{{ $blog->cover_image }}" />
+                                </a>
+                            </div>
+                            <div class="lower-content">
+                                <h5><a href="{{ $blog->slug }}">{{ $blog->title }}</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -493,7 +505,8 @@
 
                                     <!-- Form Group -->
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                        <div class="g-recaptcha" data-sitekey="6LcsT1ErAAAAAHJLZDaxHg8a-YN__CYOxVB4H8I4"></div>
+                                        <div class="g-recaptcha" data-sitekey="6LcsT1ErAAAAAHJLZDaxHg8a-YN__CYOxVB4H8I4">
+                                        </div>
                                         @error('g-recaptcha-response')
                                             <div class="text-danger mt-1">{{ $message }}</div>
                                         @enderror
@@ -651,6 +664,20 @@
 
             // Elindítjuk az animációt az oldal betöltésekor
             startMarquee();
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            if (window.innerWidth < 768) {
+                $('.blog-carousel').owlCarousel({
+                    loop: true,
+                    margin: 30,
+                    nav: false,
+                    dots: true,
+                    items: 1
+                });
+            }
         });
     </script>
 @endsection

@@ -79,7 +79,7 @@
                         {{-- ... --}}
                         @if (isset($product) && $product->image)
                             <div class="mt-2" id="image-preview-container">
-                                <img id="image-preview" src="{{ asset('/assets/images/gallery/' . $product->image) }}"
+                                <img id="image-preview" src="{{ asset('/assets/images/gallery/product/' . $product->image) }}"
                                     alt="Termékkép" width="200">
                                 <button type="button" class="btn btn-danger btn-sm ms-2" id="delete-image-btn">Kép
                                     törlése</button>
