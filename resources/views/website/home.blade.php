@@ -13,6 +13,18 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Bezárás"></button>
                 </div>
             @endif
+
+            @if ($errors->any())
+                <div class="alert alert-danger alert-dismissible fade show mt-3 notification-alert" role="alert"
+                    style="max-width: 700px; margin: 0 auto;">
+                    <ul class="mb-0">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Bezárás"></button>
+                </div>
+            @endif
             <div class="rev_slider fullwidthabanner" id="rev_slider_one" data-version="5.4.1">
                 <ul>
 
@@ -678,6 +690,20 @@
                     items: 1
                 });
             }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                let alerts = document.querySelectorAll('.notification-alert');
+                alerts.forEach(function(alert) {
+                    // Bootstrap 5 fade out
+                    alert.classList.remove('show');
+                    setTimeout(function() {
+                        alert.remove();
+                    }, 500); // fade ki animáció után törlés
+                });
+            }, 4000); // 4 másodperc után eltűnik
         });
     </script>
 @endsection

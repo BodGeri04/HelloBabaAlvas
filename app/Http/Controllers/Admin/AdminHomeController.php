@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Auth;
 
 class AdminHomeController extends Controller
 {
@@ -37,8 +38,8 @@ class AdminHomeController extends Controller
         // Egyedi secret kód (pl. .env-ből)
         $secret = env('MAINTENANCE_SECRET', 'titkos-kod');
 
-        if ($action === 'on') {
-            // Karbantartás bekapcsolása, admin IP és secret kód engedélyezése
+        if ($action === 'on' && Auth::check() && Auth::user()->is_admin) {
+            // Karbantartás bekapcsolása secret kód engedélyezése
             Artisan::call('down', [
                 '--secret' => $secret,
             ]);
