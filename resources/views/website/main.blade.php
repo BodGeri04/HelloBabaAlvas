@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="hu">
+    
 <head>
     <meta charset="utf-8">
     <!-- CSS -->
@@ -87,7 +87,7 @@
 
                     <!-- Logo Box -->
                     <div class="pull-left logo-box">
-                        <div class="logo"><a href="/"><img src="assets/images/gallery/baba3.png"
+                        <div class="logo"><a href="/"><img src="/assets/images/gallery/baba3.png"
                                     style="max-width: 90px;max-height:90px;"alt="" title=""></a>
                         </div>
                     </div>
@@ -145,7 +145,7 @@
                     <!--Logo-->
                     <div class="logo pull-left">
                         <a href="/" title=""><img style="max-width: 90px;max-height:90px;"
-                                src="assets/images/gallery/baba3.png" alt="" title=""></a>
+                                src="/assets/images/gallery/baba3.png" alt="" title=""></a>
                     </div>
                     <!--Right Col-->
                     <div class="pull-right">
@@ -170,7 +170,7 @@
 
                 <nav class="menu-box">
                     <div class="nav-logo"><a href="/"><img style="max-width: 90px;max-height:90px;"
-                                src="assets/images/gallery/baba3.png" alt="" title=""></a></div>
+                                src="/assets/images/gallery/baba3.png" alt="" title=""></a></div>
                     <div class="menu-outer">
                         <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                     </div>
@@ -258,7 +258,7 @@
                                 <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                                     <div class="footer-widget logo-widget">
                                         <div class="logo">
-                                            <a href="/"><img src="assets/images/gallery/baba3.png"
+                                            <a href="/"><img src="/assets/images/gallery/baba3.png"
                                                     style="max-width: 90px;max-height:90px;" alt="" /></a>
                                         </div>
                                         <div class="text">Nyugodt alvás a babának és a családnak.<br>Személyre

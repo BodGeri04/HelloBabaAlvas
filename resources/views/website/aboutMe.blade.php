@@ -294,7 +294,7 @@
                                 <ul class="broucher-list">
                                     @foreach ($blogs as $blog)
                                         <li>
-                                            <a href="{{ url($blog->slug) }}">
+                                            <a href="{{ url('blog/'.$blog->slug) }}">
                                                 {{ \Illuminate\Support\Str::limit($blog->title, 30) }}
                                             </a>
                                         </li>

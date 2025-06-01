@@ -39,6 +39,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::resource('products', AdminProductController::class);
     Route::resource('blogs', AdminBlogController::class);
     Route::get('/home', [AdminHomeController::class, 'index']);
+    // Karbantartási mód be/ki kapcsolása
+    Route::get('/maintenance', [AdminHomeController::class, 'showMaintenance'])->name('maintenance.show');
+    Route::post('/maintenance/{action}', [AdminHomeController::class, 'maintenance'])->name('maintenance');
 });
 
 // ----- ADMIN BELÉPÉS -----
@@ -50,7 +53,7 @@ Route::get('/admin-login', function (Request $request) {
 })->name('admin.login');
 
 // Ez a legvégén legyen, hogy ne nyelje el a fenti route-okat
-Route::get('/{slug}', [AdminBlogController::class, 'show'])->name('blog.show');
+Route::get('/blog/{slug}', [AdminBlogController::class, 'show'])->name('blog.show');
 
 // Termék oldal
 Route::get('/product/{slug}', [HomeController::class, 'product']);

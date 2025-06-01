@@ -304,14 +304,14 @@
                     <div class="course-block col-lg-3 col-md-6 col-sm-12" id="search-results">
                         <div class="inner-box" data-wow-delay="0ms" data-wow-duration="400ms">
                             <div class="image">
-                                <a href="{{ $blog->slug }}">
+                                <a href="/blog/{{ $blog->slug }}">
                                     <img class="transition-500ms"
                                         src="{{ asset('assets/images/gallery/blog/' . $blog->cover_image) }}"
                                         alt="{{ $blog->cover_image }}" />
                                 </a>
                             </div>
                             <div class="lower-content">
-                                <h5><a href="{{ $blog->slug }}">{{ $blog->title }}</a></h5>
+                                <h5><a href="/blog/{{ $blog->slug }}">{{ $blog->title }}</a></h5>
                             </div>
                         </div>
                     </div>
@@ -322,14 +322,14 @@
                     <div class="course-block">
                         <div class="inner-box" data-wow-delay="0ms" data-wow-duration="400ms">
                             <div class="image">
-                                <a href="{{ $blog->slug }}">
+                                <a href="/blog/{{ $blog->slug }}">
                                     <img class="transition-500ms"
                                         src="{{ asset('assets/images/gallery/blog/' . $blog->cover_image) }}"
                                         alt="{{ $blog->cover_image }}" />
                                 </a>
                             </div>
                             <div class="lower-content">
-                                <h5><a href="{{ $blog->slug }}">{{ $blog->title }}</a></h5>
+                                <h5><a href="/blog/{{ $blog->slug }}">{{ $blog->title }}</a></h5>
                             </div>
                         </div>
                     </div>

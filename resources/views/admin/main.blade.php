@@ -234,6 +234,12 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
+                                    <a href="{{ route('admin.maintenance.show') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Karbantartási mód</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="/" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Felhasználói oldal</p>

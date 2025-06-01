@@ -137,6 +137,12 @@ class AdminProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        if ($product->image && $product->image !== 'noimage.jpg') {
+            $imagePath = public_path('/assets/images/gallery/product/' . $product->image);
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+        }
         $product->delete();
         return redirect()->route('admin.products.index')->with('success', 'Termék sikeresen törölve!');
     }

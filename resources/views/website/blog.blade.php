@@ -3,7 +3,7 @@
 @extends('website.main')
 @section('content')
     <!-- Page Title Section -->
-    <section class="page-title" style="background-image: url(assets/images/gallery/WebsiteHeader2.png)">
+    <section class="page-title" style="background-image: url(/assets/images/gallery/WebsiteHeader2.png)">
         <div class="auto-container">
             <div class="breadcrumb-outer">
                 <ul class="page-breadcrumb">
@@ -107,7 +107,7 @@
                                         style="gap: 10px;">
                                         @if ($pastBlog)
                                             <div class="prev text-truncate" style="max-width: 45%;">
-                                                <a href="{{ url($pastBlog->slug) }}">
+                                                <a href="{{ url('blog/' . $pastBlog->slug) }}">
                                                     Korábbi blog
                                                     <strong class="d-block text-truncate"
                                                         style="max-width: 100%;">{{ $pastBlog->title }}</strong>
@@ -117,7 +117,7 @@
                                         <span class="grid-icon flaticon-grid"></span>
                                         @if ($latestBlog)
                                             <div class="next text-truncate text-end" style="max-width: 45%;">
-                                                <a href="{{ url($latestBlog->slug) }}">
+                                                <a href="{{ url('blog/' . $latestBlog->slug) }}">
                                                     Legújabb blog
                                                     <strong class="d-block text-truncate"
                                                         style="max-width: 100%;">{{ $latestBlog->title }}</strong>
@@ -159,10 +159,10 @@
                                     <article class="post">
                                         <figure class="post-thumb"><img
                                                 src="{{ asset('assets/images/gallery/blog/' . $popularblog->cover_image) }}"
-                                                alt=""><a href="{{ url($popularblog->slug) }}"
+                                                alt=""><a href="{{ url('blog/' . $popularblog->slug) }}"
                                                 class="overlay-box"><span class="icon fa fa-link"></span></a></figure>
                                         <div class="text"><a
-                                                href="{{ url($popularblog->slug) }}">{{ $popularblog->title }}</a></div>
+                                                href="{{ url('blog/' . $popularblog->slug) }}">{{ $popularblog->title }}</a></div>
                                         <div class="post-info">{{ $popularblog->created_at->format('Y. F d.') }}</div>
                                     </article>
                                 @endforeach
