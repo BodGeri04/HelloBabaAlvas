@@ -47,7 +47,7 @@ class HomeController extends Controller
 
         $products = Product::all();
         $availableProducts=Product::where('price','>',0)->get();
-        $title='Pihenj Baba | Főoldal';
+        $title='Pihenj Baba – Személyre szabott babaaltatás & tanácsadás';
         return view('website.home', compact('products', 'blogs','title','availableProducts'));
     }
 

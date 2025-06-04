@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="hu">
-    
+
 <head>
     <meta charset="utf-8">
     <!-- CSS -->
@@ -18,7 +18,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="keywords" content="baba, alvás, babaalvás, nyugodt éjszaka, altatás, babatippek">
     <meta name="author" content="Pihenj Baba Csapata">
-    <meta name="description" content="Nyugodt alvás a babának és a családnak. Személyre szabott babaaltatási tanácsadás és tippek.">
+    <meta name="description"
+        content="Segítünk, hogy a baba és a család is kipihent legyen! Babaaltatási tanácsadás, egyéni tippek és alvássegítő programok – személyre szabva.">
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ url()->current() }}">
     <!--TINYMCE-->
@@ -414,7 +415,7 @@
     <script src="{{ asset('assets/js/jquery-ui.js') }}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
     <script src="{{ asset('assets/js/cookie.js') }}"></script>
-    
+
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
