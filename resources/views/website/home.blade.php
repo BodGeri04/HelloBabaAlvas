@@ -443,12 +443,13 @@
             <div class="row clearfix">
 
                 <!-- Image Column -->
-                <div class="image-column col-lg-6 col-md-12 col-sm-12 d-flex align-items-center justify-content-center">
+                <div
+                    class="image-column col-lg-6 col-md-12 col-sm-12 d-none d-lg-flex align-items-center justify-content-center">
                     <div class="inner-column w-100 d-flex justify-content-center align-items-center"
                         style="min-height: 100%;">
                         <div class="image"
                             style="display: flex; justify-content: center; align-items: center; width: 100%;">
-                            <img src="assets/images/gallery/kapcsolatfelvetel_telefon.jpg" alt=""
+                            <img src="{{ asset('assets/images/gallery/kapcsolatfelvetel_telefon.jpg') }}" alt=""
                                 style="max-width: 70%; width: 100%; height: auto; display: block; margin: 0 auto;" />
                         </div>
                     </div>

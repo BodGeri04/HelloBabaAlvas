@@ -13,6 +13,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" href="{{ asset('assets/images/gallery/baba3.png') }}" type="image/png">
     <link rel="icon" href="{{ asset('assets/images/gallery/baba3.png') }}" type="image/png">
+        
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -27,6 +28,7 @@
         referrerpolicy="origin"></script>
     <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
     <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
 </head>
 
 <body class="hidden-bar-wrapper">
@@ -87,9 +89,9 @@
                 <div class="auto-container clearfix">
 
                     <!-- Logo Box -->
-                    <div class="pull-left logo-box">
+                    <div class="pull-left logo-box main-logo">
                         <div class="logo"><a href="/"><img src="/assets/images/gallery/baba3.png"
-                                    style="max-width: 90px;max-height:90px;"alt="" title=""></a>
+                                    style="max-width: 80px;max-height:80px;"alt="" title=""></a>
                         </div>
                     </div>
 
@@ -145,7 +147,7 @@
                 <div class="auto-container clearfix">
                     <!--Logo-->
                     <div class="logo pull-left">
-                        <a href="/" title=""><img style="max-width: 90px;max-height:90px;"
+                        <a href="/" title=""><img style="max-width: 80px;max-height:80px;"
                                 src="/assets/images/gallery/baba3.png" alt="" title=""></a>
                     </div>
                     <!--Right Col-->
@@ -170,7 +172,7 @@
                 <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
 
                 <nav class="menu-box">
-                    <div class="nav-logo"><a href="/"><img style="max-width: 90px;max-height:90px;"
+                    <div class="nav-logo"><a href="/"><img style="max-width: 80px;max-height:80px;"
                                 src="/assets/images/gallery/baba3.png" alt="" title=""></a></div>
                     <div class="menu-outer">
                         <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
@@ -260,7 +262,7 @@
                                     <div class="footer-widget logo-widget">
                                         <div class="logo">
                                             <a href="/"><img src="/assets/images/gallery/baba3.png"
-                                                    style="max-width: 90px;max-height:90px;" alt="" /></a>
+                                                    style="max-width: 80px;max-height:80px;" alt="" /></a>
                                         </div>
                                         <div class="text">Nyugodt alvás a babának és a családnak.<br>Személyre
                                             szabott megoldások a babád és a te igényeid összehangolásával.</div>

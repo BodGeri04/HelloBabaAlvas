@@ -2198,7 +2198,7 @@
 	position: relative;
 	overflow: hidden;
 	padding: 240px 0px 95px;
-	background-attachment: fixed;
+	/* background-attachment: fixed; */
 	background-size: cover;
 }
 
