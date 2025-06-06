@@ -26,6 +26,8 @@
     <!--TINYMCE-->
     <script src="https://cdn.tiny.cloud/1/z3ivhoi87w7309hzr8a537h5xm156y3unisq93zp528w3jsq/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
+    <!-- recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
     <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 
@@ -119,6 +121,8 @@
                                     <li class=""><a href="/aboutMe">Rólam</a>
                                     </li>
                                     <li class=""><a href="/products">Szolgáltatások</a>
+                                    </li>
+                                    <li class=""><a href="/blogs">Blogok</a>
                                     </li>
                                     <li><a href="/#contact-section">Kapcsolat</a></li>
                                 </ul>
@@ -280,6 +284,7 @@
                                                     <li><a href="/">Főoldal</a></li>
                                                     <li><a href="/aboutMe">Rólam</a></li>
                                                     <li><a href="/products">Szolgáltatások</a></li>
+                                                    <li><a href="/blogs">Blogok</a></li>
                                                     <li><a href="/#contact-section">Kapcsolat</a></li>
                                                 </ul>
                                             </div>
@@ -418,7 +423,6 @@
     <script src="{{ asset('assets/js/script.js') }}"></script>
     <script src="{{ asset('assets/js/cookie.js') }}"></script>
 
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             tinymce.init({

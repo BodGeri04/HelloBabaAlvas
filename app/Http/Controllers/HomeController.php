@@ -77,6 +77,13 @@ class HomeController extends Controller
         return view('website.allProducts', compact('products', 'title'));
     }
 
+    public function allBlogs()
+    {
+        $blogs = Blog::where('is_published', true)->orderBy('created_at', 'DESC')->get();
+        $title = 'Pihenj Baba | Blogok';
+        return view('website.allBlogs', compact('blogs', 'title'));
+    }
+
     public function product($slug)
     {
         $product = Product::where('slug', $slug)->where('active', true)->firstOrFail();

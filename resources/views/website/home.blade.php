@@ -518,7 +518,7 @@
 
                                     <!-- Form Group -->
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                        <div class="g-recaptcha" data-sitekey="6LcsT1ErAAAAAHJLZDaxHg8a-YN__CYOxVB4H8I4">
+                                        <div class="g-recaptcha" data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}"></div>
                                         </div>
                                         @error('g-recaptcha-response')
                                             <div class="text-danger mt-1">{{ $message }}</div>

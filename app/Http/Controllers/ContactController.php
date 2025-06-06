@@ -6,6 +6,7 @@ use App\Mail\ContactAutoReply;
 use App\Mail\ContactMessage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use App\Rules\ReCaptcha;
 use Illuminate\Support\Facades\Log;
 
 
@@ -20,6 +21,7 @@ class ContactController extends Controller
                 'email' => 'required|email',
                 'product' => 'required|string',
                 'message' => 'nullable|string',
+                'g-recaptcha-response' => [new ReCaptcha()],
             ]);
 
             // Message új sorok és szóközök kezelése
