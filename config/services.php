@@ -36,8 +36,8 @@ return [
     ],
 
     'recaptcha' => [
-        'site_key' => "6LeW9VcrAAAAAOfMZ3J4miupZ2yDc_iaxlDA8oWp",
-        'secret' => "6LeW9VcrAAAAAHmSShs907nCwzyesqYP0587SmiF",
+        'site_key' => env('GOOGLE_RECAPTCHA_KEY'),
+        'secret' => env('GOOGLE_RECAPTCHA_SECRET'),
     ],
 
 ];
