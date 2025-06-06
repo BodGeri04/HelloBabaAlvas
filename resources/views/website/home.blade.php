@@ -460,7 +460,7 @@
                     <div class="inner-column">
                         <div class="sec-title">
                             <div class="title color-three">Kapcsolatfelvétel</div>
-                            <h2>Szolgáltatás megrendelése/Kapcsolatfelvétel</h2>
+                            <h2>Szolgáltatás megrendelése</h2>
                         </div>
 
                         <!-- Contact Form -->
@@ -518,7 +518,7 @@
 
                                     <!-- Form Group -->
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                        <div class="g-recaptcha" data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}"></div>
+                                        <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
                                         </div>
                                         @error('g-recaptcha-response')
                                             <div class="text-danger mt-1">{{ $message }}</div>
