@@ -15,9 +15,13 @@ class ReCaptcha implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        $response=Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
             'secret' => config('services.recaptcha.secret'),
             'response' => $value,
         ]);
+
+        if (!($response->json()['success'] ?? false)) {
+            $fail('Kérlek igazold, hogy nem vagy robot!');
+        }
     }
 }
