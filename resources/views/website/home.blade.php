@@ -464,7 +464,7 @@
                         </div>
 
                         <!-- Contact Form -->
-                        <div class="contact-form">
+                        <div id="recaptcha-element" class="contact-form">
                             <form method="post" action="{{ route('contact.send') }}">
                                 @csrf
                                 <div class="row clearfix">
@@ -518,26 +518,28 @@
 
                                     <!-- Form Group -->
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                        <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
-                                        </div>
                                         @error('g-recaptcha-response')
                                             <div class="text-danger mt-1">{{ $message }}</div>
                                         @enderror
-                                        <button class="theme-btn btn-style-three" type="submit" name="submit-form">
-                                            <span class="txt">Küldés</span>
-                                        </button>
+                                        <!-- recaptcha -->
+                                        <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
                                     </div>
-
+                                    <button class="theme-btn btn-style-three" type="submit" name="submit-form">
+                                        <span class="txt">Küldés</span>
+                                    </button>
                                 </div>
                             </form>
+                            <!-- recaptcha -->
                         </div>
-                        <!-- eND Contact Form -->
-
 
                     </div>
-                </div>
+                    <!-- eND Contact Form -->
 
+
+                </div>
             </div>
+
+        </div>
         </div>
     </section>
     <!-- End Contact Form Section -->

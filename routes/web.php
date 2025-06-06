@@ -27,7 +27,12 @@ Route::get('/blogs', [HomeController::class, 'allBlogs']);
 
 // Kapcsolatfelvétel POST
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
-
+Route::get('/teszt', function () {
+    return [
+        'env' => env('GOOGLE_RECAPTCHA_SECRET'),
+        'config' => config('services.recaptcha.secret'),
+    ];
+});
 // Keresés blogok között
 Route::post('/kereses', [HomeController::class, 'searchBlogs'])->name('blog.search');
 
